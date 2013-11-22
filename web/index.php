@@ -7,7 +7,7 @@
  * @version $Id$
  */
 header('Content-Type: text/html; charset=utf-8');
-require '../init.php';
+require 'init.php';
 
 /* 防止页面cache */
 if (!headers_sent())

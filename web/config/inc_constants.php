@@ -55,7 +55,7 @@ $app = substr(PATH_DIR, strripos(PATH_DIR, DIRECTORY_SEPARATOR) + 1);
 switch ($app)
 {
     default :
-        define('CUR_DIR', '/www.yingtaozi.com');
+        define('CUR_DIR', '/');
         define('CUR_MODEL', '/');
         define('LANG', 'zh_CN');
         break;
