@@ -16,14 +16,14 @@
                 </div>
                 <div class="jNav">
                     <ul class="jMenu clearfix">
-                        <li class="current_page_item"><a href="<{$URL}>">首页</a></li>
-                        <li class="page_item page-item-1"><a href="http://www.yingtaozi.com/?page_id=2">情报站</a></li>
-                        <li class="page_item page-item-2"><a href="http://www.yingtaozi.com/?page_id=5">TV放送局</a></li>
-                        <li class="page_item page-item-3"><a href="http://www.yingtaozi.com/?page_id=5">掏周边</a></li>
-                        <li class="page_item page-item-4"><a href="http://www.yingtaozi.com/?page_id=5">图集</a></li>
+                        <li <{if $return.nav == 'index'}>class="current_page_item"<{else}>class="page_item"<{/if}>><a href="<{$URL}>">首页</a></li>
+                        <li <{if $return.nav == 'info'}>class="current_page_item"<{else}>class="page_item"<{/if}>><a href="<{$URL}>/?c=info">情报站</a></li>
+                        <li <{if $return.nav == 'video'}>class="current_page_item"<{else}>class="page_item"<{/if}>><a href="<{$URL}>/?c=video">TV放送局</a></li>
+                        <li <{if $return.nav == 'fish'}>class="current_page_item"<{else}>class="page_item"<{/if}>><a href="<{$URL}>/?c=fish">掏周边</a></li>
+                        <li <{if $return.nav == 'draw'}>class="current_page_item"<{else}>class="page_item"<{/if}>><a href="<{$URL}>/?c=draw">图集</a></li>
                     </ul>
                     <div class="jSearch">
-                        <form method="get" id="searchform" action="http://www.yingtaozi.com/">
+                        <form method="get" id="searchform" action="<{$URL}>/?a=search">
                             <input type="text" class="jSKey" value="搜索"  onfocus="this.value='';this.style.color='#444';" name="s" id="s" />
                             <button class="jSBtn">Search</button>
                         </form>
