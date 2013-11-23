@@ -14,28 +14,38 @@ $flag = hlp_common::get_cmd_flag();
 
 if (!empty($flag['help']))
 {
-    echo "/usr/sbin/gearmand --pid-file=/var/run/gearman/gearmand.pid --user=gearman --daemon --log-file=/var/log/gearman-job-server/gearman.log --listen=127.0.0.1" . PHP_EOL;
-    echo "/usr/bin/spawn-fcgi -a 127.0.0.1 -p 9000 -C 5 -u www-data -g www-data -f /usr/bin/php5-cgi -P /var/run/fastcgi-php.pid" . PHP_EOL;
-    echo "/usr/bin/memcached -m 64 -p 11211 -u memcache -l 127.0.0.1" . PHP_EOL;
-    echo "php install.php -test 1" . PHP_EOL;
+    echo "php install.php -ytz_posts 1" . PHP_EOL;
 }
 
-if (!empty($flag['test']))
+if (!empty($flag['ytz_posts']))
 {
     $number = 1;
     $sql    = "CREATE TABLE IF NOT EXISTS `%s` (
-        `tid` int(11) NOT NULL DEFAULT '0' COMMENT 'ID',
-        `test` varchar(50) NOT NULL DEFAULT '' COMMENT '内容',
-        PRIMARY KEY (`tid`)
-        ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='测试'";
+        `pid` int(10) unsigned NOT NULL AUTO_INCREMENT,
+        `post_author` varchar(100) NOT NULL DEFAULT '',
+        `post_ctime` int(10) DEFAULT NULL DEFAULT 0 COMMENT '添加时间',
+        `post_content` longtext NOT NULL,
+        `post_title` text NOT NULL,
+        `post_excerpt` text NOT NULL,
+        `comment_status` tinyint(4) NOT NULL DEFAULT 0,
+        `post_name` varchar(200) NOT NULL DEFAULT '',
+        `post_utime` int(10) DEFAULT NULL DEFAULT 0 COMMENT '修改时间',
+        `post_type` tinyint(4) NOT NULL DEFAULT 0,
+        `post_mime_type` varchar(100) NOT NULL DEFAULT '',
+        `comment_count` bigint(20) NOT NULL DEFAULT '0',
+        PRIMARY KEY (`pid`),
+        KEY `post_name` (`post_name`),
+        KEY `post_type` (`post_type`),
+        KEY `post_author` (`post_author`)
+        ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8";
 
-    if ($flag['test'] == 1)
+    if ($flag['ytz_posts'] == 1)
     {
-        hlp_tool::create_table('test', $sql, $number);
+        hlp_tool::create_table('ytz_posts', $sql, $number);
     }
-    else if ($flag['test'] == 2)
+    else if ($flag['ytz_posts'] == 2)
     {
-        hlp_tool::drop_table('test', $number);
+        hlp_tool::drop_table('ytz_posts', $number);
     }
 }
 
