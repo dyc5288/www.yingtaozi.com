@@ -933,7 +933,6 @@ function change_column(&$data, $old_column, $new_column)
  */
 function debug($data, $post = false)
 {
-    return false;
     $params = array();
     $params['data']  = $data;
     $params['url']   = get_cururl();
