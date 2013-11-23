@@ -32,7 +32,7 @@ class ctl_draw extends ctl_parent
     {
         $return = array('nav' => 'draw');
         lib_template::assign('return', $return);
-        lib_template::display('info_index.tpl');
+        lib_template::display('draw_index.tpl');
     }
 
 }
