@@ -8,14 +8,41 @@
  */
 !defined('IN_INIT') && exit('Access Denied');
 
-class ctl_index
+require_once 'ctl_parent.php';
+
+class ctl_index extends ctl_parent
 {
 
+    /**
+     * 初始化
+     * 
+     * @return void
+     */
+    public function __construct()
+    {
+        parent::__construct();
+    }
+
+    /**
+     * 首页
+     * 
+     * @return void
+     */
     public function index()
     {
-        $return = array();        
+        $return = array('nav' => 'index');
         lib_template::assign('return', $return);
         lib_template::display('index.tpl');
+    }
+
+    /**
+     * 搜索
+     * 
+     * @return void
+     */
+    public function search()
+    {
+        
     }
 
 }
