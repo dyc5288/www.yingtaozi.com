@@ -13,13 +13,13 @@
 define('DEBUG_LEVEL', true);
 
 /* URL常量 */
-define('URL_SUFFIX', 'yingtaozi.com');
+define('URL_SUFFIX', 'yingtaozi.cn');
 
 /* 当前域名地址 */
-define('URL', 'http://www.yingtaozi.com');
+define('URL', 'http://www.yingtaozi.cn');
 
 /* 域 */
-define('DOMAIN', 'yingtaozi.com');
+define('DOMAIN', 'yingtaozi.cn');
 
 /* 类库文件目录常量 */
 define('PATH_LIBRARY', PATH_ROOT . '/library');
