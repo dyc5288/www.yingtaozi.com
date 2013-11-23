@@ -16,11 +16,11 @@
                 </div>
                 <div class="jNav">
                     <ul class="jMenu clearfix">
-                        <li <{if $return.nav == 'index'}>class="current_page_item"<{else}>class="page_item"<{/if}>><a href="<{$URL}>">首页</a></li>
-                        <li <{if $return.nav == 'info'}>class="current_page_item"<{else}>class="page_item"<{/if}>><a href="<{$URL}>/?c=info">情报站</a></li>
-                        <li <{if $return.nav == 'video'}>class="current_page_item"<{else}>class="page_item"<{/if}>><a href="<{$URL}>/?c=video">TV放送局</a></li>
-                        <li <{if $return.nav == 'fish'}>class="current_page_item"<{else}>class="page_item"<{/if}>><a href="<{$URL}>/?c=fish">掏周边</a></li>
-                        <li <{if $return.nav == 'draw'}>class="current_page_item"<{else}>class="page_item"<{/if}>><a href="<{$URL}>/?c=draw">图集</a></li>
+                        <li <{if $return.nav == 'index'}>class="current_page_item class_cur"<{else}>class="page_item"<{/if}>><a href="<{$URL}>">首页</a></li>
+                        <li <{if $return.nav == 'info'}>class="current_page_item  class_cur"<{else}>class="page_item"<{/if}>><a href="<{$URL}>/?c=info">情报站</a></li>
+                        <li <{if $return.nav == 'video'}>class="current_page_item  class_cur"<{else}>class="page_item"<{/if}>><a href="<{$URL}>/?c=video">TV放送局</a></li>
+                        <li <{if $return.nav == 'fish'}>class="current_page_item  class_cur"<{else}>class="page_item"<{/if}>><a href="<{$URL}>/?c=fish">掏周边</a></li>
+                        <li <{if $return.nav == 'draw'}>class="current_page_item  class_cur"<{else}>class="page_item"<{/if}>><a href="<{$URL}>/?c=draw">图集</a></li>
                     </ul>
                     <div class="jSearch">
                         <form method="get" id="searchform" action="<{$URL}>/?a=search">
