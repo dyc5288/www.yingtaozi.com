@@ -4,9 +4,9 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <title>樱桃子</title>
         <meta name="baidu_union_verify" content="f6cb118815ad833938e4f64529026c7a" />
-        <link rel="stylesheet" href="<{$URL}>/static/css/core.css" type="text/css" media="screen" />
-        <script type="text/javascript" src="<{$URL}>/static/js/jquery.js"></script>
-        <script type="text/javascript" src="<{$URL}>/static/js/core.js"></script>
+        <link rel="stylesheet" href="<{s}>css/core.css<{/s}>" type="text/css" media="screen" />
+        <script type="text/javascript" src="<{s}>js/jquery.js<{/s}>"></script>
+        <script type="text/javascript" src="<{s}>js/core.js<{/s}>"></script>
     </head>
     <body class="home blog">
         <div class="junP jun950">
