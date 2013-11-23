@@ -20,8 +20,8 @@ if (!headers_sent())
 }
 
 /* 控制器 */
-$GLOBALS['CT'] = get_params('ct', 1, 'request', 'index');
-$GLOBALS['AC'] = get_params('ac', 1, 'request', 'index');
+$GLOBALS['CT'] = get_params('c', 1, 'request', 'index');
+$GLOBALS['AC'] = get_params('a', 1, 'request', 'index');
 
 /* 当前网址 */
 $cururl = get_cururl();
