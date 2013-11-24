@@ -83,9 +83,16 @@ Author URI: http://duanyunchao.com/
 }
 
 .jLeftContent h3 {
-    color: red;
     text-align: center;
     margin-bottom: 10px;
+}
+
+.jLeftContent h3 a{
+    color: #d71e5b;
+}
+
+.jLeftContent h3 a:hover{
+    color: red;
 }
 
 .jLeftContent .jTimeFrom {
