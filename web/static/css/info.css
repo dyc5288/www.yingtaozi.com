@@ -157,3 +157,22 @@ Author URI: http://duanyunchao.com/
     border-bottom: 1px solid #e7e7e7;
 }
 
+.jRelative {
+    border-top: 1px dashed #e7e7e7;
+    margin: 10px 0px 10px 0px;
+    clear:both;
+    zoom: 1;
+    padding: 10px;
+}
+
+.jRelative div {
+    margin-top: 5px;
+}
+
+.jRelative div a{
+    color: #d71e5b;
+}
+
+.jRelative div a:hover{
+    color: red;
+}
