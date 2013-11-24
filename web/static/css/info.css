@@ -51,3 +51,50 @@ Author URI: http://duanyunchao.com/
     height: 180px;
 }
 
+.jArticle {
+    position:relative;
+    content:'\0020';
+    clear:both;
+    width: 600px;
+    padding: 10px;
+    zoom: 1;
+    margin-bottom: 10px;
+}
+
+.jRightImg {
+    margin-top: 20px;
+    float: left;
+    margin-bottom: 20px;
+}
+
+.jRightImg  img {
+    width: 140px;
+    height: 140px;
+}
+
+.jLeftContent {
+    clear:both;
+    content:'\0020';
+    float: none;
+    position: absolute;
+    right: 10px;
+    width: 440px;
+    padding-left: 10px;
+}
+
+.jLeftContent h3 {
+    color: red;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.jLeftContent .jTimeFrom {
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.jLeftContent .jArticleContent {
+    text-indent:2em;
+    font-size: 14px;
+    font: 12px/1.8 Tahoma, Geneva, "\5B8B\4F53";
+}
