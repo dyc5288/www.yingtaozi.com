@@ -13,7 +13,7 @@
                         <img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐">
                     </div>
                     <div class="jLeftContent">
-                        <h3>死亡note再引风波?，刘克带走十五岁少女！</h3>
+                        <h3><a href="<{$URL}>/?c=info&a=detail">死亡note再引风波?，刘克带走十五岁少女！</a></h3>
                         <div class="jTimeFrom">
                             <span>时间：2013-04-30</span> <span>来源：腾讯</span>
                         </div>
@@ -27,7 +27,7 @@
                         <img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐">
                     </div>
                     <div class="jLeftContent">
-                        <h3>死亡note再引风波?，刘克带走十五岁少女！</h3>
+                        <h3><a href="<{$URL}>/?c=info&a=detail">死亡note再引风波?，刘克带走十五岁少女！</a></h3>
                         <div class="jTimeFrom">
                             <span>时间：2013-04-30</span> <span>来源：腾讯</span>
                         </div>
@@ -41,7 +41,7 @@
                         <img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐">
                     </div>                    
                     <div class="jLeftContent">
-                        <h3>死亡note再引风波?，刘克带走十五岁少女！</h3>
+                        <h3><a href="<{$URL}>/?c=info&a=detail">死亡note再引风波?，刘克带走十五岁少女！</a></h3>
                         <div class="jTimeFrom">
                             <span>时间：2013-04-30</span> <span>来源：腾讯</span>
                         </div>
