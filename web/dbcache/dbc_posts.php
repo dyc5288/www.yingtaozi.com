@@ -18,18 +18,18 @@ class dbc_posts
     /**
      * 单条
      *
-     * @param int $pid
+     * @param int $ID
      * @return boolean 
      */
-    public static function get_one($pid)
+    public static function get_one($ID)
     {
-        if (empty($pid))
+        if (empty($ID))
         {
             return false;
         }
 
         $table = hlp_common::get_split_table(null, self::TABLE_NAME);
-        $sql   = "SELECT * FROM {$table['name']} WHERE pid = '{$pid}' ";
+        $sql   = "SELECT * FROM {$table['name']} WHERE ID = '{$ID}' ";
         return lib_database::get_one($sql, $table['index']);
     }
 
@@ -53,19 +53,19 @@ class dbc_posts
     /**
      * 修改
      *
-     * @param int $pid
+     * @param int $ID
      * @param array $key_values 
      * @return boolean
      */
-    public static function update($pid, $key_values = array())
+    public static function update($ID, $key_values = array())
     {
-        if (empty($pid) || empty($key_values))
+        if (empty($ID) || empty($key_values))
         {
             return false;
         }
 
         $table = hlp_common::get_split_table(null, self::TABLE_NAME);
-        $where = " pid = '{$pid}' ";
+        $where = " ID = '{$ID}' ";
         return lib_database::update($key_values, $where, $table['name'], $table['index']);
     }
 
@@ -112,7 +112,7 @@ class dbc_posts
 
     /**
      * 获取条件
-     *
+     * 
      * @param array $cond
      * @return string 
      */
@@ -120,9 +120,9 @@ class dbc_posts
     {
         $where = "WHERE 1 = 1 ";
 
-        if (isset($cond['pid']))
+        if (isset($cond['ID']))
         {
-            $where .= "AND pid = '{$cond['pid']}' ";
+            $where .= "AND ID = '{$cond['ID']}' ";
         }
 
         return $where;
