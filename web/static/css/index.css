@@ -33,7 +33,7 @@ Author URI: http://duanyunchao.com/
 
 .jFish {
     width: 878px;
-    height: 370px
+    height: 403px;
 }
 
 .jVideo {
@@ -151,4 +151,37 @@ Author URI: http://duanyunchao.com/
     clear: both;
     width: 100%;
     margin-bottom: 5px;
+}
+
+.jFishleft,.jFishright { 
+    position:relative;
+    content:'\0020';
+    display:block;
+    clear:both;
+    zoom: 1;
+    margin-bottom: 10px;
+    float: left;
+}
+
+.jFishleft {
+    margin-top: 10px;
+    float: left;
+    width: 10px;
+}
+
+.jFishright {
+    margin-top: 10px;
+    width: 492px;
+    position: absolute;
+    float: none;
+    right: 10px;
+}
+
+.jFishright img {
+    height: 120px;
+}
+
+.jFishleft img {
+    width: 382px;
+    height: 368px;
 }
