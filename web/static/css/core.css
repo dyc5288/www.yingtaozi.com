@@ -63,7 +63,7 @@ a, a:visited {
 
 a:hover {
 
-    text-decoration:underline;
+    text-decoration:none;
 
     color:#cd0949;
 
@@ -377,6 +377,49 @@ body{
 
 .junF {}
 
+.jFriend {
+    
+    width:880px;
+
+    margin:0 auto;
+    
+    border:1px solid #ccc;
+    
+    margin-bottom: 10px;
+    
+    padding: 10px;
+    
+    height: 83px;
+    
+}
+
+.jFriend p{
+
+    text-align:center;
+
+}
+
+.jFriend h3 {
+    
+    color:#444;
+
+    font-size:14px;
+    
+    float: left;
+    
+    width: 28px;
+}
+
+.jFcontent {
+    
+}
+
+.jFcontent a {
+    
+    margin-left: 10px;
+    
+}
+
 .jCopy {
 
     line-height:23px;
@@ -385,12 +428,31 @@ body{
 
     border-top:1px solid #ccc;
 
+    margin-bottom: 50px;
 }
 
 .jCopy p{
 
     text-align:center;
 
+}
+
+.jCopyright {
+    
+    float: left;
+    
+}
+
+.jCopyleft {
+    
+    float: right;
+    
+}
+
+.jCopyleft a {
+    
+    margin-right: 5px;
+    
 }
 
 /* end foot */
@@ -427,7 +489,7 @@ body{
 
 .jPost h2 a:hover{color:#e23a70;}
 
-.jPostCont a,.jPostCont a:visited{ text-decoration:underline;color:#555;}
+.jPostCont a,.jPostCont a:visited{ text-decoration:none;color:#555;}
 
 .jPostCont a:hover{text-decoration:none;color:#777;}
 
