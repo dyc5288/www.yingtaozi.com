@@ -582,7 +582,27 @@ body{
     color:#444;
 
     font-size:14px;
+    
+    float: left;
 
+}
+
+.jBoxH {
+    
+    border-bottom: 1px solid #ccc;
+    
+}
+
+.jBoxH a {
+    
+    float: none;
+    
+    position: absolute;
+    
+    right: 8px;
+    
+    text-decoration: none;
+    
 }
 
 .junList li { line-height:23px; }
