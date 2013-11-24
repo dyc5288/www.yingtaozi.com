@@ -38,7 +38,7 @@ Author URI: http://duanyunchao.com/
 
 .jVideo {
     width: 878px;
-    height: 500px
+    height: 552px;
 }
 
 .jAcross {
@@ -119,4 +119,36 @@ Author URI: http://duanyunchao.com/
     width: 107px;
     height: 56px;
     border: 1px solid #f6f6f6;
+}
+
+.jMovie,.jIntro { 
+    position:relative;
+    content:'\0020';
+    display:block;
+    clear:both;
+    zoom: 1;
+    margin-bottom: 10px;
+    float: left;
+    height: 516px;
+}
+
+.jMovie {
+    float: left;
+    width: 622px;
+    margin-top: 10px;
+}
+
+.jIntro {
+    margin-top: 10px;
+    position: absolute;
+    float: none;
+    right: 8px;
+    width: 248px;
+}
+
+.jIntro h3 {
+    text-align: center;
+    clear: both;
+    width: 100%;
+    margin-bottom: 5px;
 }
