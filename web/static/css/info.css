@@ -105,3 +105,54 @@ Author URI: http://duanyunchao.com/
     font-size: 14px;
     font: 12px/1.8 Tahoma, Geneva, "\5B8B\4F53";
 }
+
+/* 详情页 */
+.jDetailContent { 
+    position:relative;
+    content:'\0020';
+    display:block;
+    clear:both;
+    zoom: 1;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    float: left;
+}
+
+.jDetailContent h3 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.jDetailContent h3 a{
+    color: #d71e5b;
+}
+
+.jDetailContent h3 a:hover{
+    color: red;
+}
+
+.jDetailContent .jTimeFrom {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.jDetailContent .jArticleContent {
+    text-indent:2em;
+    font-size: 14px;
+    font: 12px/1.8 Tahoma, Geneva, "\5B8B\4F53";
+    clear: both;
+}
+
+.jTimeFrom .jTimeFromLeft {
+    float: left;
+    margin-bottom: 20px;
+}
+
+.jTimeFrom .jShare {
+    float:none;
+    position: absolute;
+    right: 10px;    
+    border-bottom: 1px solid #e7e7e7;
+}
+
