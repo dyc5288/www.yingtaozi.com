@@ -776,6 +776,8 @@ body{
 .wp-pagenavi {
 
 	clear: both;
+        
+        text-align: center;
 
 }
 
