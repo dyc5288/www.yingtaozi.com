@@ -35,6 +35,18 @@ class ctl_info extends ctl_parent
         lib_template::display('info_index.tpl');
     }
 
+    /**
+     * 情报详情
+     * 
+     * @return void
+     */
+    public function detail()
+    {
+        $return = array('nav' => 'info');
+        lib_template::assign('return', $return);
+        lib_template::display('info_detail.tpl');
+    }
+
 }
 
 ?>
