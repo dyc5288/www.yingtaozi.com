@@ -5,7 +5,7 @@
 require_once 'ctl_parent.php';
 
 /**
- * 掏周边
+ * 淘周边
  *
  * @author duanyunchao
  * @version $Id$
