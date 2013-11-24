@@ -1,0 +1,112 @@
+@charset "utf-8";
+
+/****** 2013-11-24
+Theme Name: YTZ 
+Theme URI: http://www.yingtaozi.com/
+Version: v1.0
+Author: duanyunchao
+Author URI: http://duanyunchao.com/
+*/
+/*reset*/
+.jHot, .jPos, .jAcross { 
+    position:relative;
+    content:'\0020';
+    display:block;
+    clear:both;
+    zoom: 1;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    float: left;
+}
+
+.jHot {
+    width: 250px;
+    height: 260px
+}
+
+.jPos {
+    padding: 0px;
+    width: 270px;
+    height: 120px;
+}
+
+.jAcross {
+    padding: 0px;
+    width: 898px;
+    height: 50px;
+}
+
+.jAds {    
+    color:#444;    
+    background-position:-892px -148px;
+}
+
+.jAds img {
+    width: 270px;
+    height: 120px;
+}
+
+.jAcross img {
+    width: 898px;
+    height: 50px;
+}
+
+.jPdt { 
+    position:absolute;
+    content:'\0020';
+    display:block;
+    clear:both;
+    zoom: 1;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    float: none;
+    right: 0px;
+    width: 597px;
+    height: 392px;
+    float: left;
+    overflow: hidden;
+}
+
+.jPhoto {
+    float: left;
+    padding: 0 0 10px 0;
+}
+
+.jPhoto img {
+    float: left;
+    width: 587px;
+    height: 310px;
+    padding: 3px;
+    border: 1px solid #d0d9e1;
+    border-radius: 3px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+}
+
+.jExtImg {
+    text-align: center;
+}
+
+.jExtImg li.focus {
+    background: #DDD;
+    cursor: default;
+}
+
+.jExtImg li {
+    position: relative;
+    padding: 2px;
+    vertical-align: top;
+    border-radius: 2px;
+    cursor: pointer;
+    width: 109px;
+    float: left;
+    margin: 0 3px;
+}
+
+.jExtImg li img {
+    display: block;
+    width: 107px;
+    height: 56px;
+    border: 1px solid #f6f6f6;
+}
