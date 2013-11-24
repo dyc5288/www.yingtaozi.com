@@ -1,0 +1,146 @@
+@charset "utf-8";
+
+/****** 2013-11-24
+Theme Name: YTZ 
+Theme URI: http://www.yingtaozi.com/
+Version: v1.0
+Author: duanyunchao
+Author URI: http://duanyunchao.com/
+*/
+/*reset*/
+.jHot, .jContent, .jPosition { 
+    position:relative;
+    content:'\0020';
+    display:block;
+    clear:both;
+    zoom: 1;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    float: left;
+}
+
+.jHot {
+    width: 228px;
+}
+
+.jContent {
+    width: 619px;
+}
+
+.jPosition {
+    width: 619px;
+}
+
+.jAds {
+    position:relative;
+    content:'\0020';
+    display:block;
+    clear:both;
+    zoom: 1;
+    border: 1px solid #ccc;
+    float: left;
+    width: 248px;
+    height: 180px;
+    margin-bottom: 10px;
+}
+
+.jAds img {
+    width: 248px;
+    height: 180px;
+}
+
+.jHeader {
+    clear: both;
+}
+
+.jHeader hr {
+    float:left;
+    margin-top: 10px;
+}
+
+.jHeader h3 {
+    float:left;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.jContent .jHeader .jHrLeft {
+    width: 20px;
+}
+
+.jContent .jHeader .jHrRight {
+    width: 515px;
+}
+
+.jVideo {
+    position:relative;
+    content:'\0020';
+    display:block;
+    zoom: 1;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-right: 5px;
+    float: left;
+}
+
+.jVideo img {
+    width: 149px;
+    height: 122px;
+    margin-bottom: 5px;
+}
+
+.jVideo .jWord {
+    text-align: center;    
+}
+
+.jMain2 {
+    position:relative;
+    content:'\0020';
+    display:block;
+    zoom: 1;
+    margin-bottom: 10px;
+    float: left;
+}
+
+.jPages {
+    padding-top: 10px;
+    padding-left:0px;
+}
+
+
+.jHot .jHeader .jHrLeft {
+    width: 20px;
+}
+
+.jHot .jHeader .jHrRight {
+    width: 124px;
+}
+
+.jHotVideo {
+    position:relative;
+    content:'\0020';
+    display:block;
+    clear:both;
+    zoom: 1;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    float: left;
+    width: 229px;
+}
+
+.jHotVideo .jHotImg {    
+    float: left;
+}
+
+.jHotVideo img {
+    width: 108px;
+    height: 89px;
+}
+
+.jHotVideo .jWord {
+    float: none;
+    position: absolute;
+    right: 8px;
+}
