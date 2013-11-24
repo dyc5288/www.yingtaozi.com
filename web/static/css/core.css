@@ -783,7 +783,7 @@ body{
 
 .jPages {
 
-    padding:10px;
+    padding-bottom:10px;
 
     zoom:1;
 
@@ -822,6 +822,14 @@ body{
 }
 
 .jPages .current { font-weight:bold; }
+
+.jPages .nextpostslink {
+    width: 50px;
+}
+
+.jPages .previouspostslink {
+    width: 50px;
+}
 
 /* end pages */
 
