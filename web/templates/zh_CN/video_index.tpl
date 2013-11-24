@@ -14,79 +14,105 @@
                     <hr class="jHrRight"/>
                 </div>
 
-                <div class="jMain">
+                <div class="jMain2">
 
                     <div class="jVideo">
-                        <img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐">
-                        <div class="jWord">
-                            樱桃小丸子 国语版
-                        </div>
+                        <a href="">
+                            <img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐">
+                            <div class="jWord">
+                                樱桃小丸子 国语版
+                            </div>
+                        </a>
+                    </div>
+                    
+                    
+                    <div class="jVideo">
+                        <a href="">
+                            <img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐">
+                            <div class="jWord">
+                                樱桃小丸子 国语版
+                            </div>
+                        </a>
                     </div>
                     <div class="jVideo">
-                        <img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐">
-                        <div class="jWord">
-                            樱桃小丸子 国语版
-                        </div>
+                        <a href="">
+                            <img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐">
+                            <div class="jWord">
+                                樱桃小丸子 国语版
+                            </div>
+                        </a>
                     </div>
                     <div class="jVideo">
-                        <img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐">
-                        <div class="jWord">
-                            樱桃小丸子 国语版
-                        </div>
+                        <a href="">
+                            <img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐">
+                            <div class="jWord">
+                                樱桃小丸子 国语版
+                            </div>
+                        </a>
                     </div>
                     <div class="jVideo">
-                        <img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐">
-                        <div class="jWord">
-                            樱桃小丸子 国语版
-                        </div>
+                        <a href="">
+                            <img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐">
+                            <div class="jWord">
+                                樱桃小丸子 国语版
+                            </div>
+                        </a>
                     </div>
                     <div class="jVideo">
-                        <img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐">
-                        <div class="jWord">
-                            樱桃小丸子 国语版
-                        </div>
+                        <a href="">
+                            <img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐">
+                            <div class="jWord">
+                                樱桃小丸子 国语版
+                            </div>
+                        </a>
                     </div>
                     <div class="jVideo">
-                        <img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐">
-                        <div class="jWord">
-                            樱桃小丸子 国语版
-                        </div>
+                        <a href="">
+                            <img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐">
+                            <div class="jWord">
+                                樱桃小丸子 国语版
+                            </div>
+                        </a>
                     </div>
                     <div class="jVideo">
-                        <img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐">
-                        <div class="jWord">
-                            樱桃小丸子 国语版
-                        </div>
+                        <a href="">
+                            <img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐">
+                            <div class="jWord">
+                                樱桃小丸子 国语版
+                            </div>
+                        </a>
                     </div>
                     <div class="jVideo">
-                        <img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐">
-                        <div class="jWord">
-                            樱桃小丸子 国语版
-                        </div>
+                        <a href="">
+                            <img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐">
+                            <div class="jWord">
+                                樱桃小丸子 国语版
+                            </div>
+                        </a>
                     </div>
                     <div class="jVideo">
-                        <img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐">
-                        <div class="jWord">
-                            樱桃小丸子 国语版
-                        </div>
+                        <a href="">
+                            <img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐">
+                            <div class="jWord">
+                                樱桃小丸子 国语版
+                            </div>
+                        </a>
                     </div>
                     <div class="jVideo">
-                        <img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐">
-                        <div class="jWord">
-                            樱桃小丸子 国语版
-                        </div>
+                        <a href="">
+                            <img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐">
+                            <div class="jWord">
+                                樱桃小丸子 国语版
+                            </div>
+                        </a>
                     </div>
                     <div class="jVideo">
-                        <img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐">
-                        <div class="jWord">
-                            樱桃小丸子 国语版
-                        </div>
-                    </div>
-                    <div class="jVideo">
-                        <img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐">
-                        <div class="jWord">
-                            樱桃小丸子 国语版
-                        </div>
+                        <a href="">
+                            <img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐">
+                            <div class="jWord">
+                                樱桃小丸子 国语版
+                            </div>
+                        </a>
                     </div>
                 </div>
 
@@ -105,25 +131,52 @@
 </div>
 <div class="jSide">
     <div class="jHot">
-        <div class="jBox">
-            <div class="jBoxH">
-                <h3>热点资讯</h3>
-                <a href="">more>></a>
-            </div>
-            <div class="jBoxC">
-                <ul class="jTxtList jNewsList">
-                    <li><a href="http://www.yingtaozi.com/?p=171">【漫画版】小丸子懂得了可惜</a></li>
-                    <li><a href="http://www.yingtaozi.com/?p=165">【漫画版】小丸子的专属运动衫</a></li>
-                    <li><a href="http://www.yingtaozi.com/?p=149">麦当劳推出2013年樱桃小丸子麦乐卡</a></li>
-                    <li><a href="http://www.yingtaozi.com/?p=132">❤小丸子和大野❤在一起的日子</a></li>
-                    <li><a href="http://www.yingtaozi.com/?p=119">12星座版“陈欧代言体”</a></li>
-                </ul>
-            </div>
+        <div class="jHeader">
+            <hr class="jHrLeft"/>
+            <h3>精彩推荐</h3>
+            <hr class="jHrRight"/>
+        </div>        
+        
+        <div class="jHotVideo">
+            <a href="">
+                <div class="jHotImg">
+                    <img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐">
+                </div>            
+                <div class="jWord">殷桃小丸子 20周年</div>
+            </a>
         </div>
-    </div>
-
-    <div class="jAds">
-        <a href="www.baidu.com" target="_blank"><img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐"></a>
+        <div class="jHotVideo">
+            <a href="">
+                <div class="jHotImg">
+                    <img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐">
+                </div>            
+                <div class="jWord">殷桃小丸子 20周年</div>
+            </a>
+        </div>
+        <div class="jHotVideo">
+            <a href="">
+                <div class="jHotImg">
+                    <img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐">
+                </div>            
+                <div class="jWord">殷桃小丸子 20周年</div>
+            </a>
+        </div>
+        <div class="jHotVideo">
+            <a href="">
+                <div class="jHotImg">
+                    <img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐">
+                </div>            
+                <div class="jWord">殷桃小丸子 20周年</div>
+            </a>
+        </div>
+        <div class="jHotVideo">
+            <a href="">
+                <div class="jHotImg">
+                    <img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐">
+                </div>            
+                <div class="jWord">殷桃小丸子 20周年</div>
+            </a>
+        </div>
     </div>
 </div>
 <{include file='footer.tpl'}>
