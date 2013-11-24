@@ -8,10 +8,11 @@
             </div>
             
             <div class="jContent">
-                sdfsf
+                <div class="jArticle">
+                    
+                </div>
             </div>
         </div>
-
         <div class="jPages">
             <div class='wp-pagenavi'>
                 <a href="http://www.yingtaozi.com/" class="previouspostslink">上一页</a>
