@@ -52,11 +52,11 @@
             </div>
             <div class="jBoxC">
                 <ul class="jTxtList jNewsList">
-                    <li><a href="http://www.yingtaozi.com/?p=171">【漫画版】小丸子懂得了可惜</a></li>
-                    <li><a href="http://www.yingtaozi.com/?p=165">【漫画版】小丸子的专属运动衫</a></li>
-                    <li><a href="http://www.yingtaozi.com/?p=149">麦当劳推出2013年樱桃小丸子麦乐卡</a></li>
-                    <li><a href="http://www.yingtaozi.com/?p=132">❤小丸子和大野❤在一起的日子</a></li>
-                    <li><a href="http://www.yingtaozi.com/?p=119">12星座版“陈欧代言体”</a></li>
+                    <li><a href="<{$URL}>/?c=info&a=detail&p=171">【漫画版】小丸子懂得了可惜</a></li>
+                    <li><a href="<{$URL}>/?c=info&a=detail&p=165">【漫画版】小丸子的专属运动衫</a></li>
+                    <li><a href="<{$URL}>/?c=info&a=detail&p=149">麦当劳推出2013年樱桃小丸子麦乐卡</a></li>
+                    <li><a href="<{$URL}>/?c=info&a=detail&p=132">❤小丸子和大野❤在一起的日子</a></li>
+                    <li><a href="<{$URL}>/?c=info&a=detail&p=119">12星座版“陈欧代言体”</a></li>
                 </ul>
             </div>
         </div>
