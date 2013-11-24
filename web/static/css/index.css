@@ -8,7 +8,7 @@ Author: duanyunchao
 Author URI: http://duanyunchao.com/
 */
 /*reset*/
-.jHot, .jPos, .jAcross { 
+.jHot, .jPos, .jAcross, .jFish, .jVideo { 
     position:relative;
     content:'\0020';
     display:block;
@@ -29,6 +29,16 @@ Author URI: http://duanyunchao.com/
     padding: 0px;
     width: 270px;
     height: 120px;
+}
+
+.jFish {
+    width: 878px;
+    height: 370px
+}
+
+.jVideo {
+    width: 878px;
+    height: 500px
 }
 
 .jAcross {
