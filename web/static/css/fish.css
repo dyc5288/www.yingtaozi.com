@@ -21,9 +21,11 @@ Author URI: http://duanyunchao.com/
 }
 
 .jContent {
-    width: 880px;
+    width: 902px;
     padding-left: 5px;
     padding-right: 5px;
+    border:0px;
+    padding: 0px;
 }
 
 .jPosition {
@@ -36,6 +38,16 @@ Author URI: http://duanyunchao.com/
     display:block;
     zoom: 1;
     float: left;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.jFirst {
+    margin-left:0px;
+}
+
+.jLast {
+    margin-right: 0px;    
 }
 
 .jProduct { 
@@ -47,17 +59,15 @@ Author URI: http://duanyunchao.com/
     border: 1px solid #ccc;
     padding: 10px;
     margin-bottom: 10px;
-    margin-left: 5px;
-    margin-right: 5px;
     float: left;
 }
 
 .jProduct {
-    width: 188px;
+    width: 196px;
 }
 
 .jProduct img {
-    width: 188px;
+    width: 196px;
     margin-bottom: 5px;
 }
 
@@ -106,4 +116,49 @@ Author URI: http://duanyunchao.com/
 .jTheme .jCurrent, .jCategory .jCurrent {
     background: #56b38e;
     color: white;
+}
+
+/* 详情页 */
+.jDetailContent,.jRightContent,.jMainContent {    
+    position:relative;
+    content:'\0020';
+    display:block;
+    clear:both;
+    zoom: 1;
+    margin-bottom: 10px;
+}
+
+.jDetailContent {
+    width: 902px;
+}
+
+.jMainContent {
+    float: left;
+    width: 640px;
+    background: red;
+    height: 1000px;
+}
+
+.jRightContent {
+    width: 262px;
+    float: none;
+    position: absolute;
+    right: 0px;
+}
+
+.jDproduct, .jDcate {
+    position:relative;
+    content:'\0020';
+    display:block;
+    clear:both;
+    zoom: 1;
+    border: 1px solid #ccc;    
+}
+
+.jDproduct {    
+    padding: 10px;
+}
+
+.jDcate {
+    margin-left: 10px;
 }
