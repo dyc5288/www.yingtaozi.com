@@ -1,0 +1,66 @@
+@charset "utf-8";
+
+/****** 2013-11-24
+Theme Name: YTZ 
+Theme URI: http://www.yingtaozi.com/
+Version: v1.0
+Author: duanyunchao
+Author URI: http://duanyunchao.com/
+*/
+/*reset*/
+.jContent, .jPosition { 
+    position:relative;
+    content:'\0020';
+    display:block;
+    clear:both;
+    zoom: 1;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    float: left;
+}
+
+.jContent {
+    width: 880px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.jPosition {
+    width: 880px;
+}
+
+.jCol {
+    position:relative;
+    content:'\0020';
+    display:block;
+    zoom: 1;
+    float: left;
+}
+
+.jProduct { 
+    position:relative;
+    content:'\0020';
+    display:block;
+    zoom: 1;
+    clear: both;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    float: left;
+}
+
+.jProduct {
+    width: 188px;
+}
+
+.jProduct img {
+    width: 188px;
+    margin-bottom: 5px;
+}
+
+.jProduct .jWord {
+    text-align: center;    
+}
