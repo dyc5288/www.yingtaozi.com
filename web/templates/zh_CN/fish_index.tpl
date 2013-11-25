@@ -7,7 +7,7 @@
                 您的位置：<a href="">淘周边</a>  >> 产品列表
             </div>
             <div class="jContent">      
-                <div class="jCol">
+                <div class="jCol jFirst">
                     <div class="jProduct jCate">
                         <div class="jTheme">
                             <div class="jCurrent">樱桃小丸子</div>
@@ -136,7 +136,7 @@
                     </div>
                 </div>
 
-                <div class="jCol">
+                <div class="jCol jLast">
                     <div class="jProduct">
                         <a href="<{$URL}>/?c=fish&a=detail">
                             <img src="http://f-1.tuzhan.com/9b66fc441ff3/p-2/m/2013/07/09/23/268e80e5ae8940c193d9297b5d2e02b5.jpg" alt="115商务云标准套餐">
