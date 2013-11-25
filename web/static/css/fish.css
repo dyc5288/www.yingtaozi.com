@@ -64,3 +64,46 @@ Author URI: http://duanyunchao.com/
 .jProduct .jWord {
     text-align: center;    
 }
+
+.jCate {
+    padding: 0px;
+    width: 208px;
+}
+
+.jTheme, .jCategory{    
+    position:relative;
+    content:'\0020';
+    display:block;
+    zoom: 1;
+    clear: both;
+    padding: 10px;
+}
+
+.jTheme {
+    border-bottom: 1px solid #ccc;
+    overflow:auto;
+}
+
+.jCategory {
+    overflow:auto;
+}   
+
+.jTheme div, .jCategory div {    
+    margin: 5px;
+    border: 1px solid #ccc;
+    padding: 5px;
+    float: left;
+    border-collapse: separate;
+    border-spacing: 2px;
+}
+
+.jTheme div:hover, .jCategory div:hover {    
+    cursor: pointer;
+    background: #56b38e;
+    color: white;
+}
+
+.jTheme .jCurrent, .jCategory .jCurrent {
+    background: #56b38e;
+    color: white;
+}
