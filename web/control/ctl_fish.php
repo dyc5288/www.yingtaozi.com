@@ -35,6 +35,18 @@ class ctl_fish extends ctl_parent
         lib_template::display('fish_index.tpl');
     }
 
+    /**
+     * 详情页
+     * 
+     * @return void
+     */
+    public function detail()
+    {
+        $return = array('nav' => 'fish');
+        lib_template::assign('return', $return);
+        lib_template::display('fish_detail.tpl');
+    }
+
 }
 
 ?>
