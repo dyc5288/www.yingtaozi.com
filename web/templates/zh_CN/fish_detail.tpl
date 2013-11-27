@@ -14,7 +14,7 @@
                         </div>
                     </div>
                     
-                    <div class="jDproduct">
+                    <div class="jDproduct jDbuy">
                         <div class="jDintro">
                             可爱卡通 日本樱桃小丸子防滑鼠标垫 14款自选...
                         </div>
@@ -24,7 +24,7 @@
                         <input class="jBuy" type="button" value="购买" />
                     </div>
                     
-                    <div class="jDproduct">
+                    <div class="jDproduct jDcomment">
                         <div class="jHeader">
                             <hr class="jHrLeft">
                             <h4>评论详情</h4>
@@ -82,6 +82,34 @@
                             <div>个性定制</div>
                             <div>影碟</div>
                         </div>
+                    </div>
+                    <div class="jDshop">
+                        <div class="jDHeader">
+                            明星店铺
+                        </div>
+                        <div class="jShopMain">
+                            <a href="">                                
+                                <img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐">
+                            </a>
+                            <a href="">                                
+                                <img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐">
+                            </a>
+                            <a href="">                                
+                                <img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐">
+                            </a>
+                            <a href="">                                
+                                <img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐">
+                            </a>
+                            <a href="">                                
+                                <img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐">
+                            </a>
+                            <a href="">                                
+                                <img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="jAds">
+                        <img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐">
                     </div>
                 </div>
             </div>
