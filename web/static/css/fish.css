@@ -135,7 +135,6 @@ Author URI: http://duanyunchao.com/
 .jMainContent {
     float: left;
     width: 640px;
-    background: red;
     height: 1000px;
 }
 
@@ -157,8 +156,106 @@ Author URI: http://duanyunchao.com/
 
 .jDproduct {    
     padding: 10px;
+    overflow: auto;
+    margin-bottom: 10px;
 }
 
 .jDcate {
     margin-left: 10px;
+}
+
+.jDimg {
+    position:relative;
+    content:'\0020';
+    display:block;
+    clear:both;
+    zoom: 1;
+    padding: 20px;
+}
+
+.jDimg img {
+    width: 578px;
+    height: 578px;
+}
+
+.jDproduct .jDintro {
+    float: left;
+    font-size: 14px;
+    height: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.jDproduct .jPrice {
+    float: none;
+    position: absolute;
+    right: 120px;
+    color: red;
+    font-size: 14px;
+    padding-top: 5px;
+}
+
+.jDproduct .jBuy {
+    float: none;
+    position: absolute;
+    right: 30px;
+    padding-bottom: 3px;
+    padding-top: 3px;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 16px;
+}
+
+.jHeader {
+    clear: both;
+    position:relative;
+    content:'\0020';
+    display:block;
+    clear:both;
+    zoom: 1;
+    height: 25px;
+}
+
+.jHeader hr {
+    float:left;
+    margin-top: 10px;
+}
+
+.jHeader h4 {
+    float:left;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.jDproduct .jHeader .jHrLeft {
+    width: 20px;
+}
+
+.jDproduct .jHeader .jHrRight {
+    width: 522px;
+}
+
+.jComment {    
+    position:relative;
+    content:'\0020';
+    display:block;
+    clear:both;
+    zoom: 1;
+    height: 50px;
+    margin-top: 10px;
+    overflow: auto;
+}
+
+.jComment img {
+    float: left;
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+}
+
+.jComment .jCommentText {    
+    float: none;
+    position: absolute;
+    right: 0px;
+    width: 560px;
 }
