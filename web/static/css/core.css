@@ -389,7 +389,9 @@ body{
     
     padding: 10px;
     
-    height: 83px;
+    height: 83px;    
+    
+    border-radius: 3px;
     
 }
 
