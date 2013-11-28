@@ -34,6 +34,18 @@ class ctl_video extends ctl_parent
         lib_template::assign('return', $return);
         lib_template::display('video_index.tpl');
     }
+    
+    /**
+     * 播放页面
+     * 
+     * @return void
+     */
+    public function detail()
+    {        
+        $return = array('nav' => 'video');
+        lib_template::assign('return', $return);
+        lib_template::display('video_detail.tpl');
+    }
 
 }
 
