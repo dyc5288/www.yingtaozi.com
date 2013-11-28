@@ -34,6 +34,18 @@ class ctl_draw extends ctl_parent
         lib_template::assign('return', $return);
         lib_template::display('draw_index.tpl');
     }
+    
+    /**
+     * 查看页面
+     * 
+     * @return void
+     */
+    public function detail()
+    {        
+        $return = array('nav' => 'draw');
+        lib_template::assign('return', $return);
+        lib_template::display('draw_detail.tpl');
+    }
 
 }
 
