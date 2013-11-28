@@ -18,6 +18,7 @@ Author URI: http://duanyunchao.com/
     padding: 10px;
     margin-bottom: 10px;
     float: left;
+    border-radius: 3px;
 }
 
 .jHot {
@@ -44,6 +45,7 @@ Author URI: http://duanyunchao.com/
     width: 248px;
     height: 180px;
     margin-bottom: 10px;
+    border-radius: 3px;
 }
 
 .jAds img {
@@ -118,6 +120,7 @@ Author URI: http://duanyunchao.com/
     margin-bottom: 10px;
     float: left;
     width: 619px;
+    border-radius: 3px;
 }
 
 .jDetailContent h3 {
