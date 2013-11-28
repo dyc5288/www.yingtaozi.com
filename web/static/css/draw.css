@@ -30,6 +30,7 @@ Author URI: http://duanyunchao.com/
 
 .jPosition {
     width: 880px;
+    border-radius: 3px;
 }
 
 .jContainer {
@@ -73,4 +74,182 @@ Author URI: http://duanyunchao.com/
 
 .jFriend {
     margin-top: -10px;
+}
+
+/* 详情页 */
+.jDetailContent,.jRightContent,.jMainContent {    
+    position:relative;
+    content:'\0020';
+    display:block;
+    clear:both;
+    zoom: 1;
+    margin-bottom: 10px;
+}
+
+.jDetailContent {
+    width: 902px;
+}
+
+.jMainContent {
+    float: left;
+    width: 640px;
+}
+
+.jRightContent {
+    width: 262px;
+    float: none;
+    position: absolute;
+    right: 0px;
+}
+
+.jDproduct, .jDcate {
+    position:relative;
+    content:'\0020';
+    display:block;
+    clear:both;
+    zoom: 1;
+    border: 1px solid #ccc;    
+    border-radius: 3px;
+}
+
+.jDproduct {    
+    padding: 10px;
+    overflow: auto;
+    margin-bottom: 10px;
+}
+
+.jDcate {
+    margin-left: 10px;
+}
+
+.jDimg {
+    position:relative;
+    content:'\0020';
+    display:block;
+    clear:both;
+    zoom: 1;
+    padding: 20px;
+}
+
+.jDimg img {
+    width: 578px;
+    height: 578px;
+}
+
+.jDproduct .jDintro {
+    float: left;
+    font-size: 14px;
+    height: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.jDproduct .jPrice {
+    float: none;
+    position: absolute;
+    right: 120px;
+    color: red;
+    font-size: 14px;
+    padding-top: 5px;
+}
+
+.jDproduct .jBuy {
+    float: none;
+    position: absolute;
+    right: 30px;
+    padding-bottom: 3px;
+    padding-top: 3px;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 16px;
+}
+
+
+.jHeader {
+    clear: both;
+    position:relative;
+    content:'\0020';
+    display:block;
+    clear:both;
+    zoom: 1;
+    height: 25px;
+}
+
+.jHeader hr {
+    float:left;
+    margin-top: 10px;
+}
+
+.jHeader h3 {
+    float:left;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.jDcurr .jHeader .jHrLeft {
+    width: 20px;
+}
+
+.jDcurr .jHeader .jHrRight {
+    width: 126px;
+}
+
+.jAds {    
+    position:relative;
+    content:'\0020';
+    display:block;
+    clear:both;
+    zoom: 1;
+    border: 1px solid #ccc;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 3px;
+}
+
+.jAds img {
+    width: 638px;
+    height: 160px;
+}
+
+.jDcurr {
+    position:relative;
+    content:'\0020';
+    display:block;
+    clear:both;
+    zoom: 1;
+    border: 1px solid #ccc;    
+    margin-left: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 3px;
+}
+
+.jDcurr .jLeft {
+    float: left;
+    margin-left: 1px;
+}
+
+.jDcurr .jRight {
+    float: none;
+    position: absolute;
+    right: 10px;
+}
+
+.jDcurr .jTitle {
+    overflow: auto;
+    margin-bottom: 5px;
+}
+
+.jDNine {
+    padding-left: 1px;
+}
+
+.jDNine img {
+    width: 71px;
+    height: 71px;
+    padding: 0px;
+    margin: 0px;
+    display:inline; 
+    border: 1px solid #ccc;    
+    border-radius: 3px;
 }
