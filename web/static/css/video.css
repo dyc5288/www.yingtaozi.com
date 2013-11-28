@@ -18,10 +18,11 @@ Author URI: http://duanyunchao.com/
     padding: 10px;
     margin-bottom: 10px;
     float: left;
+    border-radius: 3px;
 }
 
 .jHot {
-    width: 228px;
+    width: 228px;    
 }
 
 .jContent {
@@ -143,4 +144,95 @@ Author URI: http://duanyunchao.com/
     float: none;
     position: absolute;
     right: 8px;
+}
+
+.jCategory{    
+    position:relative;
+    content:'\0020';
+    display:block;
+    zoom: 1;
+    clear: both;
+    overflow:auto;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    border-radius: 3px;
+}
+
+.jDcate {
+    margin: 5px;
+    overflow: auto;
+}
+
+.jDcate div {    
+    margin: 5px;
+    border: 1px solid #ccc;
+    padding: 5px;
+    float: left;
+    border-radius: 3px;
+}
+
+.jCategory .jDHeader {
+    float:none;
+    margin: 0px;
+    border-left: 0px;
+    border-top: 0px;
+    padding-left: 10px;
+    padding-bottom: 3px;
+    padding-top: 3px;
+    border-right: 0px;
+    border-bottom: 1px solid #ccc;   
+    font-size: 18px ;
+    background: rgba(245,245,245,0.94);
+}
+
+.jDcate div:hover {    
+    cursor: pointer;
+    background: #56b38e;
+    color: white;
+}
+
+.jDcate .jCurrent {
+    background: #56b38e;
+    color: white;
+}
+
+.jDvideo, .jOrder，.jDcontent {    
+    position:relative;
+    content:'\0020';
+    display:block;
+    zoom: 1;
+    clear: both;
+    margin: 10px;
+} 
+
+.jOrder {
+    margin-top: 40px;
+}
+
+.jDcontent {
+    margin-top: 29px;
+    padding: 5px;
+    overflow: auto;
+}
+
+.jOrder div {    
+    margin: 5px;
+    border: 1px solid #ccc;
+    padding-bottom: 3px;
+    padding-top: 3px;
+    padding-left: 15px;
+    padding-right: 15px;
+    float: left;
+    border-radius: 3px;
+}
+
+.jOrder div:hover {    
+    cursor: pointer;
+    background: #56b38e;
+    color: white;
+}
+
+.jOrder .jCurrent {
+    background: #56b38e;
+    color: white;
 }
