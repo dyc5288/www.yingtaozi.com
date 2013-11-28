@@ -17,7 +17,7 @@
                 <div class="jMain2">
 
                     <div class="jVideo">
-                        <a href="">
+                        <a href="<{$URL}>/?c=video&a=detail">
                             <img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐">
                             <div class="jWord">
                                 樱桃小丸子 国语版
@@ -27,7 +27,7 @@
                     
                     
                     <div class="jVideo">
-                        <a href="">
+                        <a href="<{$URL}>/?c=video&a=detail">
                             <img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐">
                             <div class="jWord">
                                 樱桃小丸子 国语版
@@ -35,7 +35,7 @@
                         </a>
                     </div>
                     <div class="jVideo">
-                        <a href="">
+                        <a href="<{$URL}>/?c=video&a=detail">
                             <img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐">
                             <div class="jWord">
                                 樱桃小丸子 国语版
@@ -43,7 +43,7 @@
                         </a>
                     </div>
                     <div class="jVideo">
-                        <a href="">
+                        <a href="<{$URL}>/?c=video&a=detail">
                             <img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐">
                             <div class="jWord">
                                 樱桃小丸子 国语版
@@ -51,7 +51,7 @@
                         </a>
                     </div>
                     <div class="jVideo">
-                        <a href="">
+                        <a href="<{$URL}>/?c=video&a=detail">
                             <img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐">
                             <div class="jWord">
                                 樱桃小丸子 国语版
@@ -59,7 +59,7 @@
                         </a>
                     </div>
                     <div class="jVideo">
-                        <a href="">
+                        <a href="<{$URL}>/?c=video&a=detail">
                             <img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐">
                             <div class="jWord">
                                 樱桃小丸子 国语版
@@ -67,7 +67,7 @@
                         </a>
                     </div>
                     <div class="jVideo">
-                        <a href="">
+                        <a href="<{$URL}>/?c=video&a=detail">
                             <img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐">
                             <div class="jWord">
                                 樱桃小丸子 国语版
@@ -75,7 +75,7 @@
                         </a>
                     </div>
                     <div class="jVideo">
-                        <a href="">
+                        <a href="<{$URL}>/?c=video&a=detail">
                             <img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐">
                             <div class="jWord">
                                 樱桃小丸子 国语版
@@ -83,7 +83,7 @@
                         </a>
                     </div>
                     <div class="jVideo">
-                        <a href="">
+                        <a href="<{$URL}>/?c=video&a=detail">
                             <img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐">
                             <div class="jWord">
                                 樱桃小丸子 国语版
@@ -91,7 +91,7 @@
                         </a>
                     </div>
                     <div class="jVideo">
-                        <a href="">
+                        <a href="<{$URL}>/?c=video&a=detail">
                             <img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐">
                             <div class="jWord">
                                 樱桃小丸子 国语版
@@ -99,7 +99,7 @@
                         </a>
                     </div>
                     <div class="jVideo">
-                        <a href="">
+                        <a href="<{$URL}>/?c=video&a=detail">
                             <img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐">
                             <div class="jWord">
                                 樱桃小丸子 国语版
@@ -107,7 +107,7 @@
                         </a>
                     </div>
                     <div class="jVideo">
-                        <a href="">
+                        <a href="<{$URL}>/?c=video&a=detail">
                             <img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐">
                             <div class="jWord">
                                 樱桃小丸子 国语版
@@ -138,7 +138,7 @@
         </div>        
         
         <div class="jHotVideo">
-            <a href="">
+            <a href="<{$URL}>/?c=video&a=detail">
                 <div class="jHotImg">
                     <img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐">
                 </div>            
@@ -146,7 +146,7 @@
             </a>
         </div>
         <div class="jHotVideo">
-            <a href="">
+            <a href="<{$URL}>/?c=video&a=detail">
                 <div class="jHotImg">
                     <img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐">
                 </div>            
@@ -154,7 +154,7 @@
             </a>
         </div>
         <div class="jHotVideo">
-            <a href="">
+            <a href="<{$URL}>/?c=video&a=detail">
                 <div class="jHotImg">
                     <img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐">
                 </div>            
@@ -162,7 +162,7 @@
             </a>
         </div>
         <div class="jHotVideo">
-            <a href="">
+            <a href="<{$URL}>/?c=video&a=detail">
                 <div class="jHotImg">
                     <img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐">
                 </div>            
@@ -170,7 +170,7 @@
             </a>
         </div>
         <div class="jHotVideo">
-            <a href="">
+            <a href="<{$URL}>/?c=video&a=detail">
                 <div class="jHotImg">
                     <img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐">
                 </div>            
