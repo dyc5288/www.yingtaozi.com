@@ -16,9 +16,10 @@ if (!empty($flag['help']))
 {
     echo "php install.php -ytz_users 1 用户表" . PHP_EOL;
     echo "php install.php -ytz_usermeta 1 用户额外参数表" . PHP_EOL;
+    echo "php install.php -ytz_options 1 网站设置选项表" . PHP_EOL;
 }
 
-if (!empty($flag['ytz_users']))
+if (!empty($flag['ytz_options']))
 {
     $number = 1;
     $sql    = "CREATE TABLE IF NOT EXISTS `%s` (
@@ -70,6 +71,28 @@ if (!empty($flag['ytz_usermeta']))
     else if ($flag['ytz_usermeta'] == 2)
     {
         hlp_tool::drop_table('ytz_usermeta', $number);
+    }
+}
+
+if (!empty($flag['ytz_options']))
+{
+    $number = 1;
+    $sql    = "CREATE TABLE IF NOT EXISTS `%s` (
+        `option_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT COMMENT '自增ID',
+        `option_name` varchar(64) NOT NULL DEFAULT '' COMMENT '选项名',
+        `option_value` longtext NOT NULL COMMENT '值',
+        `autoload` varchar(20) NOT NULL DEFAULT 'yes' COMMENT '是否自动载入',
+        PRIMARY KEY (`option_id`),
+        UNIQUE KEY `option_name` (`option_name`)
+        ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8";
+
+    if ($flag['ytz_options'] == 1)
+    {
+        hlp_tool::create_table('ytz_options', $sql, $number);
+    }
+    else if ($flag['ytz_options'] == 2)
+    {
+        hlp_tool::drop_table('ytz_options', $number);
     }
 }
 
