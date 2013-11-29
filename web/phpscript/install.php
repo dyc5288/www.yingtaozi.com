@@ -15,6 +15,7 @@ $flag = hlp_common::get_cmd_flag();
 if (!empty($flag['help']))
 {
     echo "php install.php -ytz_users 1 用户表" . PHP_EOL;
+    echo "php install.php -ytz_usermeta 1 用户额外参数表" . PHP_EOL;
 }
 
 if (!empty($flag['ytz_users']))
@@ -34,7 +35,7 @@ if (!empty($flag['ytz_users']))
             PRIMARY KEY (`ID`),
             KEY `user_login_key` (`user_login`),
             KEY `user_nicename` (`user_nicename`)
-            ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8";
+            ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8";
 
     if ($flag['ytz_users'] == 1)
     {
@@ -43,6 +44,29 @@ if (!empty($flag['ytz_users']))
     else if ($flag['ytz_users'] == 2)
     {
         hlp_tool::drop_table('ytz_users', $number);
+    }
+}
+
+if (!empty($flag['ytz_usermeta']))
+{
+    $number = 1;
+    $sql    = "CREATE TABLE IF NOT EXISTS `%s` (
+            `umeta_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT COMMENT '自增ID',
+            `user_id` bigint(20) unsigned NOT NULL DEFAULT '0' COMMENT '用户ID',
+            `meta_key` varchar(255) DEFAULT NULL COMMENT '参数名',
+            `meta_value` longtext COMMENT '参数值',
+            PRIMARY KEY (`umeta_id`),
+            KEY `user_id` (`user_id`),
+            KEY `meta_key` (`meta_key`)
+            ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8";
+
+    if ($flag['ytz_usermeta'] == 1)
+    {
+        hlp_tool::create_table('ytz_usermeta', $sql, $number);
+    }
+    else if ($flag['ytz_usermeta'] == 2)
+    {
+        hlp_tool::drop_table('ytz_usermeta', $number);
     }
 }
 
