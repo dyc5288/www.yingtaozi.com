@@ -76,6 +76,28 @@ if (!empty($flag['ytz_usermeta']))
 
 if (!empty($flag['ytz_options']))
 {
+    // siteurl:网站首页地址，blogname:站点标题，blogdescription：副标题，users_can_register：是否允许任何人注册，
+    // admin_email：管理员邮箱，start_of_week：一星期开始于，use_balanceTags：，use_smilies：，
+    // require_name_email：comments_notify，posts_per_rss，rss_use_excerpt,mailserver_url：邮件服务器地址，
+    // mailserver_login：邮件服务器用户名，mailserver_pass：邮件服务器登录密码，mailserver_port：邮件服务器端口，
+    // default_category，default_comment_status，default_ping_status，default_pingback_flag，posts_per_page，
+    // date_format，time_format，links_updated_date_format，links_recently_updated_prepend，links_recently_updated_append，
+    // links_recently_updated_time，comment_moderation，moderation_notify，permalink_structure，gzipcompression，hack_file，
+    // blog_charset，moderation_keys，active_plugins，home，category_base，ping_sites，advanced_edit，comment_max_links,
+    // gmt_offset，default_email_category，recently_edited，template，stylesheet，comment_whitelist，blacklist_keys，
+    // comment_registration，html_type，use_trackback，default_role，db_version，uploads_use_yearmonth_folders，
+    // upload_path，default_link_category，show_on_front，tag_base，show_avatars，avatar_rating，upload_url_path，
+    // thumbnail_size_w，thumbnail_size_h，thumbnail_crop，medium_size_w，medium_size_h，avatar_default，
+    // large_size_w，large_size_h，image_default_link_type，image_default_size，image_default_align，close_comments_for_old_posts，
+    // close_comments_days_old，thread_comments，thread_comments_depth，page_comments，comments_per_page，default_comments_page，
+    // comment_order，sticky_posts，widget_categories，widget_text，widget_rss，uninstall_plugins，timezone_string，page_for_posts，
+    // page_on_front，default_post_format，link_manager_enabled，initial_db_version，ytz_user_roles，widget_search，widget_recent-posts，
+    // widget_recent-comments，widget_archives，widget_meta，sidebars_widgets，cron，_transient_doing_cron，_site_transient_update_core，
+    // _site_transient_update_plugins，_site_transient_update_themes，_site_transient_timeout_browser_***，_transient_timeout_feed_***,
+    // dashboard_widget_options，can_compress_scripts，_transient_is_multi_author，_transient_dash_***, _transient_doing_cron, 
+    // _site_transient_timeout_theme_roots，_site_transient_theme_roots，_transient_feed_mod_***,_transient_feed_***，
+    // _transient_is_multi_author，_transient_plugin_slugs，_transient_random_seed，_transient_timeout_dash_***，
+    // _transient_timeout_plugin_slugs，_transient_timeout_feed_***，_transient_timeout_feed_mod_***
     $number = 1;
     $sql    = "CREATE TABLE IF NOT EXISTS `%s` (
         `option_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT COMMENT '自增ID',
