@@ -49,6 +49,9 @@ if (!empty($flag['ytz_users']))
 
 if (!empty($flag['ytz_usermeta']))
 {
+    // first_name:姓， last_name：名，nickname：昵称, description：个人说明，rich_editing：是否使用可视化编辑器，
+    // comment_shortcuts：是否启用键盘快捷键，admin_color：管理界面配色方案，use_ssl，show_admin_bar_front：浏览站点时是否显示工具栏，
+    // ytz_capabilities：用户角色，ytz_user_level：用户等级，dismissed_wp_pointers，show_welcome_panel，ytz_dashboard_quick_press_last_post_id 
     $number = 1;
     $sql    = "CREATE TABLE IF NOT EXISTS `%s` (
             `umeta_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT COMMENT '自增ID',
