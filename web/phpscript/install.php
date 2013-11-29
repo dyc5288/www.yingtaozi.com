@@ -35,7 +35,7 @@ if (!empty($flag['ytz_users']))
             PRIMARY KEY (`ID`),
             KEY `user_login_key` (`user_login`),
             KEY `user_nicename` (`user_nicename`)
-            ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8";
+            ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COMMENT='用户表'";
 
     if ($flag['ytz_users'] == 1)
     {
@@ -58,7 +58,7 @@ if (!empty($flag['ytz_usermeta']))
             PRIMARY KEY (`umeta_id`),
             KEY `user_id` (`user_id`),
             KEY `meta_key` (`meta_key`)
-            ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8";
+            ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COMMENT='用户额外参数表'";
 
     if ($flag['ytz_usermeta'] == 1)
     {
