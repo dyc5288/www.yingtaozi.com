@@ -20,7 +20,7 @@
                                     <span>时间：<{$info.post_date}></span> <span>来源：<{$info.post_excerpt|excerpt:'from'}></span>
                                 </div>
                                 <div class="jArticleContent">
-                                    <{$info.post_content|truncate:270}>
+                                    <{$info.post_content|truncate:250}>
                                 </div>
                             </div>
                         </div>
