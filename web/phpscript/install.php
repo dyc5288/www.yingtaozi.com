@@ -21,6 +21,7 @@ if (!empty($flag['help']))
     echo "php install.php -ytz_postmeta 1 文章额外参数表" . PHP_EOL;
     echo "php install.php -ytz_comments 1 评论表" . PHP_EOL;
     echo "php install.php -ytz_commentmeta 1 评论额外参数表" . PHP_EOL;
+    echo "php install.php -ytz_links 1 链接表" . PHP_EOL;
 }
 
 if (!empty($flag['ytz_options']))
@@ -247,6 +248,37 @@ if (!empty($flag['ytz_commentmeta']))
     else if ($flag['ytz_commentmeta'] == 2)
     {
         hlp_tool::drop_table('ytz_commentmeta', $number);
+    }
+}
+
+if (!empty($flag['ytz_links']))
+{
+    $number = 1;
+    $sql    = "CREATE TABLE IF NOT EXISTS `%s` (
+            `link_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT COMMENT='链接ID',
+            `link_url` varchar(255) NOT NULL DEFAULT '' COMMENT='链接地址',
+            `link_name` varchar(255) NOT NULL DEFAULT '' COMMENT='链接名',
+            `link_image` varchar(255) NOT NULL DEFAULT '' COMMENT='链接图片地址',
+            `link_target` varchar(25) NOT NULL DEFAULT '' COMMENT='链接方式',
+            `link_description` varchar(255) NOT NULL DEFAULT '' COMMENT='链接描述',
+            `link_visible` varchar(20) NOT NULL DEFAULT 'Y' COMMENT='是否可见 Y：可见',
+            `link_owner` bigint(20) unsigned NOT NULL DEFAULT '1' COMMENT='链接拥有者用户ID',
+            `link_rating` int(11) NOT NULL DEFAULT '0' COMMENT='链接点击率',
+            `link_updated` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT='链接修改时间',
+            `link_rel` varchar(255) NOT NULL DEFAULT '' COMMENT='链接拥有者用户ID',
+            `link_notes` mediumtext NOT NULL,
+            `link_rss` varchar(255) NOT NULL DEFAULT '',
+            PRIMARY KEY (`link_id`),
+            KEY `link_visible` (`link_visible`)
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='链接表'";
+
+    if ($flag['ytz_links'] == 1)
+    {
+        hlp_tool::create_table('ytz_links', $sql, $number);
+    }
+    else if ($flag['ytz_links'] == 2)
+    {
+        hlp_tool::drop_table('ytz_links', $number);
     }
 }
 
