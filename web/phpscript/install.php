@@ -23,6 +23,7 @@ if (!empty($flag['help']))
     echo "php install.php -ytz_commentmeta 1 评论额外参数表" . PHP_EOL;
     echo "php install.php -ytz_links 1 链接表" . PHP_EOL;
     echo "php install.php -ytz_terms 1 条件表" . PHP_EOL;
+    echo "php install.php -ytz_term_taxonomy 1 条件分类表" . PHP_EOL;
 }
 
 if (!empty($flag['ytz_options']))
@@ -306,4 +307,28 @@ if (!empty($flag['ytz_terms']))
     }
 }
 
+if (!empty($flag['ytz_term_taxonomy']))
+{
+    $number = 1;
+    $sql    = "CREATE TABLE IF NOT EXISTS `%s` (
+            `term_taxonomy_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT COMMENT '条件分类ID',
+            `term_id` bigint(20) unsigned NOT NULL DEFAULT '0' COMMENT '条件ID',
+            `taxonomy` varchar(32) NOT NULL DEFAULT '' COMMENT '类型：category：文章分类；post_format：发表形式；post_tag：文章标签',
+            `description` longtext NOT NULL COMMENT '条件ID',
+            `parent` bigint(20) unsigned NOT NULL DEFAULT '0' COMMENT '父亲分类',
+            `count` bigint(20) NOT NULL DEFAULT '0',
+            PRIMARY KEY (`term_taxonomy_id`),
+            UNIQUE KEY `term_id_taxonomy` (`term_id`,`taxonomy`),
+            KEY `taxonomy` (`taxonomy`)
+            ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COMMENT='条件分类表'";
+
+    if ($flag['ytz_term_taxonomy'] == 1)
+    {
+        hlp_tool::create_table('ytz_term_taxonomy', $sql, $number);
+    }
+    else if ($flag['ytz_term_taxonomy'] == 2)
+    {
+        hlp_tool::drop_table('ytz_term_taxonomy', $number);
+    }
+}
 echo "success" . PHP_EOL;
