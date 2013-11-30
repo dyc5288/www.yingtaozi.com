@@ -12,7 +12,6 @@ require_once 'ctl_parent.php';
  */
 class ctl_info extends ctl_parent
 {
-
     /**
      * 初始化
      * 
@@ -30,7 +29,29 @@ class ctl_info extends ctl_parent
      */
     public function index()
     {
-        $return = array('nav' => 'info');
+        $return = array('nav'   => 'info', 'count' => 0, 'data'  => array());
+        $start = get_params('s', 0, 'request', 0);
+        $limit = 10;
+        $url   = '?c=info';
+        $cond  = array();
+        $cond['post_status'] = pub_mod_posts::STATUS_PUBLISH;
+        $cond['post_type']   = pub_mod_posts::TYPE_POST;
+        $return['count']     = pub_mod_posts::get_count($cond);
+
+        if (!empty($return['count']))
+        {
+            $return['data'] = pub_mod_posts::get_list($cond, false, $start, $limit, pub_mod_posts::COLUMN_INFO_INDEX);
+        }
+
+        /* 分页 */
+        $config = array();
+        $config['page_name']    = 's';
+        $config['count_number'] = $return['count'];
+        $config['url']          = $url;
+        $config['per_count']    = $limit;
+        $config['start']        = $start;
+        $return['page']         = pagination($config);
+
         lib_template::assign('return', $return);
         lib_template::display('info_index.tpl');
     }
