@@ -25,7 +25,7 @@
  * @param boolean
  * @return string
  */
-function smarty_modifier_truncate($string, $length = 80, $etc = '...', $break_words = false, $middle = false)
+function smarty_modifier_truncate($string, $length = 80, $etc = '...')
 {
     if ($length == 0)
     {
@@ -38,16 +38,7 @@ function smarty_modifier_truncate($string, $length = 80, $etc = '...', $break_wo
     }
 
     $length = $length - utf8_strlen($etc);
-
-    if (!$break_words && !$middle)
-    {
-        $string = preg_replace('/\s+?(\S+)?$/', '', utf8_strcut($string, 0, $length));
-    }
-    else
-    {
-        $string = utf8_strcut($string, 0, $length);
-    }
-
+    $string = utf8_strcut($string, 0, $length);
     return $string . $etc;
 }
 
