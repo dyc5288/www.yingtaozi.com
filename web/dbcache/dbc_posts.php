@@ -80,13 +80,14 @@ class dbc_posts
      * @param int $limit
      * @return array 
      */
-    public static function get_list($cond = array(), $order = false, $start = 0, $limit = 10)
+    public static function get_list($cond = array(), $order = false, $start = 0, $limit = 10, $column = false)
     {
         $where = self::_get_where($cond);
         $table = hlp_common::get_split_table(null, self::TABLE_NAME);
         $order = !empty($order) ? "ORDER BY {$order}" : "";
+        $column = !empty($column) ? $column : "*";
 
-        $sql = "SELECT *  FROM {$table['name']} {$where} {$order} LIMIT {$start}, {$limit}";
+        $sql = "SELECT {$column}  FROM {$table['name']} {$where} {$order} LIMIT {$start}, {$limit}";
         return lib_database::get_all($sql, $table['index']);
     }
 
