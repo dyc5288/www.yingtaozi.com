@@ -170,10 +170,10 @@ if (!empty($flag['ytz_postmeta']))
     // _wp_attached_file，_wp_attachment_metadata，_wp_attachment_image_alt
     $number = 1;
     $sql    = "CREATE TABLE IF NOT EXISTS `%s` (
-            `meta_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-            `post_id` bigint(20) unsigned NOT NULL DEFAULT '0',
-            `meta_key` varchar(255) DEFAULT NULL,
-            `meta_value` longtext,
+            `meta_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT COMMENT '自增ID',
+            `post_id` bigint(20) unsigned NOT NULL DEFAULT '0' COMMENT '文章ID',
+            `meta_key` varchar(255) DEFAULT NULL COMMENT '参数名',
+            `meta_value` longtext COMMENT '参数值',
             PRIMARY KEY (`meta_id`),
             KEY `post_id` (`post_id`),
             KEY `meta_key` (`meta_key`)
