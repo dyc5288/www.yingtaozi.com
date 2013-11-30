@@ -83,7 +83,7 @@ class ctl_info extends ctl_parent
             $return['previous']    = !empty($previous) ? $previous[0] : false;
 
             $pcond                 = $cond;
-            $ncond['lt_post_date'] = $return['info']['post_date'];
+            $pcond['lt_post_date'] = $return['info']['post_date'];
             $next                  = pub_mod_posts::get_list($pcond, "post_date desc", 0, 1, pub_mod_posts::COLUMN_INFO_HOT);
             $return['next']        = !empty($next) ? $next[0] : false;
         }
