@@ -4,7 +4,7 @@
     <div class="jWrap">
         <div class="jPost">
             <div class="jPosition">
-                您的位置：<a href="">情报站</a> >> 正文
+                您的位置：<a href="<{''|url:'info'}>">情报站</a> >> 正文
             </div>
             
             <div class="jDetailContent">
