@@ -53,6 +53,7 @@ class ctl_info extends ctl_parent
         $config['start']        = $start;
         $return['page']         = pagination($config);
 
+        $this->_hot($return);
         lib_template::assign('return', $return);
         lib_template::display('info_index.tpl');
     }
@@ -67,6 +68,7 @@ class ctl_info extends ctl_parent
         $return = array('nav'           => 'info');
         $id             = get_params('id', 0, 'request');
         $return['info'] = pub_mod_posts::get_one_post($id);
+        $this->_hot($return);
         lib_template::assign('return', $return);
         lib_template::display('info_detail.tpl');
     }
