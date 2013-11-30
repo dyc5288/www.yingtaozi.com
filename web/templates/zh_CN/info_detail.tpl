@@ -56,18 +56,18 @@
             </div>
             <div class="jBoxC">
                 <ul class="jTxtList jNewsList">
-                    <li><a href="<{$URL}>/?c=info&a=detail&p=171">【漫画版】小丸子懂得了可惜</a></li>
-                    <li><a href="<{$URL}>/?c=info&a=detail&p=165">【漫画版】小丸子的专属运动衫</a></li>
-                    <li><a href="<{$URL}>/?c=info&a=detail&p=149">麦当劳推出2013年樱桃小丸子麦乐卡</a></li>
-                    <li><a href="<{$URL}>/?c=info&a=detail&p=132">❤小丸子和大野❤在一起的日子</a></li>
-                    <li><a href="<{$URL}>/?c=info&a=detail&p=119">12星座版“陈欧代言体”</a></li>
+                    <{if !empty($return.hot)}>
+                        <{foreach from=$return.hot item=info}>
+                            <li><a href="<{$info.ID|url:"info_detail"}>"><{$info.post_title|truncate:37}></a></li>
+                        <{/foreach}>
+                    <{/if}>
                 </ul>
             </div>
         </div>
     </div>
     
     <div class="jAds">
-        <a href="www.baidu.com" target="_blank"><img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐"></a>
+        <a href="http://re.taobao.com/eauction?e=HO3yoWCP7M%2FghojqVNxKsarnc6yQ59ouWIYUy9WxI16LltG5xFicOcVMu84rFBr8JPePkNk3onE3avkGnQR%2BPocMiCVs0rVkk%2B0jBdlPG77XcOrG9huDtQ%3D%3D&ptype=100008&unid=&refpos=274_102170_12,a,null&refpid=mm_30908564_3410813_11007308&clk1=885c3239ad31c658c9f3a36ca9c5ece1&upsid=885c3239ad31c658c9f3a36ca9c5ece1&spm=0.0.0.0.0_0.0.0.0" target="_blank"><img src="http://img02.taobaocdn.com/bao/uploaded/i1/15225031331019981/T1wkjRFhxeXXXXXXXX_!!0-item_pic.jpg_b.jpg" alt=""></a>
     </div>
 </div>
 <{include file='footer.tpl'}>
