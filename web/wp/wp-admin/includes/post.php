@@ -233,9 +233,15 @@ function edit_post( $post_data = null ) {
 		}
 	}
 
-	// Meta Stuff
+	// Meta Stuff 云朝修改
+    $column = array('image_url' => 1, 'from' => 1);
+    $post_data['post_excerpt'] = array();
 	if ( isset($post_data['meta']) && $post_data['meta'] ) {
 		foreach ( $post_data['meta'] as $key => $value ) {
+            if (isset($column[$value['key']])) {
+                $post_data['post_excerpt'][$value['key']] = $value['value'];
+                continue;
+            }
 			if ( !$meta = get_post_meta_by_id( $key ) )
 				continue;
 			if ( $meta->post_id != $post_ID )
@@ -245,6 +251,7 @@ function edit_post( $post_data = null ) {
 			update_meta( $key, $value['key'], $value['value'] );
 		}
 	}
+    $post_data['post_excerpt'] = serialize($post_data['post_excerpt']);
 
 	if ( isset($post_data['deletemeta']) && $post_data['deletemeta'] ) {
 		foreach ( $post_data['deletemeta'] as $key => $value ) {
