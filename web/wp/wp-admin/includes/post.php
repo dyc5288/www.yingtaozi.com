@@ -240,7 +240,6 @@ function edit_post( $post_data = null ) {
 		foreach ( $post_data['meta'] as $key => $value ) {
             if (isset($column[$value['key']])) {
                 $post_data['post_excerpt'][$value['key']] = $value['value'];
-                continue;
             }
 			if ( !$meta = get_post_meta_by_id( $key ) )
 				continue;
