@@ -20,7 +20,7 @@
                                     <span>时间：<{$info.post_date}></span> <span>来源：腾讯</span>
                                 </div>
                                 <div class="jArticleContent">
-                                    <{$info.post_content|truncate:300}>
+                                    <{$info.post_content|truncate:270}>
                                 </div>
                             </div>
                         </div>
