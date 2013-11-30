@@ -46,6 +46,7 @@ class dbc_posts
             return false;
         }
 
+        $key_values['post_modified'] = date('Y-m-d H:i:s');
         $table = hlp_common::get_split_table(null, self::TABLE_NAME);
         return lib_database::duplicate($key_values, $table['name'], $table['index']);
     }
@@ -64,6 +65,7 @@ class dbc_posts
             return false;
         }
 
+        $key_values['post_modified'] = date('Y-m-d H:i:s');
         $table = hlp_common::get_split_table(null, self::TABLE_NAME);
         $where = " ID = '{$ID}' ";
         return lib_database::update($key_values, $where, $table['name'], $table['index']);
