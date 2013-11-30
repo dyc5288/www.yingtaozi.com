@@ -522,28 +522,22 @@ function pagination($config)
     }
 
     /* 网址 */
-    $config['url']               = empty($config['url']) ? '' : $config['url'];
+    $config['url']            = empty($config['url']) ? '' : $config['url'];
     /* 总记录数 */
-    $config['count_number']      = empty($config['count_number']) ? 0 : (int) $config['count_number'];
+    $config['count_number']   = empty($config['count_number']) ? 0 : (int) $config['count_number'];
     /* 每页显示数 */
-    $config['per_count']         = empty($config['per_count']) ? 10 : (int) $config['per_count'];
+    $config['per_count']      = empty($config['per_count']) ? 10 : (int) $config['per_count'];
     /* 总页数 */
-    $config['count_page']        = ceil($config['count_number'] / $config['per_count']);
+    $config['count_page']     = ceil($config['count_number'] / $config['per_count']);
     /* 分页名 */
-    $config['page_name']         = empty($config['page_name']) ? 'start' : $config['page_name'];
+    $config['page_name']      = empty($config['page_name']) ? 'start' : $config['page_name'];
     /* 当前页数 */
-    $config['current_page']      = max(1, ceil($config['start'] / $config['per_count']) + 1);
-    $config['count_number_true'] = $config['count_number'];
-
-    if (!empty($config['maxpage']) && $config['count_page'] > $config['maxpage'])
-    {
-        $config['count_number'] = ($config['maxpage'] - 1) * $config['per_count'];
-        $config['count_page']   = $config['maxpage'];
-    }
-
+    $config['current_page']   = max(1, ceil($config['start'] / $config['per_count']) + 1);
+    /* 模板 */
+    $tpl                      = empty($config['tpl']) ? "" : $config['tpl'];
     /* 分页样式类名 */
-    $config['prepage_class']  = isset($config['prepage_class']) ? $config['prepage_class'] : 'nextprev';
-    $config['nextpage_class'] = isset($config['nextpage_class']) ? $config['nextpage_class'] : 'nextprev';
+    $config['prepage_class']  = isset($config['prepage_class']) ? $config['prepage_class'] : 'previouspostslink';
+    $config['nextpage_class'] = isset($config['nextpage_class']) ? $config['nextpage_class'] : 'nextpostslink';
 
     /* 总页数不到二页时不分页 */
     if (empty($config) or $config['count_page'] < 2)
@@ -551,82 +545,13 @@ function pagination($config)
         return false;
     }
 
-    /* 下一页 */
-    $next_page = $config['start'] + $config['per_count'];
-    /* 上一页 */
-    $prev_page = $config['start'] - $config['per_count'];
-    /* 末页 */
-    $last_page = ($config['count_page'] - 1) * $config['per_count'];
-
-    $flag = 0;
-
-    //分页内容
-    $pages = '<div class="page">';
-
-    if ($config['current_page'] > 1)
+    switch ($tpl)
     {
-        //首页
-        $pages .= "<a href='{$config['url']}' class='{$config['prepage_class']}'>首页</a>\n";
-        //上一页
-        $pages .= "<a href='{$config['url']}&{$config['page_name']}={$prev_page}' class='{$config['prepage_class']}'>上一页</a>\n";
-    }
-    else
-    {
-        $pages .= "<span class='{$config['prepage_class']}'>首页</span>\n";
-        $pages .= "<span class='{$config['prepage_class']}'>上一页</span>\n";
+        default :
+            return hlp_pagination::system($config);
     }
 
-    //前偏移
-    for ($i = $config['current_page'] - 4; $i <= $config['current_page'] - 1; $i++)
-    {
-        if ($i < 1)
-        {
-            continue;
-        }
-
-        $_start = ($i - 1) * $config['per_count'];
-        $pages .= "<a href='{$config['url']}&{$config['page_name']}=$_start'>$i</a>\n";
-    }
-
-    //当前页
-    $pages .= "<span class='current'>" . $config['current_page'] . "</span>\n";
-    //后偏移
-    if ($config['current_page'] < $config['count_page'])
-    {
-        for ($i = $config['current_page'] + 1; $i <= $config['count_page']; $i++)
-        {
-            $_start = ($i - 1) * $config['per_count'];
-            $pages .= "<a href='{$config['url']}&{$config['page_name']}=$_start'>$i</a>\n";
-            $flag++;
-
-            if ($flag == 4)
-            {
-                break;
-            }
-        }
-    }
-
-    if ($config['current_page'] != $config['count_page'])
-    {
-        //下一页
-        $pages .= "<a href='{$config['url']}&{$config['page_name']}={$next_page}' class='{$config['nextpage_class']}'>下一页</a>\n";
-        //末页
-        $pages .= "<a href='{$config['url']}&{$config['page_name']}={$last_page}' class='{$config['nextpage_class']}'>末页</a>\n";
-    }
-    else
-    {
-        $pages .= "<span class='{$config['nextpage_class']}'>下一页</span>\n";
-        $pages .= "<span class='{$config['nextpage_class']}'>末页</span>\n";
-    }
-
-    if (!empty($config['input']))
-    {
-        $pages .= '<input type="text" onkeydown="javascript:if(event.keyCode==13){ var offset = ' . $config['per_count'] . '*(this.value-1);location=\'' . $config["url"] . '&' . $config["page_name"] . '=\'+offset;}" onkeyup="value=value.replace(/[^\d]/g,\'\')" />';
-    }
-
-    $pages .= '</div>';
-
-    return $pages;
+    return false;
 }
 
 /**
