@@ -234,11 +234,11 @@ function edit_post( $post_data = null ) {
 	}
 
 	// Meta Stuff 云朝修改
-    $column = array('image_url' => 1, 'from' => 1);
+    $excerpt_column = array('image_url' => 1, 'from' => 1);
     $post_data['post_excerpt'] = array();
 	if ( isset($post_data['meta']) && $post_data['meta'] ) {
 		foreach ( $post_data['meta'] as $key => $value ) {
-            if (isset($column[$value['key']])) {
+            if (isset($excerpt_column[$value['key']])) {
                 $post_data['post_excerpt'][$value['key']] = $value['value'];
             }
 			if ( !$meta = get_post_meta_by_id( $key ) )
@@ -250,7 +250,6 @@ function edit_post( $post_data = null ) {
 			update_meta( $key, $value['key'], $value['value'] );
 		}
 	}
-    $post_data['post_excerpt'] = serialize($post_data['post_excerpt']);
 
 	if ( isset($post_data['deletemeta']) && $post_data['deletemeta'] ) {
 		foreach ( $post_data['deletemeta'] as $key => $value ) {
@@ -280,10 +279,11 @@ function edit_post( $post_data = null ) {
 		$post_data = apply_filters( 'attachment_fields_to_save', $post_data, $attachment_data );
 	}
 
-	add_meta( $post_ID );
+	add_meta( $post_ID, &$post_data);
 
 	update_post_meta( $post_ID, '_edit_last', get_current_user_id() );
 
+    $post_data['post_excerpt'] = serialize($post_data['post_excerpt']);
 	wp_update_post( $post_data );
 
 	// Now that we have an ID we can fix any attachment anchor hrefs
@@ -645,9 +645,10 @@ function write_post() {
  * @param unknown_type $post_ID
  * @return unknown
  */
-function add_meta( $post_ID ) {
+function add_meta( $post_ID, $post_data = false) {
 	global $wpdb;
 	$post_ID = (int) $post_ID;
+    $excerpt_column = array('image_url' => 1, 'from' => 1);
 
 	$metakeyselect = isset($_POST['metakeyselect']) ? wp_unslash( trim( $_POST['metakeyselect'] ) ) : '';
 	$metakeyinput = isset($_POST['metakeyinput']) ? wp_unslash( trim( $_POST['metakeyinput'] ) ) : '';
@@ -658,6 +659,11 @@ function add_meta( $post_ID ) {
 	if ( ('0' === $metavalue || ! empty ( $metavalue ) ) && ( ( ( '#NONE#' != $metakeyselect ) && !empty ( $metakeyselect) ) || !empty ( $metakeyinput ) ) ) {
 		// We have a key/value pair. If both the select and the
 		// input for the key have data, the input takes precedence:
+        
+        if (isset($excerpt_column[$metakeyselect]) && $post_data)
+        {
+            $post_data['post_excerpt'][$metakeyselect] = $metavalue;
+        }
 
  		if ( '#NONE#' != $metakeyselect )
 			$metakey = $metakeyselect;
