@@ -158,6 +158,11 @@ class dbc_posts
             $where .= "AND post_date <= '{$cond['gt_post_date']}' ";
         }
 
+        if (isset($cond['no_ID']))
+        {
+            $where .= "AND ID != '{$cond['no_ID']}' ";
+        }
+
         return $where;
     }
 
