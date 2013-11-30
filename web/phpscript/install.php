@@ -24,6 +24,7 @@ if (!empty($flag['help']))
     echo "php install.php -ytz_links 1 链接表" . PHP_EOL;
     echo "php install.php -ytz_terms 1 条件表" . PHP_EOL;
     echo "php install.php -ytz_term_taxonomy 1 条件分类表" . PHP_EOL;
+    echo "php install.php -ytz_term_relationships 1 条件关系表" . PHP_EOL;
 }
 
 if (!empty($flag['ytz_options']))
@@ -331,4 +332,26 @@ if (!empty($flag['ytz_term_taxonomy']))
         hlp_tool::drop_table('ytz_term_taxonomy', $number);
     }
 }
+
+if (!empty($flag['ytz_term_relationships']))
+{
+    $number = 1;
+    $sql    = "CREATE TABLE IF NOT EXISTS `%s` (
+            `object_id` bigint(20) unsigned NOT NULL DEFAULT '0' COMMENT '文章ID',
+            `term_taxonomy_id` bigint(20) unsigned NOT NULL DEFAULT '0' COMMENT '条件分类ID',
+            `term_order` int(11) NOT NULL DEFAULT '0',
+            PRIMARY KEY (`object_id`,`term_taxonomy_id`),
+            KEY `term_taxonomy_id` (`term_taxonomy_id`)
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='条件关系表'";
+
+    if ($flag['ytz_term_relationships'] == 1)
+    {
+        hlp_tool::create_table('ytz_term_relationships', $sql, $number);
+    }
+    else if ($flag['ytz_term_relationships'] == 2)
+    {
+        hlp_tool::drop_table('ytz_term_relationships', $number);
+    }
+}
+
 echo "success" . PHP_EOL;
