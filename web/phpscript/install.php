@@ -22,6 +22,7 @@ if (!empty($flag['help']))
     echo "php install.php -ytz_comments 1 评论表" . PHP_EOL;
     echo "php install.php -ytz_commentmeta 1 评论额外参数表" . PHP_EOL;
     echo "php install.php -ytz_links 1 链接表" . PHP_EOL;
+    echo "php install.php -ytz_terms 1 条件表" . PHP_EOL;
 }
 
 if (!empty($flag['ytz_options']))
@@ -279,6 +280,29 @@ if (!empty($flag['ytz_links']))
     else if ($flag['ytz_links'] == 2)
     {
         hlp_tool::drop_table('ytz_links', $number);
+    }
+}
+
+if (!empty($flag['ytz_terms']))
+{
+    $number = 1;
+    $sql    = "CREATE TABLE IF NOT EXISTS `%s` (
+            `term_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT COMMENT '条件ID',
+            `name` varchar(200) NOT NULL DEFAULT '' COMMENT '条件名',
+            `slug` varchar(200) NOT NULL DEFAULT '' COMMENT '条件名加铅',
+            `term_group` bigint(10) NOT NULL DEFAULT '0' COMMENT '条件组',
+            PRIMARY KEY (`term_id`),
+            UNIQUE KEY `slug` (`slug`),
+            KEY `name` (`name`)
+            ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COMMENT='条件表'";
+
+    if ($flag['ytz_terms'] == 1)
+    {
+        hlp_tool::create_table('ytz_terms', $sql, $number);
+    }
+    else if ($flag['ytz_terms'] == 2)
+    {
+        hlp_tool::drop_table('ytz_terms', $number);
     }
 }
 
