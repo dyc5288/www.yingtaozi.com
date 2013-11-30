@@ -4,9 +4,9 @@
     <div class="jWrap">
         <div class="jPost">
             <div class="jPosition">
-                您的位置：<a href="">情报站</a> >> <a href="">资讯列表</a> >> 综合报道
+                您的位置：<a href="<{$URL}>/?c=info">情报站</a> >> 资讯列表
             </div>
-            
+
             <div class="jContent">
                 <{if !empty($return.data)}>
                     <{foreach from=$return.data item=info}>                        
@@ -29,17 +29,10 @@
                     <div class="jArticle">
                         暂无情报！
                     </div>
-                <{/if}>                
-                <div class="jPages">
-                    <div class='wp-pagenavi'>
-                        <a href="http://www.yingtaozi.com/" class="previouspostslink">上一页</a>
-                        <span class='current'>1</span>
-                        <a href='http://www.yingtaozi.com/?paged=2' class='page larger'>2</a>
-                        <a href="http://www.yingtaozi.com/?paged=2" class="nextpostslink">下一页</a>
-                    </div>
-                </div>
+                <{/if}>           
+                <{$return.page}>
             </div>
-        </div>        
+        </div>
     </div>
 </div>
 <div class="jSide">
@@ -60,7 +53,7 @@
             </div>
         </div>
     </div>
-    
+
     <div class="jAds">
         <a href="www.baidu.com" target="_blank"><img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐"></a>
     </div>
