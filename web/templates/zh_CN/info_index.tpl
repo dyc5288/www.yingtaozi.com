@@ -15,7 +15,7 @@
                                 <img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐">
                             </div>
                             <div class="jLeftContent">
-                                <h3><a href="<{$URL}>/?c=info&a=detail&id=<{$info.ID}>"><{$info.post_title}></a></h3>
+                                <h3><a href="<{$info.ID|url:"info_detail"}>"><{$info.post_title}></a></h3>
                                 <div class="jTimeFrom">
                                     <span>时间：<{$info.post_date}></span> <span>来源：腾讯</span>
                                 </div>
