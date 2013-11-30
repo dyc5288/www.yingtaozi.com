@@ -204,7 +204,7 @@ if (!empty($flag['ytz_comments']))
             `comment_date_gmt` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '格林标准评论时间',
             `comment_content` text NOT NULL COMMENT '评论内容',
             `comment_karma` int(11) NOT NULL DEFAULT '0' COMMENT '评论者邮箱',
-            `comment_approved` varchar(20) NOT NULL DEFAULT '1',
+            `comment_approved` varchar(20) NOT NULL DEFAULT '1' COMMENT '状态：0：未审核，1：已审核，spam：垃圾评论，trash：回收站',
             `comment_agent` varchar(255) NOT NULL DEFAULT '' COMMENT '评论user_agent',
             `comment_type` varchar(20) NOT NULL DEFAULT '',
             `comment_parent` bigint(20) unsigned NOT NULL DEFAULT '0' COMMENT '父亲评论ID',
