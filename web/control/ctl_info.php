@@ -31,7 +31,7 @@ class ctl_info extends ctl_parent
     {
         $return = array('nav'   => 'info', 'count' => 0, 'data'  => array());
         $start = get_params('s', 0, 'request', 0);
-        $limit = 10;
+        $limit = 5;
         $url   = '?c=info';
         $order = "post_date desc";
         $cond  = array();
