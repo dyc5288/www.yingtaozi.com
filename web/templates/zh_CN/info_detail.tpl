@@ -52,7 +52,7 @@
         <div class="jBox">
             <div class="jBoxH">
                 <h3>热点资讯</h3>
-                <a href="">more>></a>
+                <a href="<{''|url:'info'}>">more>></a>
             </div>
             <div class="jBoxC">
                 <ul class="jTxtList jNewsList">
