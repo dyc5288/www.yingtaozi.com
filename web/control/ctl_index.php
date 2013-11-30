@@ -31,6 +31,7 @@ class ctl_index extends ctl_parent
     public function index()
     {
         $return = array('nav' => 'index');
+        $this->_hot($return);
         lib_template::assign('return', $return);
         lib_template::display('index.tpl');
     }
