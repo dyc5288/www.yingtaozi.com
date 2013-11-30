@@ -815,6 +815,10 @@ body{
 
 }
 
+.jPages span {
+    color: #999;
+}
+
 .jPages a:hover, .jPages .current{
 
     border:1px solid #9d0537;
