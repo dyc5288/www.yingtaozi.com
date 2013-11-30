@@ -47,7 +47,7 @@ class dbc_posts
         }
 
         $key_values['post_modified'] = date('Y-m-d H:i:s');
-        $table = hlp_common::get_split_table(null, self::TABLE_NAME);
+        $table                       = hlp_common::get_split_table(null, self::TABLE_NAME);
         return lib_database::duplicate($key_values, $table['name'], $table['index']);
     }
 
@@ -66,8 +66,8 @@ class dbc_posts
         }
 
         $key_values['post_modified'] = date('Y-m-d H:i:s');
-        $table = hlp_common::get_split_table(null, self::TABLE_NAME);
-        $where = " ID = '{$ID}' ";
+        $table                       = hlp_common::get_split_table(null, self::TABLE_NAME);
+        $where                       = " ID = '{$ID}' ";
         return lib_database::update($key_values, $where, $table['name'], $table['index']);
     }
 
@@ -125,6 +125,36 @@ class dbc_posts
         if (isset($cond['ID']))
         {
             $where .= "AND ID = '{$cond['ID']}' ";
+        }
+
+        if (isset($cond['post_author']))
+        {
+            $where .= "AND post_author <= '{$cond['post_author']}' ";
+        }
+
+        if (isset($cond['post_name']))
+        {
+            $where .= "AND post_name like '%{$cond['post_name']}%' ";
+        }
+
+        if (isset($cond['post_type']))
+        {
+            $where .= "AND post_type = '{$cond['post_type']}' ";
+        }
+
+        if (isset($cond['post_status']))
+        {
+            $where .= "AND post_status = '{$cond['post_status']}' ";
+        }
+
+        if (isset($cond['gt_post_date']))
+        {
+            $where .= "AND post_date >= '{$cond['gt_post_date']}' ";
+        }
+
+        if (isset($cond['lt_post_date']))
+        {
+            $where .= "AND post_date <= '{$cond['gt_post_date']}' ";
         }
 
         return $where;
