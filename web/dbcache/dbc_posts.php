@@ -155,7 +155,7 @@ class dbc_posts
 
         if (isset($cond['lt_post_date']))
         {
-            $where .= "AND post_date <= '{$cond['gt_post_date']}' ";
+            $where .= "AND post_date <= '{$cond['lt_post_date']}' ";
         }
 
         if (isset($cond['no_ID']))
