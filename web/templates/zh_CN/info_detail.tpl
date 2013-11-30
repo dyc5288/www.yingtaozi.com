@@ -40,8 +40,8 @@
                     <{/if}>
                 </div>                
                 <div class="jRelative">
-                    <div>上一篇：<a href="">《魁拔2》首度上映 让80后心头一热</a></div>                    
-                    <div>下一篇：<a href="">《蓝精灵2》亮相坎昆 凯蒂派瑞蓝裙性感可爱</a></div>
+                    <{if !empty($return.previous)}><div>上一篇：<a href="<{$return.previous.ID|url:"info_detail"}>"><{$return.previous.post_title}></a></div><{/if}>             
+                    <{if !empty($return.next)}><div>下一篇：<a href="<{$return.next.ID|url:"info_detail"}>"><{$return.next.post_title}></a></div><{/if}> 
                 </div>
             </div>
         </div>        
