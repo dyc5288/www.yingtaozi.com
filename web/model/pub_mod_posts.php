@@ -8,6 +8,20 @@
  */
 class pub_mod_posts
 {
+    /* 文章状态 */
+    const STATUS_PUBLISH    = 'publish';    // 发布状态
+    const STATUS_INHERIT    = 'inherit';    // 继承
+    const STATUS_AUTO_DRAFT = 'auto-draft'; // 自动草稿
+    const STATUS_PRIVATE    = 'private';    // 私密
+    const STATUS_FUTURE     = 'future';     // 将来发布
+    const STATUS_PENDING    = 'pending';    // 发布状态
+    const STATUS_TRASH      = 'trash';      // 发布状态
+
+    /* 类型 */
+    const TYPE_POST       = 'post';         // 文章
+    const TYPE_ATTACHMENT = 'attachment';   // 附件
+    const TYPE_REVISION   = 'revision';     // 修订版
+    const TYPE_PAGE       = 'page';         // 单独页面    
 
     /**
      * 添加
