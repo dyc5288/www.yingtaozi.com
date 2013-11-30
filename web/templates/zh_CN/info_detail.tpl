@@ -4,14 +4,14 @@
     <div class="jWrap">
         <div class="jPost">
             <div class="jPosition">
-                您的位置：<a href="">情报站</a> >> <a href="">资讯列表</a> >> 综合报道
+                您的位置：<a href="">情报站</a> >> 正文
             </div>
             
             <div class="jDetailContent">
-                <h3><a href="<{$URL}>/?c=info&a=detail">死亡note再引风波?，刘克带走十五岁少女！</a></h3>
+                <h3><a href=""><{if !empty($return.info)}><{$return.info.post_title}><{/if}></a></h3>
                 <div class="jTimeFrom">
                     <div class="jTimeFromLeft">
-                        <span>时间：2013-04-30</span> <span>来源：腾讯</span>
+                        <span>时间：<{if !empty($return.info)}><{$return.info.post_date}><{/if}></span> <span>来源：腾讯</span>
                     </div>
                     <div class="jShare">
                         <!-- Baidu Button BEGIN -->
@@ -33,7 +33,11 @@
                     </div>
                 </div>
                 <div class="jArticleContent">
-                    三年四班的女班长，极度自恋，自认是一位美女；梦想是成为花轮的新娘，对接近花轮的女生都用很可怕的表情恐吓；每天脑里想的有99%是花轮的，1%是其他事情；但也喜欢花轮的朋友麦克，实际上只要是帅气的男生她都喜欢；为了成为配得上花轮的女生不断努力学习（如芭蕾舞、做点心等）；白色情人节的时候因为自己从花轮那里收到的回礼和其他女生一样而受打。 .....
+                    <{if !empty($return.info)}>
+                        <{$return.info.post_content|wpautop}>
+                    <{else}>
+                        不存在！
+                    <{/if}>
                 </div>                
                 <div class="jRelative">
                     <div>上一篇：<a href="">《魁拔2》首度上映 让80后心头一热</a></div>                    
