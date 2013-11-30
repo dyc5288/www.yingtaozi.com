@@ -22,6 +22,9 @@ class pub_mod_posts
     const TYPE_ATTACHMENT = 'attachment';   // 附件
     const TYPE_REVISION   = 'revision';     // 修订版
     const TYPE_PAGE       = 'page';         // 单独页面    
+    
+    /* 类表字段 */
+    const COLUMN_INFO_INDEX = 'ID, post_title, post_content, post_excerpt, post_date';           // 情报站首页
 
     /**
      * 添加
@@ -112,11 +115,11 @@ class pub_mod_posts
      * @param int $limit
      * @return void
      */
-    public static function get_list($cond, $order = false, $start = 0, $limit = 10)
+    public static function get_list($cond, $order = false, $start = 0, $limit = 10, $column = false)
     {
         $start = intval($start);
         $limit = intval($limit);
-        return dbc_posts::get_list($cond, $order, $start, $limit);
+        return dbc_posts::get_list($cond, $order, $start, $limit, $column);
     }
 
     /**
