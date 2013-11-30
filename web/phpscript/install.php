@@ -20,6 +20,7 @@ if (!empty($flag['help']))
     echo "php install.php -ytz_posts 1 文章表" . PHP_EOL;
     echo "php install.php -ytz_postmeta 1 文章额外参数表" . PHP_EOL;
     echo "php install.php -ytz_comments 1 评论表" . PHP_EOL;
+    echo "php install.php -ytz_commentmeta 1 评论额外参数表" . PHP_EOL;
 }
 
 if (!empty($flag['ytz_options']))
@@ -223,6 +224,29 @@ if (!empty($flag['ytz_comments']))
     else if ($flag['ytz_comments'] == 2)
     {
         hlp_tool::drop_table('ytz_comments', $number);
+    }
+}
+
+if (!empty($flag['ytz_commentmeta']))
+{
+    $number = 1;
+    $sql    = "CREATE TABLE IF NOT EXISTS `%s` (
+            `meta_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT COMMENT '自增ID',
+            `comment_id` bigint(20) unsigned NOT NULL DEFAULT '0' COMMENT '评论ID',
+            `meta_key` varchar(255) DEFAULT NULL COMMENT '参数名',
+            `meta_value` longtext COMMENT '参数值',
+            PRIMARY KEY (`meta_id`),
+            KEY `comment_id` (`comment_id`),
+            KEY `meta_key` (`meta_key`)
+            ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COMMENT='评论额外参数表'";
+
+    if ($flag['ytz_commentmeta'] == 1)
+    {
+        hlp_tool::create_table('ytz_commentmeta', $sql, $number);
+    }
+    else if ($flag['ytz_commentmeta'] == 2)
+    {
+        hlp_tool::drop_table('ytz_commentmeta', $number);
     }
 }
 
