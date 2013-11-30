@@ -18,6 +18,7 @@ if (!empty($flag['help']))
     echo "php install.php -ytz_usermeta 1 用户额外参数表" . PHP_EOL;
     echo "php install.php -ytz_options 1 网站设置选项表" . PHP_EOL;
     echo "php install.php -ytz_posts 1 文章表" . PHP_EOL;
+    echo "php install.php -ytz_postmeta 1 文章额外参数表" . PHP_EOL;
 }
 
 if (!empty($flag['ytz_options']))
@@ -107,7 +108,7 @@ if (!empty($flag['ytz_options']))
         `autoload` varchar(20) NOT NULL DEFAULT 'yes' COMMENT '是否自动载入',
         PRIMARY KEY (`option_id`),
         UNIQUE KEY `option_name` (`option_name`)
-        ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8";
+        ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COMMENT='网站设置选项表'";
 
     if ($flag['ytz_options'] == 1)
     {
@@ -151,7 +152,7 @@ if (!empty($flag['ytz_posts']))
             KEY `type_status_date` (`post_type`,`post_status`,`post_date`,`ID`),
             KEY `post_parent` (`post_parent`),
             KEY `post_author` (`post_author`)
-            ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8";
+            ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COMMENT='文章表'";
     
     if ($flag['ytz_posts'] == 1)
     {
@@ -160,6 +161,31 @@ if (!empty($flag['ytz_posts']))
     else if ($flag['ytz_posts'] == 2)
     {
         hlp_tool::drop_table('ytz_posts', $number);
+    }
+}
+
+if (!empty($flag['ytz_postmeta']))
+{
+    // 额外参数存储，_edit_lock，_edit_last，_pingme，_encloseme，_thumbnail_id，_wp_page_template，
+    // _wp_attached_file，_wp_attachment_metadata，_wp_attachment_image_alt
+    $number = 1;
+    $sql    = "CREATE TABLE IF NOT EXISTS `%s` (
+            `meta_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+            `post_id` bigint(20) unsigned NOT NULL DEFAULT '0',
+            `meta_key` varchar(255) DEFAULT NULL,
+            `meta_value` longtext,
+            PRIMARY KEY (`meta_id`),
+            KEY `post_id` (`post_id`),
+            KEY `meta_key` (`meta_key`)
+            ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COMMENT='文章额外参数表'";
+
+    if ($flag['ytz_postmeta'] == 1)
+    {
+        hlp_tool::create_table('ytz_postmeta', $sql, $number);
+    }
+    else if ($flag['ytz_postmeta'] == 2)
+    {
+        hlp_tool::drop_table('ytz_postmeta', $number);
     }
 }
 
