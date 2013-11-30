@@ -19,6 +19,7 @@ if (!empty($flag['help']))
     echo "php install.php -ytz_options 1 网站设置选项表" . PHP_EOL;
     echo "php install.php -ytz_posts 1 文章表" . PHP_EOL;
     echo "php install.php -ytz_postmeta 1 文章额外参数表" . PHP_EOL;
+    echo "php install.php -ytz_comments 1 评论表" . PHP_EOL;
 }
 
 if (!empty($flag['ytz_options']))
@@ -186,6 +187,42 @@ if (!empty($flag['ytz_postmeta']))
     else if ($flag['ytz_postmeta'] == 2)
     {
         hlp_tool::drop_table('ytz_postmeta', $number);
+    }
+}
+
+if (!empty($flag['ytz_comments']))
+{
+    $number = 1;
+    $sql    = "CREATE TABLE IF NOT EXISTS `%s` (
+            `comment_ID` bigint(20) unsigned NOT NULL AUTO_INCREMENT COMMENT '评论ID',
+            `comment_post_ID` bigint(20) unsigned NOT NULL DEFAULT '0' COMMENT '评论文章ID',
+            `comment_author` tinytext NOT NULL COMMENT '评论者姓名',
+            `comment_author_email` varchar(100) NOT NULL DEFAULT '' COMMENT '评论者邮箱',
+            `comment_author_url` varchar(200) NOT NULL DEFAULT '' COMMENT '评论者站点',
+            `comment_author_IP` varchar(100) NOT NULL DEFAULT '' COMMENT '评论者IP',
+            `comment_date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '评论时间',
+            `comment_date_gmt` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '格林标准评论时间',
+            `comment_content` text NOT NULL COMMENT '评论内容',
+            `comment_karma` int(11) NOT NULL DEFAULT '0' COMMENT '评论者邮箱',
+            `comment_approved` varchar(20) NOT NULL DEFAULT '1',
+            `comment_agent` varchar(255) NOT NULL DEFAULT '' COMMENT '评论user_agent',
+            `comment_type` varchar(20) NOT NULL DEFAULT '',
+            `comment_parent` bigint(20) unsigned NOT NULL DEFAULT '0' COMMENT '父亲评论ID',
+            `user_id` bigint(20) unsigned NOT NULL DEFAULT '0' COMMENT '评论用户ID，登录情况使用',
+            PRIMARY KEY (`comment_ID`),
+            KEY `comment_post_ID` (`comment_post_ID`),
+            KEY `comment_approved_date_gmt` (`comment_approved`,`comment_date_gmt`),
+            KEY `comment_date_gmt` (`comment_date_gmt`),
+            KEY `comment_parent` (`comment_parent`)
+            ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COMMENT='评论表'";
+
+    if ($flag['ytz_comments'] == 1)
+    {
+        hlp_tool::create_table('ytz_comments', $sql, $number);
+    }
+    else if ($flag['ytz_comments'] == 2)
+    {
+        hlp_tool::drop_table('ytz_comments', $number);
     }
 }
 
