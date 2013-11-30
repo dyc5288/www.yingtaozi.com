@@ -12,12 +12,12 @@
                     <{foreach from=$return.data item=info}>                        
                         <div class="jArticle">
                             <div class="jRightImg">
-                                <img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐">
+                                <a href="<{$info.ID|url:"info_detail"}>"><img src="<{$info.post_excerpt|excerpt}>" alt=""></a>
                             </div>
                             <div class="jLeftContent">
                                 <h3><a href="<{$info.ID|url:"info_detail"}>"><{$info.post_title}></a></h3>
                                 <div class="jTimeFrom">
-                                    <span>时间：<{$info.post_date}></span> <span>来源：腾讯</span>
+                                    <span>时间：<{$info.post_date}></span> <span>来源：<{$info.post_excerpt|excerpt:'from'}></span>
                                 </div>
                                 <div class="jArticleContent">
                                     <{$info.post_content|truncate:270}>
