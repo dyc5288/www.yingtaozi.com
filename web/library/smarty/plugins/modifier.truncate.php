@@ -31,6 +31,8 @@ function smarty_modifier_truncate($string, $length = 80, $etc = '...')
     {
         return '';
     }
+    
+    $string = preg_replace('/<img.+>/i', '', $string);
 
     if (utf8_strlen($string) <= $length)
     {
