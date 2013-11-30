@@ -105,7 +105,7 @@ Author URI: http://duanyunchao.com/
 .jLeftContent .jArticleContent {
     text-indent:2em;
     font-size: 14px;
-    font: 12px/1.8 Tahoma, Geneva, "\5B8B\4F53";
+    font: normal 12px/180% "宋体";
 }
 
 /* 详情页 */
@@ -125,7 +125,7 @@ Author URI: http://duanyunchao.com/
 
 .jDetailContent h3 {
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .jDetailContent h3 a{
@@ -143,9 +143,17 @@ Author URI: http://duanyunchao.com/
 
 .jDetailContent .jArticleContent {
     text-indent:2em;
-    font-size: 14px;
-    font: 12px/1.8 Tahoma, Geneva, "\5B8B\4F53";
+    font: normal 14px/180% "宋体";
+    line-height: 190%;
     clear: both;
+    color: #000000;
+}
+.jArticleContent p {
+    display: block;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
 }
 
 .jTimeFrom .jTimeFromLeft {
