@@ -6,7 +6,6 @@
  * @package Smarty
  * @subpackage plugins
  */
-
 /**
  * Smarty truncate modifier plugin
  *
@@ -31,7 +30,7 @@ function smarty_modifier_truncate($string, $length = 80, $etc = '...')
     {
         return '';
     }
-    
+
     $string = preg_replace('/<img.+>/i', '', $string);
 
     if (utf8_strlen($string) <= $length)
@@ -41,6 +40,7 @@ function smarty_modifier_truncate($string, $length = 80, $etc = '...')
 
     $length = $length - utf8_strlen($etc);
     $string = utf8_strcut($string, 0, $length);
+    $string = preg_replace('/<p.*>/i', '', $string);
     return $string . $etc;
 }
 
