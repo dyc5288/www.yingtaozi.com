@@ -44,7 +44,7 @@ class pub_mod_info
             }
         }
 
-        $data    = mb_convert_encoding($result['data'], 'utf-8', 'gb2312');
+        $data    = mb_convert_encoding($result['data'], 'utf-8', 'GBK');
         $matches = array();
         $rmatches = array();
         preg_match_all('/<div class=\"newsleft(.*)\">(.*)<\\/div>/iU', $data, $matches);
@@ -83,9 +83,43 @@ class pub_mod_info
                 $dattributes        = $vals[$index['A'][0]]['attributes'];
                 $detail_url         = isset($dattributes['HREF']) ? "http://news.emland.net/" . $dattributes['HREF'] : '';
                 $data['detail_url'] = $detail_url;
-                $return[] = $data;
+                $return[]           = $data;
             }
         }
+
+        return $return;
+    }
+
+    /**
+     * 抓取详情页
+     *
+     * @param string $url 
+     * @return array
+     */
+    public static function grab_detail($url)
+    {
+        $result = array('code'  => 404);
+        $return = array();
+
+        while ($result['code'] != 200)
+        {
+            try
+            {
+                $result = curl($url);
+            }
+            catch (Exception $e)
+            {
+                echo $e->getMessage() . PHP_EOL;
+            }
+        }
+
+        $data    = mb_convert_encoding($result['data'], 'utf-8', 'GBK');
+        $matches = array();
+        $rmatches = array();
+        preg_match_all('/<div class=\"newsleft(.*)\">(.*)<\\/div>/iU', $data, $matches);
+        $left_data  = isset($matches[0]) ? $matches[0] : null;
+        var_dump($data);
+        
 
         return $return;
     }
