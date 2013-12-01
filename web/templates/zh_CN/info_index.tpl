@@ -20,7 +20,11 @@
                                     <span>时间：<{$info.post_date}></span> <span>来源：<{$info.post_excerpt|excerpt:'from'}></span>
                                 </div>
                                 <div class="jArticleContent">
-                                    <{$info.post_content|truncate:250}>
+                                    <script type="text/javascript">
+                                        var div = document.createElement('div');
+                                        div.innerHTML ='<{$info.post_content|truncate:250}>';
+                                        document.write(div.innerHTML);
+                                    </script>                                    
                                 </div>
                             </div>
                         </div>
