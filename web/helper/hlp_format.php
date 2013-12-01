@@ -106,4 +106,42 @@ class hlp_format
         return $pee;
     }
 
+    /**
+     * 时间格式化
+     *
+     * @param string $string
+     * @param string $format
+     * @return type 
+     */
+    public static function get_gmt_from_date($string, $format = 'Y-m-d H:i:s')
+    {
+        $tz      = get_option('timezone_string');
+        $matches = array();
+
+        if ($tz)
+        {
+            $datetime = date_create($string, new DateTimeZone($tz));
+
+            if (!$datetime)
+            {
+                return gmdate($format, 0);
+            }
+
+            $datetime->setTimezone(new DateTimeZone('UTC'));
+            $string_gmt = $datetime->format($format);
+        }
+        else
+        {
+            if (!preg_match('#([0-9]{1,4})-([0-9]{1,2})-([0-9]{1,2}) ([0-9]{1,2}):([0-9]{1,2}):([0-9]{1,2})#', $string, $matches))
+            {
+                return gmdate($format, 0);
+            }
+
+            $string_time = gmmktime($matches[4], $matches[5], $matches[6], $matches[2], $matches[3], $matches[1]);
+            $string_gmt  = gmdate($format, $string_time - get_option('gmt_offset') * HOUR_IN_SECONDS);
+        }
+
+        return $string_gmt;
+    }
+
 }
