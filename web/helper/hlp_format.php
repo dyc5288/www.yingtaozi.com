@@ -180,24 +180,25 @@ class hlp_format
 
             if ($row[1] > $hit)
             {
-                $divs[$row[1]] = $row;
+                $divs[] = $row[1];
             }
         }
 
         foreach ($end_matches[0] as $row)
         {
-            $end_divs[$row[1]] = 1;
+            $end_divs[$row[1]] = $row;
 
             if ($row[1] > $hit)
             {
-                $divs[$row[1]] = $row;
+                $divs[] = $row[1];
             }
         }
 
         $flag    = 1;
         $end_obj = false;
+        sort($divs);
 
-        foreach ($divs as $index => $row)
+        foreach ($divs as $index)
         {
             if (isset($start_divs[$index]))
             {
@@ -211,7 +212,7 @@ class hlp_format
 
             if ($flag == 0)
             {
-                $end_obj = $row;
+                $end_obj = $end_divs[$index];
                 break;
             }
         }
