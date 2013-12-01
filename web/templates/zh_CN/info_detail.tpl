@@ -34,7 +34,12 @@
                 </div>
                 <div class="jArticleContent">
                     <{if !empty($return.info)}>
-                        <{$return.info.post_content|wpautop}>
+                        <script type="text/javascript">
+                            var div = document.createElement('div');
+                            var data =<{$return.info.post_content|wpautop}>;
+                             div.innerHTML = data.html;
+                            document.write(div.innerHTML);
+                        </script>
                     <{else}>
                         不存在！
                     <{/if}>
