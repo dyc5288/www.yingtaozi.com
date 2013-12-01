@@ -21,7 +21,7 @@ class pub_mod_info
         {
             return false;
         }
-        
+
         return pub_mod_posts::add_post($param_array);
     }
 
@@ -69,8 +69,8 @@ class pub_mod_info
                 $right_row     = isset($right_data[$key]) ? $right_data[$key] : false;
                 $right_matches = array();
                 preg_match('/[[:alnum:]]{4}-[[:alnum:]]{2}-[[:alnum:]]{2} [[:alnum:]]{2}:[[:alnum:]]{2}/', $right_row, $right_matches);
-                $post_time         = isset($right_matches[0]) ? $right_matches[0] : '';
-                $data['post_time'] = $post_time;
+                $post_date         = isset($right_matches[0]) ? $right_matches[0] : '';
+                $data['post_date'] = $post_date;
 
                 $right_matches = array();
                 preg_match_all('/[\x{4e00}-\x{9fa5}]+/u', $right_row, $right_matches);
