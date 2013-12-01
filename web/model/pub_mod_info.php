@@ -91,7 +91,6 @@ class pub_mod_info
                 $detail_data        = self::grab_detail($detail_url);
                 $data               = array_merge($data, $detail_data);
                 $return[]           = $data;
-                return $return;
             }
         }
 
