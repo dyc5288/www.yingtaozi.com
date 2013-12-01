@@ -26,7 +26,7 @@ class pub_mod_posts
     /* 类表字段 */
     const COLUMN_INFO_INDEX = 'ID, post_title, post_content, post_excerpt, post_date';           // 情报站首页
     const COLUMN_INFO_HOT   = 'ID, post_title';                                                    // 情报站热点资讯
-    
+
     /* 管理员的用户ID */
     const AUTHOR_ADMIN_ID = 1;
 
@@ -44,7 +44,7 @@ class pub_mod_posts
         }
 
         $column = array('post_author', 'post_content', 'post_title', 'post_status',
-            'post_type', 'comment_count', 'post_name', 'post_date');
+            'post_type', 'comment_count', 'post_name', 'post_date', 'post_excerpt');
         $param_array = array();
 
         foreach ($column as $column_name)
@@ -59,7 +59,7 @@ class pub_mod_posts
         {
             $param_array['post_date_gmt'] = hlp_format::get_gmt_from_date($param_array['post_date']);
         }
-        
+
         if (isset($param_array['post_excerpt']))
         {
             $param_array['post_excerpt'] = serialize($param_array['post_excerpt']);
@@ -88,7 +88,7 @@ class pub_mod_posts
         }
 
         $column = array('post_author', 'post_content', 'post_title', 'post_status',
-            'post_type', 'comment_count', 'post_name', 'post_date');
+            'post_type', 'comment_count', 'post_name', 'post_date', 'post_excerpt');
         $param_array = array();
 
         foreach ($column as $column_name)
