@@ -776,6 +776,39 @@ function jsonp_print($data, $js_return = '', $js_callback = '')
 }
 
 /**
+ * 写文件
+ *
+ * @param string $file
+ * @param string $content
+ * @param int $flag
+ * @return boolean
+ */
+function put_file($file, $content, $flag = 0)
+{
+    $pathinfo = pathinfo($file);
+
+    if (!empty($pathinfo['dirname']))
+    {
+        if (file_exists($pathinfo['dirname']) === false)
+        {
+            if (@mkdir($pathinfo['dirname'], 0777, true) === false)
+            {
+                return false;
+            }
+        }
+    }
+
+    if ($flag === FILE_APPEND)
+    {
+        return @file_put_contents($file, $content, FILE_APPEND);
+    }
+    else
+    {
+        return @file_put_contents($file, $content, LOCK_EX);
+    }
+}
+
+/**
  * 强建目录路径
  *
  * @param string $path
