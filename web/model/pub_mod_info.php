@@ -151,7 +151,7 @@ class pub_mod_info
         }
 
         $matches = array();
-        preg_match_all('/<img.*src=\"(.*)\".*>/iU', $content, $matches);
+        preg_match_all('/<img.*src=[\"\'](.*)[\"\'].*>/iU', $content, $matches);
         $images = $matches[1];
 
         if (!empty($images))
