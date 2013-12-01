@@ -7,7 +7,7 @@
  */
 require_once PATH_CONFIG . '/inc_wp_api.php';
 
-class pub_wp_api
+class lib_wp_api
 {
     /**
      * 获取用户的好友信息
