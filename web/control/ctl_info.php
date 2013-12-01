@@ -38,6 +38,7 @@ class ctl_info extends ctl_parent
         $cond['post_status'] = pub_mod_posts::STATUS_PUBLISH;
         $cond['post_type']   = pub_mod_posts::TYPE_POST;
         $return['count']     = pub_mod_posts::get_count($cond);
+        $start               = ($start >= $return['count']) ? floor($return['count'] / $limit) * $limit : $start;
 
         if (!empty($return['count']))
         {
