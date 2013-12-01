@@ -27,7 +27,7 @@
  */
 function smarty_modifier_wpautop($pee, $br = true)
 {
-    return hlp_format::wpautop($pee, $br);
+    return json_encode(array('html' => hlp_format::wpautop($pee, $br)));
 }
 
 /* vim: set expandtab: */
