@@ -1,7 +1,7 @@
 <?php
 
 /**
- * 情报站
+ * 文章
  * 
  * @author duanyunchao
  * @version $Id$
@@ -22,10 +22,13 @@ class pub_mod_posts
     const TYPE_ATTACHMENT = 'attachment';   // 附件
     const TYPE_REVISION   = 'revision';     // 修订版
     const TYPE_PAGE       = 'page';         // 单独页面    
-    
+
     /* 类表字段 */
     const COLUMN_INFO_INDEX = 'ID, post_title, post_content, post_excerpt, post_date';           // 情报站首页
-    const COLUMN_INFO_HOT = 'ID, post_title';                                                    // 情报站热点资讯
+    const COLUMN_INFO_HOT   = 'ID, post_title';                                                    // 情报站热点资讯
+    
+    /* 管理员的用户ID */
+    const AUTHOR_ADMIN_ID = 1;
 
     /**
      * 添加
@@ -40,7 +43,8 @@ class pub_mod_posts
             return false;
         }
 
-        $column = array('post_author', 'post_content', 'post_title', 'post_status', 'post_type', 'comment_count', 'post_name');
+        $column = array('post_author', 'post_content', 'post_title', 'post_status',
+            'post_type', 'comment_count', 'post_name', 'post_date');
         $param_array = array();
 
         foreach ($column as $column_name)
@@ -49,6 +53,16 @@ class pub_mod_posts
             {
                 $param_array[$column_name] = $params[$column_name];
             }
+        }
+
+        if (isset($param_array['post_date']))
+        {
+            $param_array['post_date_gmt'] = hlp_format::get_gmt_from_date($param_array['post_date']);
+        }
+        
+        if (isset($param_array['post_excerpt']))
+        {
+            $param_array['post_excerpt'] = serialize($param_array['post_excerpt']);
         }
 
         if (empty($param_array))
@@ -73,7 +87,8 @@ class pub_mod_posts
             return false;
         }
 
-        $column = array('post_author', 'post_content', 'post_title', 'post_status', 'post_type', 'comment_count', 'post_name');
+        $column = array('post_author', 'post_content', 'post_title', 'post_status',
+            'post_type', 'comment_count', 'post_name', 'post_date');
         $param_array = array();
 
         foreach ($column as $column_name)
@@ -82,6 +97,11 @@ class pub_mod_posts
             {
                 $param_array[$column_name] = $params[$column_name];
             }
+        }
+
+        if (isset($param_array['post_date']))
+        {
+            $param_array['post_date_gmt'] = hlp_format::get_gmt_from_date($param_array['post_date']);
         }
 
         if (empty($param_array))
