@@ -195,8 +195,10 @@ class pub_mod_info
             }
         }
 
-        $date     = date('Y') . "/" . date('m') . "/" . date('d') . "/";
-        $filename = "/images/upload/" . $date . time() . mt_rand(1000, 9999) . '.jpg';
+        $rand     = mt_rand(1000, 9999);
+        $dir      = date('Y') . "/" . date('m') . "/" . date('d') . "/{$rand}/";
+        $name     = time() . '.jpg';
+        $filename = "/images/upload/" . $dir . $name;
         $file     = PATH_STATIC . $filename;
         put_file($file, $result['data']);
         return URL . '/static' . $filename;
