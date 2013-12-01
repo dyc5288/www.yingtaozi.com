@@ -30,22 +30,33 @@ function smarty_modifier_truncate($string, $length = 80, $etc = '...')
     {
         return '';
     }
-    
-    $tag = array('img', 'p', 'div', 'a');
-    
-    foreach($tag as $t)
+
+    $tag = array('img', 'p', 'div', 'a', 'br');
+
+    foreach ($tag as $t)
     {
-        $string = preg_replace("/<{$t}.+>/i", '', $string);    
+        $string = preg_replace("/<{$t}.*>/iU", '', $string);
+        $string = preg_replace("/<\/{$t}>/i", '', $string);
     }
+
+    $string = close_tags($string);
+    $string = preg_replace("/\s*/i", '', $string);
 
     if (utf8_strlen($string) <= $length)
     {
-        return $string;
+        $return = trim($string);
+
+        if (empty($return))
+        {
+            $return = '请看详情!';
+        }
+
+        return $return;
     }
 
     $length = $length - utf8_strlen($etc);
     $string = utf8_strcut($string, 0, $length);
-    return $string . $etc;
+    return trim($string) . $etc;
 }
 
 /* vim: set expandtab: */
