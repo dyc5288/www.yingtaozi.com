@@ -60,10 +60,10 @@ function GRAB_INFO($job)
                             $param_array['post_date']    = $row['post_date'];
                             $param_array['post_content'] = addslashes($row['post_content']);
                             $param_array['post_title']   = addslashes($row['post_title']);
-                            $param_array['post_date']   = $row['post_date'];
+                            $param_array['post_date']    = $row['post_date'];
                             $post_excerpt                = array();
                             $post_excerpt['from']        = $row['from'];
-                            $post_excerpt['image_url']   = $row['image_url'];
+                            $post_excerpt['image_url']   = pub_mod_info::save_image($row['image_url']);
                             $param_array['post_excerpt'] = $post_excerpt;
                             $result                      = pub_mod_info::add_info($param_array);
                             if ($result)
