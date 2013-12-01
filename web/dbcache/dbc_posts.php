@@ -46,8 +46,9 @@ class dbc_posts
             return false;
         }
 
-        $key_values['post_modified'] = date('Y-m-d H:i:s');
-        $table                       = hlp_common::get_split_table(null, self::TABLE_NAME);
+        $key_values['post_modified']     = date('Y-m-d H:i:s');
+        $key_values['post_modified_gmt'] = hlp_format::get_gmt_from_date($key_values['post_modified']);
+        $table                           = hlp_common::get_split_table(null, self::TABLE_NAME);
         return lib_database::duplicate($key_values, $table['name'], $table['index']);
     }
 
@@ -65,9 +66,10 @@ class dbc_posts
             return false;
         }
 
-        $key_values['post_modified'] = date('Y-m-d H:i:s');
-        $table                       = hlp_common::get_split_table(null, self::TABLE_NAME);
-        $where                       = " ID = '{$ID}' ";
+        $key_values['post_modified']     = date('Y-m-d H:i:s');
+        $key_values['post_modified_gmt'] = hlp_format::get_gmt_from_date($key_values['post_modified']);
+        $table                           = hlp_common::get_split_table(null, self::TABLE_NAME);
+        $where                           = " ID = '{$ID}' ";
         return lib_database::update($key_values, $where, $table['name'], $table['index']);
     }
 
@@ -82,9 +84,9 @@ class dbc_posts
      */
     public static function get_list($cond = array(), $order = false, $start = 0, $limit = 10, $column = false)
     {
-        $where = self::_get_where($cond);
-        $table = hlp_common::get_split_table(null, self::TABLE_NAME);
-        $order = !empty($order) ? "ORDER BY {$order}" : "";
+        $where  = self::_get_where($cond);
+        $table  = hlp_common::get_split_table(null, self::TABLE_NAME);
+        $order  = !empty($order) ? "ORDER BY {$order}" : "";
         $column = !empty($column) ? $column : "*";
 
         $sql = "SELECT {$column}  FROM {$table['name']} {$where} {$order} LIMIT {$start}, {$limit}";
