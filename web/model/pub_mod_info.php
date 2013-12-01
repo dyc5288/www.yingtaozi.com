@@ -29,6 +29,11 @@ class pub_mod_info
      */
     public static function grab_list($url)
     {
+        if (empty($url))
+        {
+            return false;
+        }
+
         $result = array('code'  => 404);
         $return = array();
 
@@ -83,7 +88,10 @@ class pub_mod_info
                 $dattributes        = $vals[$index['A'][0]]['attributes'];
                 $detail_url         = isset($dattributes['HREF']) ? "http://news.emland.net/" . $dattributes['HREF'] : '';
                 $data['detail_url'] = $detail_url;
+                $detail_data        = self::grab_detail($detail_url);
+                $data               = array_merge($data, $detail_data);
                 $return[]           = $data;
+                return $return;
             }
         }
 
@@ -98,6 +106,11 @@ class pub_mod_info
      */
     public static function grab_detail($url)
     {
+        if (empty($url))
+        {
+            return false;
+        }
+
         $result = array('code'  => 404);
         $return = array();
 
@@ -113,14 +126,8 @@ class pub_mod_info
             }
         }
 
-        $data    = mb_convert_encoding($result['data'], 'utf-8', 'GBK');
-        $matches = array();
-        $rmatches = array();
-        preg_match_all('/<div class=\"newsleft(.*)\">(.*)<\\/div>/iU', $data, $matches);
-        $left_data  = isset($matches[0]) ? $matches[0] : null;
-        var_dump($data);
-        
-
+        $data                   = mb_convert_encoding($result['data'], 'utf-8', 'GBK');
+        $return['post_content'] = hlp_format::get_div('class="he15 content line22"', $data);
         return $return;
     }
 
