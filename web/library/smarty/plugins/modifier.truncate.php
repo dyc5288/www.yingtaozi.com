@@ -31,15 +31,7 @@ function smarty_modifier_truncate($string, $length = 80, $etc = '...')
         return '';
     }
 
-    $tag = array('img', 'p', 'div', 'a', 'br');
-
-    foreach ($tag as $t)
-    {
-        $string = preg_replace("/<{$t}.*>/iU", '', $string);
-        $string = preg_replace("/<\/{$t}>/i", '', $string);
-    }
-
-    $string = close_tags($string);
+    $string = strip_tags($string);
     $string = preg_replace("/\s*/i", '', $string);
 
     if (utf8_strlen($string) <= $length)
