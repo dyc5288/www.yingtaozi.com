@@ -137,4 +137,37 @@ class pub_mod_info
         return $return;
     }
 
+    /**
+     * 保存图片
+     * 
+     * @return void
+     */
+    public static function save_image($url)
+    {
+        if (empty($url))
+        {
+            return false;
+        }
+
+        $result = array('code' => 404);
+
+        while ($result['code'] != 200)
+        {
+            try
+            {
+                $result = curl($url);
+            }
+            catch (Exception $e)
+            {
+                echo $e->getMessage() . PHP_EOL;
+            }
+        }
+
+        $date     = date('Y') . "/" . date('m') . "/" . date('d') . "/";
+        $filename = "/images/upload/" . $date . time() . mt_rand(1000, 9999) . '.jpg';
+        $file     = PATH_STATIC . $filename;
+        put_file($file, $result['data']);
+        return URL . '/static' . $filename;
+    }
+
 }
