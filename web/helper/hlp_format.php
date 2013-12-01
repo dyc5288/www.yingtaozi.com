@@ -115,7 +115,7 @@ class hlp_format
      */
     public static function get_gmt_from_date($string, $format = 'Y-m-d H:i:s')
     {
-        $tz      = get_option('timezone_string');
+        $tz      = 'Asia/Macau';
         $matches = array();
 
         if ($tz)
@@ -138,7 +138,7 @@ class hlp_format
             }
 
             $string_time = gmmktime($matches[4], $matches[5], $matches[6], $matches[2], $matches[3], $matches[1]);
-            $string_gmt  = gmdate($format, $string_time - get_option('gmt_offset') * HOUR_IN_SECONDS);
+            $string_gmt  = gmdate($format, $string_time - 0 * HOUR_IN_SECONDS);
         }
 
         return $string_gmt;
