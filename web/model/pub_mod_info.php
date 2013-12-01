@@ -38,20 +38,8 @@ class pub_mod_info
             return false;
         }
 
-        $result = array('code'  => 404);
+        $result = hlp_common::remote_request($url);
         $return = array();
-
-        while ($result['code'] != 200)
-        {
-            try
-            {
-                $result = curl($url);
-            }
-            catch (Exception $e)
-            {
-                echo $e->getMessage() . PHP_EOL;
-            }
-        }
 
         $data    = mb_convert_encoding($result['data'], 'utf-8', 'GBK');
         $matches = array();
@@ -114,20 +102,8 @@ class pub_mod_info
             return false;
         }
 
-        $result = array('code'  => 404);
+        $result = hlp_common::remote_request($url);
         $return = array();
-
-        while ($result['code'] != 200)
-        {
-            try
-            {
-                $result = curl($url);
-            }
-            catch (Exception $e)
-            {
-                echo $e->getMessage() . PHP_EOL;
-            }
-        }
 
         $data                   = mb_convert_encoding($result['data'], 'utf-8', 'GBK');
         $post_content           = hlp_format::get_div('class="he15 content line22"', $data);
@@ -181,20 +157,7 @@ class pub_mod_info
             return false;
         }
 
-        $result = array('code' => 404);
-
-        while ($result['code'] != 200)
-        {
-            try
-            {
-                $result = curl($url);
-            }
-            catch (Exception $e)
-            {
-                echo $e->getMessage() . PHP_EOL;
-            }
-        }
-
+        $result   = hlp_common::remote_request($url);
         $rand     = mt_rand(1000, 9999);
         $dir      = date('Y') . "/" . date('m') . "/" . date('d') . "/{$rand}/";
         $name     = time() . '.jpg';
