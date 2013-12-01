@@ -21,7 +21,7 @@ if (!empty($flag['grab_info']))
 {
     switch ($flag['grab_info'])
     {
-        case 1:
+        case pub_mod_info::TYPE_ELONGDAO:
             for ($i = 1; $i <= 776; $i++)
             {
                 $params = array('url'  => "http://news.emland.net/index.php?&page={$i}", 'type' => $flag['grab_info']);
