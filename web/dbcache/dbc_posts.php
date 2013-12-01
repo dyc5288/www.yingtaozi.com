@@ -45,11 +45,11 @@ class dbc_posts
         {
             return false;
         }
-
+        
         $key_values['post_modified']     = date('Y-m-d H:i:s');
         $key_values['post_modified_gmt'] = hlp_format::get_gmt_from_date($key_values['post_modified']);
         $table                           = hlp_common::get_split_table(null, self::TABLE_NAME);
-        return lib_database::duplicate($key_values, $table['name'], $table['index']);
+        return lib_database::insert($key_values, $table['name'], $table['index']);
     }
 
     /**
