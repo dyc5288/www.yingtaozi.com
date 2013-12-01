@@ -30,8 +30,13 @@ function smarty_modifier_truncate($string, $length = 80, $etc = '...')
     {
         return '';
     }
-
-    $string = preg_replace('/<img.+>/i', '', $string);
+    
+    $tag = array('img', 'p', 'div', 'a');
+    
+    foreach($tag as $t)
+    {
+        $string = preg_replace("/<{$t}.+>/i", '', $string);    
+    }
 
     if (utf8_strlen($string) <= $length)
     {
@@ -40,7 +45,6 @@ function smarty_modifier_truncate($string, $length = 80, $etc = '...')
 
     $length = $length - utf8_strlen($etc);
     $string = utf8_strcut($string, 0, $length);
-    $string = preg_replace('/<p.*>/i', '', $string);
     return $string . $etc;
 }
 
