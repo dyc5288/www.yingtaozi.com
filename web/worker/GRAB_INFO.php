@@ -55,6 +55,15 @@ function GRAB_INFO($job)
                     {
                         foreach ($data as $row)
                         {
+                            $key   = $row['detail_url'];
+                            $cache = GM('W_100', $key);
+
+                            if (!empty($cache))
+                            {
+                                echo "{$key} exist!" . PHP_EOL;
+                                continue;
+                            }
+
                             $param_array = array();
                             $param_array['post_author']  = pub_mod_posts::AUTHOR_ADMIN_ID;
                             $param_array['post_date']    = $row['post_date'];
@@ -69,7 +78,8 @@ function GRAB_INFO($job)
                             $result                      = pub_mod_info::add_info($param_array);
                             if ($result)
                             {
-                                $return['data'][] = $row['detail_url'];
+                                $return['data'][] = $key;
+                                SM(1, 'W_100', $key, 864000);
                             }
                             else
                             {
