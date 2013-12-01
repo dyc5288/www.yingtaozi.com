@@ -55,7 +55,7 @@
     </div>
 
     <div class="jAds">
-        <a href="www.baidu.com" target="_blank"><img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐"></a>
+        <a href="http://re.taobao.com/eauction?e=HO3yoWCP7M%2FghojqVNxKsarnc6yQ59ouWIYUy9WxI16LltG5xFicOcVMu84rFBr8JPePkNk3onE3avkGnQR%2BPocMiCVs0rVkk%2B0jBdlPG77XcOrG9huDtQ%3D%3D&ptype=100008&unid=&refpos=274_102170_12,a,null&refpid=mm_30908564_3410813_11007308&clk1=885c3239ad31c658c9f3a36ca9c5ece1&upsid=885c3239ad31c658c9f3a36ca9c5ece1&spm=0.0.0.0.0_0.0.0.0" target="_blank"><img src="http://img02.taobaocdn.com/bao/uploaded/i1/15225031331019981/T1wkjRFhxeXXXXXXXX_!!0-item_pic.jpg_b.jpg" alt=""></a>
     </div>
 </div>
 <{include file='footer.tpl'}>
