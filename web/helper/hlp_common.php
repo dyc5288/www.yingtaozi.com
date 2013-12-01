@@ -10,7 +10,6 @@
  */
 class hlp_common
 {
-
     /**
      * 根据$item_value得到分表名称
      *
@@ -88,6 +87,34 @@ class hlp_common
             }
         }
         return $return;
+    }
+
+    /**
+     * 重试请求 
+     *
+     * @param string $url 
+     * @return array
+     */
+    public static function remote_request($url)
+    {
+        $result = array('code' => 404);
+        $count = 0;
+
+        while ($result['code'] != 200 && $count < 5)
+        {
+            try
+            {
+                $result = curl($url);
+            }
+            catch (Exception $e)
+            {
+                echo $e->getMessage() . PHP_EOL;
+            }
+
+            $count++;
+        }
+
+        return $result;
     }
 
 }
