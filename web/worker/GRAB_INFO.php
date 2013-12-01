@@ -41,15 +41,41 @@ function GRAB_INFO($job)
 
     if (!empty($params) && !empty($params['type']))
     {
-        $return = array('state'      => false, 'start_time' => time(), 'params'     => $params);
+        $return = array('state'      => false, 'start_time' => time(), 'params'     => $params, 'data'       => array());
 
         try
         {
             switch ($params['type'])
             {
                 case pub_mod_info::TYPE_ELONGDAO:
-                    $url            = $params['url'];
-                    $return['data'] = pub_mod_info::grab_list($url);
+                    $url  = $params['url'];
+                    $data = pub_mod_info::grab_list($url);
+
+                    if (!empty($data))
+                    {
+                        foreach ($data as $row)
+                        {
+                            $param_array = array();
+                            $param_array['post_author']  = pub_mod_posts::AUTHOR_ADMIN_ID;
+                            $param_array['post_date']    = $row['post_date'];
+                            $param_array['post_content'] = $row['post_content'];
+                            $param_array['post_title']   = $row['post_title'];
+                            $post_excerpt                = array();
+                            $post_excerpt['from']        = $row['from'];
+                            $post_excerpt['image_url']   = $row['image_url'];
+                            $param_array['post_excerpt'] = $post_excerpt;
+                            $result                      = pub_mod_info::add_info($param_array);
+                            if ($result)
+                            {
+                                $return['data'][] = $row['detail_url'];
+                            }
+                            else
+                            {
+                                throw new Exception('add error!');
+                            }
+                        }
+                    }
+
                     break;
             }
 
