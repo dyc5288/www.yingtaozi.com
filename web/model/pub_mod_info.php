@@ -130,7 +130,10 @@ class pub_mod_info
         }
 
         $data                   = mb_convert_encoding($result['data'], 'utf-8', 'GBK');
-        $return['post_content'] = hlp_format::get_div('class="he15 content line22"', $data);
+        $post_content           = hlp_format::get_div('class="he15 content line22"', $data);
+        $post_content           = preg_replace('/on(.*)=\"(.*)\"/iU', '', $post_content);
+        $post_content           = preg_replace('/on(.*)=\'(.*)\'/iU', '', $post_content);
+        $return['post_content'] = $post_content;
         return $return;
     }
 
