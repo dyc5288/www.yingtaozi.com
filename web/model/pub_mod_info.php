@@ -136,6 +136,13 @@ class pub_mod_info
 
             foreach ($images as $image_url)
             {
+                $image_url = trim($image_url);
+
+                if (strpos(trim($image_url), ' ') !== false)
+                {
+                    continue;
+                }
+
                 $new_url = self::save_image($image_url);
                 $content = str_replace($image_url, $new_url, $content);
             }
