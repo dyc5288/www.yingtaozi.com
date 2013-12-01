@@ -27,3 +27,6 @@ $GLOBALS["DATABASE"]['MEMCACHED_PREFIX'] = array();
 
 /* dbc层 */
 $GLOBALS["DATABASE"]['MEMCACHED_PREFIX']['D_100'] = 'dbc_test::get_one';
+
+/* worker层 */
+$GLOBALS["DATABASE"]['MEMCACHED_PREFIX']['W_100'] = 'GRAB_INFO::one';
