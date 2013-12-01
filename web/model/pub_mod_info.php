@@ -138,8 +138,40 @@ class pub_mod_info
     }
 
     /**
+     * 替换图片保存到本地
+     * 
+     * @param string $url 
+     * @return void
+     */
+    public static function replace_image($content)
+    {
+        if (empty($content))
+        {
+            return false;
+        }
+
+        $matches = array();
+        preg_match_all('/<img.*src=\"(.*)\".*>/iU', $content, $matches);
+        $images = $matches[1];
+
+        if (!empty($images))
+        {
+            $images = array_unique($images);
+
+            foreach ($images as $image_url)
+            {
+                $new_url = self::save_image($image_url);
+                $content = str_replace($image_url, $new_url, $content);
+            }
+        }
+
+        return $content;
+    }
+
+    /**
      * 保存图片
      * 
+     * @param string $url 
      * @return void
      */
     public static function save_image($url)
