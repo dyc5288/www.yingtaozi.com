@@ -144,4 +144,75 @@ class hlp_format
         return $string_gmt;
     }
 
+    /**
+     * 获取div的内容
+     *
+     * @param string $div_id
+     * @param string $data
+     * @return boolean 
+     */
+    public static function get_div($div_id, $data)
+    {
+        $start_matches = array();
+        $end_matches = array();
+        preg_match_all('/<div(.*)>/iU', $data, $start_matches, PREG_OFFSET_CAPTURE); //获取所有div后缀         
+        preg_match_all('/<\/div>/i', $data, $end_matches, PREG_OFFSET_CAPTURE); //获取所有div后缀         
+        $hit = strpos($data, $div_id);
+
+        if ($hit === false)
+        {
+            return false; //未命中 
+        }
+
+        $start_divs = array();
+        $end_divs = array();
+
+        foreach ($start_matches[0] as $row)
+        {
+            if ($row[1] > $hit)
+            {
+                $start_divs[$row[1]] = $row;
+            }
+        }
+
+        foreach ($end_matches[0] as $row)
+        {
+            if ($row[1] > $hit)
+            {
+                $end_divs[$row[1]] = $row;
+            }
+        }
+
+        $divs = array_merge($start_divs, $end_divs);
+        $flag = 1;
+        $end  = false;
+
+        foreach ($divs as $index => $data)
+        {
+            if (isset($start_divs[$index]))
+            {
+                $flag++;
+            }
+
+            if (isset($end_divs[$index]))
+            {
+                $flag--;
+            }
+
+            if ($flag == 0)
+            {
+                $end = $data;
+                break;
+            }
+        }
+
+        if (empty($end))
+        {
+            return false;
+        }
+
+        $length = $end[1] - $hit;
+        return substr($data, $hit, $length);
+    }
+
 }
