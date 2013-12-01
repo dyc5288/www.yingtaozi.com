@@ -15,9 +15,13 @@ class pub_mod_info
      * 
      * @return void
      */
-    public static function add_info()
+    public static function add_info($param_array)
     {
-        $param_array = array();
+        if (empty($param_array))
+        {
+            return false;
+        }
+        
         return pub_mod_posts::add_post($param_array);
     }
 
