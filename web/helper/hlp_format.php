@@ -166,28 +166,38 @@ class hlp_format
 
         $start_divs = array();
         $end_divs = array();
+        $divs = array();
+        $start_obj = false;
 
         foreach ($start_matches[0] as $row)
         {
+            $start_divs[$row[1]] = 1;
+
+            if (strpos($row[0], $div_id) !== false)
+            {
+                $start_obj = $row;
+            }
+
             if ($row[1] > $hit)
             {
-                $start_divs[$row[1]] = $row;
+                $divs[$row[1]] = $row;
             }
         }
 
         foreach ($end_matches[0] as $row)
         {
+            $end_divs[$row[1]] = 1;
+
             if ($row[1] > $hit)
             {
-                $end_divs[$row[1]] = $row;
+                $divs[$row[1]] = $row;
             }
         }
 
-        $divs = array_merge($start_divs, $end_divs);
-        $flag = 1;
-        $end  = false;
+        $flag    = 1;
+        $end_obj = false;
 
-        foreach ($divs as $index => $data)
+        foreach ($divs as $index => $row)
         {
             if (isset($start_divs[$index]))
             {
@@ -201,18 +211,19 @@ class hlp_format
 
             if ($flag == 0)
             {
-                $end = $data;
+                $end_obj = $row;
                 break;
             }
         }
 
-        if (empty($end))
+        if (empty($end_obj) || empty($start_obj))
         {
             return false;
         }
 
-        $length = $end[1] - $hit;
-        return substr($data, $hit, $length);
+        $start  = $start_obj[1] + strlen($start_obj[0]);
+        $length = $end_obj[1] - $start;
+        return substr($data, $start, $length);
     }
 
 }
