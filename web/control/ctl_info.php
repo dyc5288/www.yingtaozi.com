@@ -33,7 +33,7 @@ class ctl_info extends ctl_parent
         $start = get_params('s', 0, 'request', 0);
         $limit = 5;
         $url   = '?c=info';
-        $order = "post_date desc";
+        $order = "post_date desc,ID desc";
         $cond  = array();
         $cond['post_status'] = pub_mod_posts::STATUS_PUBLISH;
         $cond['post_type']   = pub_mod_posts::TYPE_POST;
@@ -76,16 +76,16 @@ class ctl_info extends ctl_parent
             $cond = array();
             $cond['post_status'] = pub_mod_posts::STATUS_PUBLISH;
             $cond['post_type']   = pub_mod_posts::TYPE_POST;
-            $cond['no_ID']       = $id;
+            $cond['post_ID']     = $id;
 
             $ncond                 = $cond;
             $ncond['gt_post_date'] = $return['info']['post_date'];
-            $previous              = pub_mod_posts::get_list($ncond, "post_date", 0, 1, pub_mod_posts::COLUMN_INFO_HOT);
+            $previous              = pub_mod_posts::get_list($ncond, "post_date,ID", 0, 1, pub_mod_posts::COLUMN_INFO_HOT);
             $return['previous']    = !empty($previous) ? $previous[0] : false;
 
             $pcond                 = $cond;
             $pcond['lt_post_date'] = $return['info']['post_date'];
-            $next                  = pub_mod_posts::get_list($pcond, "post_date desc", 0, 1, pub_mod_posts::COLUMN_INFO_HOT);
+            $next                  = pub_mod_posts::get_list($pcond, "post_date desc,ID desc", 0, 1, pub_mod_posts::COLUMN_INFO_HOT);
             $return['next']        = !empty($next) ? $next[0] : false;
         }
 
