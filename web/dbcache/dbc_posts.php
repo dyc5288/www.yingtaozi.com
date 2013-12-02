@@ -45,7 +45,7 @@ class dbc_posts
         {
             return false;
         }
-        
+
         $key_values['post_modified']     = date('Y-m-d H:i:s');
         $key_values['post_modified_gmt'] = hlp_format::get_gmt_from_date($key_values['post_modified']);
         $table                           = hlp_common::get_split_table(null, self::TABLE_NAME);
@@ -152,12 +152,12 @@ class dbc_posts
 
         if (isset($cond['gt_post_date']))
         {
-            $where .= "AND post_date >= '{$cond['gt_post_date']}' ";
+            $where .= "AND (post_date > '{$cond['gt_post_date']}' OR (post_date =  '{$cond['gt_post_date']}' AND ID > '{$cond['post_ID']}')) ";
         }
 
         if (isset($cond['lt_post_date']))
         {
-            $where .= "AND post_date <= '{$cond['lt_post_date']}' ";
+            $where .= "AND (post_date < '{$cond['lt_post_date']}' OR (post_date =  '{$cond['lt_post_date']}' AND ID < '{$cond['post_ID']}')) ";
         }
 
         if (isset($cond['no_ID']))
