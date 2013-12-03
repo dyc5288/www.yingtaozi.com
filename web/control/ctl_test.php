@@ -231,4 +231,41 @@ class ctl_test extends ctl_parent
         }
     }
 
+    /**
+     * 公有资源下载地址
+     * 
+     * @return void
+     */
+    public function dlurl()
+    {
+        require_once(PATH_LIBRARY . "/qiniu/rs.php");
+        $key     = 'IMG_20131120_200750.jpg';
+        $domain  = 'yingtaozi.u.qiniudn.com';
+        //$baseUrl 就是您要访问资源的地址
+        $baseUrl = Qiniu_RS_MakeBaseUrl($domain, $key);
+        var_dump($baseUrl);
+    }
+
+    /**
+     * 私有资源下载地址
+     * 
+     * @return void
+     */
+    public function pdlurl()
+    {
+        require_once(PATH_LIBRARY . "/qiniu/rs.php");
+
+        $key       = 'IMG_20131118_000834.jpg';
+        $domain    = 'yunchao.u.qiniudn.com';
+        $accessKey = 'h4yaNvJCcrp6B4H5IjI85_0QdgX8w0rrTxnBo30V';
+        $secretKey = 'rwqwsuiIxFzkWroCKUeJ5LltaaPTD1t5VxBfkHie';
+
+        Qiniu_SetKeys($accessKey, $secretKey);
+        $baseUrl    = Qiniu_RS_MakeBaseUrl($domain, $key);
+        $getPolicy  = new Qiniu_RS_GetPolicy();
+        $privateUrl = $getPolicy->MakeRequest($baseUrl, null);
+        echo "====> getPolicy result: \n";
+        echo $privateUrl . "\n";
+    }
+
 }
