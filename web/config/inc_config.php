@@ -29,3 +29,10 @@ $GLOBALS["CONFIG"]["LIBRARY"]["lib_database"]  = PATH_LIBRARY . "/lib_database.p
 $GLOBALS["CONFIG"]["LIBRARY"]["lib_func"]      = PATH_LIBRARY . "/lib_func.php";
 $GLOBALS["CONFIG"]["LIBRARY"]["lic_memcached"] = PATH_LIBRARY . "/lib_memcached.php";
 $GLOBALS["CONFIG"]["LIBRARY"]["lib_gearman"]   = PATH_LIBRARY . "/lib_gearman.php";
+
+/* 七牛配置 */
+$GLOBALS["CONFIG"]['QINIU'] = array();
+$GLOBALS["CONFIG"]['QINIU']['accessKey'] = "h4yaNvJCcrp6B4H5IjI85_0QdgX8w0rrTxnBo30V";
+$GLOBALS["CONFIG"]['QINIU']['secretKey'] = "rwqwsuiIxFzkWroCKUeJ5LltaaPTD1t5VxBfkHie";
+$GLOBALS["CONFIG"]['QINIU']['bucket'] = 'yingtaozi';
+$GLOBALS["CONFIG"]['QINIU']['domain'] = 'http://yingtaozi.u.qiniudn.com/';
