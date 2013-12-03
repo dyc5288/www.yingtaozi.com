@@ -268,4 +268,97 @@ class ctl_test extends ctl_parent
         echo $privateUrl . "\n";
     }
 
+    /**
+     * 查看图片属性
+     * 
+     * @return void
+     */
+    public function rimage()
+    {
+        require_once(PATH_LIBRARY . "/qiniu/rs.php");
+        require_once(PATH_LIBRARY . "/qiniu/fop.php");
+
+        $key       = 'IMG_20131118_000834.jpg';
+        $domain    = 'yunchao.u.qiniudn.com';
+        $accessKey = 'h4yaNvJCcrp6B4H5IjI85_0QdgX8w0rrTxnBo30V';
+        $secretKey = 'rwqwsuiIxFzkWroCKUeJ5LltaaPTD1t5VxBfkHie';
+
+        Qiniu_SetKeys($accessKey, $secretKey);
+        //生成baseUrl
+        $baseUrl = Qiniu_RS_MakeBaseUrl($domain, $key);
+
+        //生成fopUrl
+        $imgInfo    = new Qiniu_ImageInfo;
+        $imgInfoUrl = $imgInfo->MakeRequest($baseUrl);
+
+        //对fopUrl 进行签名，生成privateUrl。 公有bucket 此步可以省去。
+        $getPolicy         = new Qiniu_RS_GetPolicy();
+        $imgInfoPrivateUrl = $getPolicy->MakeRequest($imgInfoUrl, null);
+        echo "====> imageInfo privateUrl: \n";
+        echo $imgInfoPrivateUrl . "\n";
+    }
+
+    /**
+     * 查看图片EXIF信息
+     * 
+     * @return void
+     */
+    public function rexif()
+    {
+        require_once(PATH_LIBRARY . "/qiniu/rs.php");
+        require_once(PATH_LIBRARY . "/qiniu/fop.php");
+
+        $key       = 'IMG_20131118_000834.jpg';
+        $domain    = 'yunchao.u.qiniudn.com';
+        $accessKey = 'h4yaNvJCcrp6B4H5IjI85_0QdgX8w0rrTxnBo30V';
+        $secretKey = 'rwqwsuiIxFzkWroCKUeJ5LltaaPTD1t5VxBfkHie';
+
+        Qiniu_SetKeys($accessKey, $secretKey);
+        //生成baseUrl
+        $baseUrl = Qiniu_RS_MakeBaseUrl($domain, $key);
+
+        //生成fopUrl
+        $imgExif    = new Qiniu_Exif;
+        $imgExifUrl = $imgExif->MakeRequest($baseUrl);
+
+        //对fopUrl 进行签名，生成privateUrl。 公有bucket 此步可以省去。
+        $getPolicy         = new Qiniu_RS_GetPolicy();
+        $imgExifPrivateUrl = $getPolicy->MakeRequest($imgExifUrl, null);
+        echo "====> imageView privateUrl: \n";
+        echo $imgExifPrivateUrl . "\n";
+    }
+
+    /**
+     * 生成预览
+     * 
+     * @return void
+     */
+    public function gpreview()
+    {
+        require_once(PATH_LIBRARY . "/qiniu/rs.php");
+        require_once(PATH_LIBRARY . "/qiniu/fop.php");
+
+        $key       = 'IMG_20131118_000834.jpg';
+        $domain    = 'yunchao.u.qiniudn.com';
+        $accessKey = 'h4yaNvJCcrp6B4H5IjI85_0QdgX8w0rrTxnBo30V';
+        $secretKey = 'rwqwsuiIxFzkWroCKUeJ5LltaaPTD1t5VxBfkHie';
+
+        Qiniu_SetKeys($accessKey, $secretKey);
+        //生成baseUrl
+        $baseUrl = Qiniu_RS_MakeBaseUrl($domain, $key);
+
+        //生成fopUrl
+        $imgView    = new Qiniu_ImageView;
+        $imgView->Mode = 1;
+        $imgView->Width = 700;
+        $imgView->Height = 800;
+        $imgViewUrl = $imgView->MakeRequest($baseUrl);
+
+        //对fopUrl 进行签名，生成privateUrl。 公有bucket 此步可以省去。
+        $getPolicy         = new Qiniu_RS_GetPolicy();
+        $imgViewPrivateUrl = $getPolicy->MakeRequest($imgViewUrl, null);
+        echo "====> imageView privateUrl: \n";
+        echo $imgViewPrivateUrl . "\n";
+    }
+
 }
