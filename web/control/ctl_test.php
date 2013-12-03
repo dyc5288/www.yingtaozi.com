@@ -1,0 +1,153 @@
+<?php
+
+/**
+ * 主页
+ * 
+ * @author duanyunchao
+ * @version $Id$
+ */
+!defined('IN_INIT') && exit('Access Denied');
+
+require_once 'ctl_parent.php';
+
+class ctl_test extends ctl_parent
+{
+    /**
+     * 初始化
+     * 
+     * @return void
+     */
+    public function __construct()
+    {
+        parent::__construct();
+    }
+
+    /**
+     * 首页
+     * 
+     * @return void
+     */
+    public function index()
+    {
+        
+    }
+
+    /**
+     * 查看单个文件
+     * 
+     * @return void
+     */
+    public function read()
+    {
+        require_once(PATH_LIBRARY . "/qiniu/rs.php");
+
+        $bucket    = "yingtaozi";
+        $key       = "IMG_20131120_200750.jpg";
+        $accessKey = 'h4yaNvJCcrp6B4H5IjI85_0QdgX8w0rrTxnBo30V';
+        $secretKey = 'rwqwsuiIxFzkWroCKUeJ5LltaaPTD1t5VxBfkHie';
+
+        Qiniu_SetKeys($accessKey, $secretKey);
+        $client = new Qiniu_MacHttpClient(null);
+
+        list($ret, $err) = Qiniu_RS_Stat($client, $bucket, $key);
+        echo "Qiniu_RS_Stat result: \n";
+        if ($err !== null)
+        {
+            var_dump($err);
+        }
+        else
+        {
+            var_dump($ret);
+        }
+    }
+
+    /**
+     * 复制单个文件 
+     * 
+     * @return void
+     */
+    public function copy()
+    {
+        require_once(PATH_LIBRARY . "/qiniu/rs.php");
+
+        $bucket    = "yingtaozi";
+        $key       = "IMG_20131120_200750.jpg";
+        $key1      = "IMG_20131120_200750_bak.jpg";
+        $accessKey = 'h4yaNvJCcrp6B4H5IjI85_0QdgX8w0rrTxnBo30V';
+        $secretKey = 'rwqwsuiIxFzkWroCKUeJ5LltaaPTD1t5VxBfkHie';
+
+        Qiniu_SetKeys($accessKey, $secretKey);
+        $client = new Qiniu_MacHttpClient(null);
+
+        $err = Qiniu_RS_Copy($client, $bucket, $key, $bucket, $key1);
+        echo "====> Qiniu_RS_Copy result: \n";
+        if ($err !== null)
+        {
+            var_dump($err);
+        }
+        else
+        {
+            echo "Success!";
+        }
+    }
+
+    /**
+     * 移动单个文件
+     * 
+     * @return void
+     */
+    public function move()
+    {
+        require_once(PATH_LIBRARY . "/qiniu/rs.php");
+
+        $bucket    = "yingtaozi";
+        $key       = "IMG_20131120_200750_bak.jpg";
+        $key1      = "IMG_20131120_200750_move.jpg";
+        $accessKey = 'h4yaNvJCcrp6B4H5IjI85_0QdgX8w0rrTxnBo30V';
+        $secretKey = 'rwqwsuiIxFzkWroCKUeJ5LltaaPTD1t5VxBfkHie';
+
+        Qiniu_SetKeys($accessKey, $secretKey);
+        $client = new Qiniu_MacHttpClient(null);
+
+        $err = Qiniu_RS_Move($client, $bucket, $key, $bucket, $key1);
+        echo "====> Qiniu_RS_Move result: \n";
+        if ($err !== null)
+        {
+            var_dump($err);
+        }
+        else
+        {
+            echo "Success!";
+        }
+    }
+
+    /**
+     * 删除单个文件
+     * 
+     * @return void
+     */
+    public function delete()
+    {
+        require_once(PATH_LIBRARY . "/qiniu/rs.php");
+
+        $bucket    = "yingtaozi";
+        $key1      = "IMG_20131120_200750_move.jpg";
+        $accessKey = 'h4yaNvJCcrp6B4H5IjI85_0QdgX8w0rrTxnBo30V';
+        $secretKey = 'rwqwsuiIxFzkWroCKUeJ5LltaaPTD1t5VxBfkHie';
+
+        Qiniu_SetKeys($accessKey, $secretKey);
+        $client = new Qiniu_MacHttpClient(null);
+
+        $err = Qiniu_RS_Delete($client, $bucket, $key1);
+        echo "====> Qiniu_RS_Delete result: \n";
+        if ($err !== null)
+        {
+            var_dump($err);
+        }
+        else
+        {
+            echo "Success!";
+        }
+    }
+
+}
