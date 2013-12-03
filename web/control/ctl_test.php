@@ -150,4 +150,85 @@ class ctl_test extends ctl_parent
         }
     }
 
+    /**
+     * 生成上传token
+     * 
+     * @return void
+     */
+    public function uptoken()
+    {
+        require_once(PATH_LIBRARY . "/qiniu/rs.php");
+
+        $bucket    = "yingtaozi";
+        $accessKey = 'h4yaNvJCcrp6B4H5IjI85_0QdgX8w0rrTxnBo30V';
+        $secretKey = 'rwqwsuiIxFzkWroCKUeJ5LltaaPTD1t5VxBfkHie';
+
+        Qiniu_SetKeys($accessKey, $secretKey);
+        $putPolicy = new Qiniu_RS_PutPolicy($bucket);
+        $upToken   = $putPolicy->Token(null);
+        var_dump($upToken);
+    }
+
+    /**
+     * 上传字符串
+     * 
+     * @return void
+     */
+    public function upstring()
+    {
+        require_once(PATH_LIBRARY . "/qiniu/io.php");
+        require_once(PATH_LIBRARY . "/qiniu/rs.php");
+
+        $bucket    = "yingtaozi";
+        $key1      = "test.txt";
+        $accessKey = 'h4yaNvJCcrp6B4H5IjI85_0QdgX8w0rrTxnBo30V';
+        $secretKey = 'rwqwsuiIxFzkWroCKUeJ5LltaaPTD1t5VxBfkHie';
+
+        Qiniu_SetKeys($accessKey, $secretKey);
+        $putPolicy = new Qiniu_RS_PutPolicy($bucket);
+        $upToken   = $putPolicy->Token(null);
+        list($ret, $err) = Qiniu_Put($upToken, $key1, "Qiniu Storage!", null);
+        echo "====> Qiniu_Put result: \n";
+        if ($err !== null)
+        {
+            var_dump($err);
+        }
+        else
+        {
+            var_dump($ret);
+        }
+    }
+
+    /**
+     * 上传本地文件
+     * 
+     * @return void
+     */
+    public function upfile()
+    {
+        require_once(PATH_LIBRARY . "/qiniu/io.php");
+        require_once(PATH_LIBRARY . "/qiniu/rs.php");
+
+        $bucket    = "yingtaozi";
+        $key1      = PATH_DATA . '/lang/zh_CN.php';
+        $accessKey = 'h4yaNvJCcrp6B4H5IjI85_0QdgX8w0rrTxnBo30V';
+        $secretKey = 'rwqwsuiIxFzkWroCKUeJ5LltaaPTD1t5VxBfkHie';
+
+        Qiniu_SetKeys($accessKey, $secretKey);
+        $putPolicy = new Qiniu_RS_PutPolicy($bucket);
+        $upToken   = $putPolicy->Token(null);
+        $putExtra  = new Qiniu_PutExtra();
+        $putExtra->Crc32 = 1;
+        list($ret, $err) = Qiniu_PutFile($upToken, $key1, __file__, $putExtra);
+        echo "====> Qiniu_PutFile result: \n";
+        if ($err !== null)
+        {
+            var_dump($err);
+        }
+        else
+        {
+            var_dump($ret);
+        }
+    }
+
 }
