@@ -206,7 +206,7 @@ class ctl_test extends ctl_parent
      */
     public function upfile()
     {
-        $fileurl = lib_qiniu::upfile('20/tu1.png', PATH_STATIC .'/images/upload/2013/12/02/1037/1385920349.jpg');        
+        $fileurl = lib_qiniu::upfile('2000/tu1.png', PATH_STATIC .'/images/upload/2013/12/02/1037/1385920349.jpg');        
         var_dump($fileurl);
     }
 
