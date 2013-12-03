@@ -206,29 +206,8 @@ class ctl_test extends ctl_parent
      */
     public function upfile()
     {
-        require_once(PATH_LIBRARY . "/qiniu/io.php");
-        require_once(PATH_LIBRARY . "/qiniu/rs.php");
-
-        $bucket    = "yingtaozi";
-        $key1      = PATH_DATA . '/lang/zh_CN.php';
-        $accessKey = 'h4yaNvJCcrp6B4H5IjI85_0QdgX8w0rrTxnBo30V';
-        $secretKey = 'rwqwsuiIxFzkWroCKUeJ5LltaaPTD1t5VxBfkHie';
-
-        Qiniu_SetKeys($accessKey, $secretKey);
-        $putPolicy = new Qiniu_RS_PutPolicy($bucket);
-        $upToken   = $putPolicy->Token(null);
-        $putExtra  = new Qiniu_PutExtra();
-        $putExtra->Crc32 = 1;
-        list($ret, $err) = Qiniu_PutFile($upToken, $key1, __file__, $putExtra);
-        echo "====> Qiniu_PutFile result: \n";
-        if ($err !== null)
-        {
-            var_dump($err);
-        }
-        else
-        {
-            var_dump($ret);
-        }
+        $fileurl = lib_qiniu::upfile('20/tu1.png', PATH_STATIC .'/images/upload/2013/12/02/1037/1385920349.jpg');        
+        var_dump($fileurl);
     }
 
     /**
