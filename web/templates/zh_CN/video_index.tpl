@@ -15,116 +15,19 @@
                 </div>
 
                 <div class="jMain2">
+                    <{foreach from=$return.data item=video}>
+                        <div class="jVideo">
+                            <a href="<{$video.ID|url:"video_detail"}>">
+                                <img src="<{$video.post_excerpt|excerpt}>" alt="">
+                                <div class="jWord">
+                                    <{$video.post_title}>
+                                </div>
+                            </a>
+                        </div>
+                    <{/foreach}>
+                </div>               
 
-                    <div class="jVideo">
-                        <a href="<{$URL}>/?c=video&a=detail">
-                            <img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐">
-                            <div class="jWord">
-                                樱桃小丸子 国语版
-                            </div>
-                        </a>
-                    </div>
-                    
-                    
-                    <div class="jVideo">
-                        <a href="<{$URL}>/?c=video&a=detail">
-                            <img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐">
-                            <div class="jWord">
-                                樱桃小丸子 国语版
-                            </div>
-                        </a>
-                    </div>
-                    <div class="jVideo">
-                        <a href="<{$URL}>/?c=video&a=detail">
-                            <img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐">
-                            <div class="jWord">
-                                樱桃小丸子 国语版
-                            </div>
-                        </a>
-                    </div>
-                    <div class="jVideo">
-                        <a href="<{$URL}>/?c=video&a=detail">
-                            <img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐">
-                            <div class="jWord">
-                                樱桃小丸子 国语版
-                            </div>
-                        </a>
-                    </div>
-                    <div class="jVideo">
-                        <a href="<{$URL}>/?c=video&a=detail">
-                            <img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐">
-                            <div class="jWord">
-                                樱桃小丸子 国语版
-                            </div>
-                        </a>
-                    </div>
-                    <div class="jVideo">
-                        <a href="<{$URL}>/?c=video&a=detail">
-                            <img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐">
-                            <div class="jWord">
-                                樱桃小丸子 国语版
-                            </div>
-                        </a>
-                    </div>
-                    <div class="jVideo">
-                        <a href="<{$URL}>/?c=video&a=detail">
-                            <img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐">
-                            <div class="jWord">
-                                樱桃小丸子 国语版
-                            </div>
-                        </a>
-                    </div>
-                    <div class="jVideo">
-                        <a href="<{$URL}>/?c=video&a=detail">
-                            <img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐">
-                            <div class="jWord">
-                                樱桃小丸子 国语版
-                            </div>
-                        </a>
-                    </div>
-                    <div class="jVideo">
-                        <a href="<{$URL}>/?c=video&a=detail">
-                            <img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐">
-                            <div class="jWord">
-                                樱桃小丸子 国语版
-                            </div>
-                        </a>
-                    </div>
-                    <div class="jVideo">
-                        <a href="<{$URL}>/?c=video&a=detail">
-                            <img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐">
-                            <div class="jWord">
-                                樱桃小丸子 国语版
-                            </div>
-                        </a>
-                    </div>
-                    <div class="jVideo">
-                        <a href="<{$URL}>/?c=video&a=detail">
-                            <img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐">
-                            <div class="jWord">
-                                樱桃小丸子 国语版
-                            </div>
-                        </a>
-                    </div>
-                    <div class="jVideo">
-                        <a href="<{$URL}>/?c=video&a=detail">
-                            <img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐">
-                            <div class="jWord">
-                                樱桃小丸子 国语版
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-
-                <div class="jPages">
-                    <div class='wp-pagenavi'>
-                        <a href="http://www.yingtaozi.com/" class="previouspostslink">上一页</a>
-                        <span class='current'>1</span>
-                        <a href='http://www.yingtaozi.com/?paged=2' class='page larger'>2</a>
-                        <a href="http://www.yingtaozi.com/?paged=2" class="nextpostslink">下一页</a>
-                    </div>
-                </div>
+                <{$return.page}>
             </div>
         </div>        
     </div>
