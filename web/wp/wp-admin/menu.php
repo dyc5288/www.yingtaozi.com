@@ -47,7 +47,8 @@ if ( ! is_multisite() ) {
 $menu[4] = array( '', 'read', 'separator1', '', 'wp-menu-separator' );
 
 $menu[5] = array( __('Posts'), 'edit_posts', 'edit.php', '', 'open-if-no-js menu-top menu-icon-post', 'menu-posts', 'none' );
-	$submenu['edit.php'][5]  = array( __('All Posts'), 'edit_posts', 'edit.php' );
+    $submenu['edit.php'][5]  = array( __('All Posts'), 'edit_posts', 'edit.php' );
+	$submenu['edit.php'][6]  = array( __('所有视频'), 'edit_posts', 'edit.php?post_type=video' );
 	/* translators: add new post */
 	$submenu['edit.php'][10]  = array( _x('Add New', 'post'), get_post_type_object( 'post' )->cap->create_posts, 'post-new.php' );
 
@@ -58,7 +59,7 @@ $menu[5] = array( __('Posts'), 'edit_posts', 'edit.php', '', 'open-if-no-js menu
 
 		$submenu['edit.php'][$i++] = array( esc_attr( $tax->labels->menu_name ), $tax->cap->manage_terms, 'edit-tags.php?taxonomy=' . $tax->name );
 	}
-	unset($tax);
+	unset($tax);    
 
 $menu[10] = array( __('Media'), 'upload_files', 'upload.php', '', 'menu-top menu-icon-media', 'menu-media', 'none' );
 	$submenu['upload.php'][5] = array( __('Library'), 'upload_files', 'upload.php');

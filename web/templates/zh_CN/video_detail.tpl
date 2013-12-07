@@ -1,5 +1,6 @@
 <{include file='header.tpl'}>
 <link rel="stylesheet" href="<{s}>css/video.css<{/s}>" type="text/css" media="screen" />
+<script type="text/javascript" src="<{s}>js/video.js<{/s}>"></script>
 <div class="jMain">
     <div class="jWrap">
         <div class="jPost">
@@ -9,13 +10,7 @@
 
             <div class="jContent">
                 <div class="jDvideo">
-                    <object width="600" height="500" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0" align="middle">
-                        <param name="src" value="http://player.youku.com/player.php/sid/XNDg1MjI2NjI4/v.swf">
-                        <param name="quality" value="high">
-                        <param name="allowscriptaccess" value="sameDomain">
-                        <param name="allowfullscreen" value="true">
-                        <embed width="600" height="500" type="application/x-shockwave-flash" src="http://player.youku.com/player.php/sid/XNDg1MjI2NjI4/v.swf" quality="high" allowscriptaccess="sameDomain" allowfullscreen="true" align="middle">
-                    </object>
+                    <iframe id="js_play" height=500 width=600 src="http://player.youku.com/embed/XMjQwNDAzNjMy" frameborder=0 allowfullscreen></iframe>
                 </div>
                 <div class="jHeader">
                     <hr class="jHrLeft">
@@ -23,63 +18,15 @@
                     <hr class="jHrRight">
                 </div>
                 <div class="jOrder">
-                    <div>01</div>
-                    <div>02</div>
-                    <div>03</div>
-                    <div>04</div>
-                    <div>05</div>
-                    <div>06</div>
-                    <div>07</div>
-                    <div>08</div>
-                    <div>09</div>
-                    <div>10</div>
-                    <div>11</div>
-                    <div>12</div>
-                    <div>13</div>
-                    <div>14</div>
-                    <div>15</div>
-                    <div>16</div>
-                    <div>17</div>
-                    <div>18</div>
-                    <div>19</div>
-                    <div>01</div>
-                    <div>02</div>
-                    <div>03</div>
-                    <div>04</div>
-                    <div>05</div>
-                    <div>06</div>
-                    <div>07</div>
-                    <div class="jCurrent">08</div>
-                    <div>09</div>
-                    <div>10</div>
-                    <div>11</div>
-                    <div>12</div>
-                    <div>13</div>
-                    <div>14</div>
-                    <div>15</div>
-                    <div>16</div>
-                    <div>17</div>
-                    <div>18</div>
-                    <div>19</div>
-                    <div>01</div>
-                    <div>02</div>
-                    <div>03</div>
-                    <div>04</div>
-                    <div>05</div>
-                    <div>06</div>
-                    <div>07</div>
-                    <div>08</div>
-                    <div>09</div>
-                    <div>10</div>
-                    <div>11</div>
-                    <div>12</div>
-                    <div>13</div>
-                    <div>14</div>
-                    <div>15</div>
-                    <div>16</div>
-                    <div>17</div>
-                    <div>18</div>
-                    <div>19</div>
+                    <{if !empty($return.post_content)}>
+                        <{foreach from=$return.post_content key=k item=row}>
+                            <{if $k == 1}>
+                                <div class="jCurrent" url="<{$row.url}>"><{$row.id}></div>
+                            <{else}>
+                                <div url="<{$row.url}>"><{$row.id}></div>
+                            <{/if}>
+                        <{/foreach}>
+                    <{/if}>
                 </div>
             </div>            
             
