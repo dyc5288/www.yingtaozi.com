@@ -41,7 +41,7 @@ class pub_mod_info
         $result = hlp_common::remote_request($url);
         $return = array();
 
-        $data    = mb_convert_encoding($result['data'], 'utf-8', 'GBK');
+        $data    = mb_convert_encoding($result, 'utf-8', 'GBK');
         $matches = array();
         $rmatches = array();
         preg_match_all('/<div class=\"newsleft(.*)\">(.*)<\\/div>/iU', $data, $matches);
@@ -105,7 +105,7 @@ class pub_mod_info
         $result = hlp_common::remote_request($url);
         $return = array();
 
-        $data                   = mb_convert_encoding($result['data'], 'utf-8', 'GBK');
+        $data                   = mb_convert_encoding($result, 'utf-8', 'GBK');
         $post_content           = hlp_format::get_div('class="he15 content line22"', $data);
         $post_content           = preg_replace('/on(.*)=\"(.*)\"/iU', '', $post_content);
         $post_content           = preg_replace('/on(.*)=\'(.*)\'/iU', '', $post_content);
@@ -170,7 +170,7 @@ class pub_mod_info
         $name     = time() . '.jpg';
         $filename = $dir . $name;
         $file     = PATH_STATIC . '/images/' . $name;
-        put_file($file, $result['data']);
+        put_file($file, $result);
         return lib_qiniu::upfile($filename, $file);
     }
 
