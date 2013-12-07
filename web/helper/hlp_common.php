@@ -97,14 +97,14 @@ class hlp_common
      */
     public static function remote_request($url)
     {
-        $result = array('code' => 404);
+        $result = false;
         $count = 0;
 
-        while ($result['code'] != 200 && $count < 5)
+        while (empty($result) && $count < 5)
         {
             try
             {
-                $result = curl($url);
+                $result = file_get_contents($url);
             }
             catch (Exception $e)
             {
