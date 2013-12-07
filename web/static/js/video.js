@@ -11,4 +11,8 @@ $(function(){
         }
         return false;
     });
+    var firstV = fbutton.first();
+    if (firstV) {
+        $("#js_play").attr('src', firstV.attr('url'));        
+    }
 });
