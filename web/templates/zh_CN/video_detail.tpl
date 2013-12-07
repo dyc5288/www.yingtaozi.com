@@ -10,7 +10,7 @@
 
             <div class="jContent">
                 <div class="jDvideo">
-                    <iframe id="js_play" height=500 width=600 src="http://player.youku.com/embed/XMjQwNDAzNjMy" frameborder=0 allowfullscreen></iframe>
+                    <iframe id="js_play" height=500 width=600 src="" frameborder=0 allowfullscreen></iframe>
                 </div>
                 <div class="jHeader">
                     <hr class="jHrLeft">
