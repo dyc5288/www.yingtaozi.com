@@ -68,7 +68,7 @@ class pub_mod_video
             {
                 $data = array();
                 $attributes    = $vals[$id]['attributes'];
-                $key           = substr($attributes['HREF'], strpos($attributes['HREF'], 'id_')+3, -5);
+                $key           = substr($attributes['HREF'], strpos($attributes['HREF'], 'id_') + 3, -5);
                 $data['url']   = "http://player.youku.com/embed/{$key}";
                 $arr           = explode(' ', $attributes['TITLE']);
                 $data['id']    = intval($arr[0]);
