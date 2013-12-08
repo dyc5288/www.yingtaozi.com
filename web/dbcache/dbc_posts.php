@@ -140,6 +140,11 @@ class dbc_posts
             $where .= "AND post_name like '%{$cond['post_name']}%' ";
         }
 
+        if (isset($cond['keyword']))
+        {
+            $where .= "AND post_title like '%{$cond['post_title']}%' ";
+        }
+
         if (isset($cond['post_type']))
         {
             $where .= "AND post_type = '{$cond['post_type']}' ";
