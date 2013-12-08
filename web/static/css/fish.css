@@ -77,7 +77,7 @@ Author URI: http://duanyunchao.com/
 
 .jCate {
     padding: 0px;
-    width: 208px;
+    width: 216px;
 }
 
 .jTheme, .jCategory{    
@@ -101,6 +101,7 @@ Author URI: http://duanyunchao.com/
 .jTheme div, .jCategory div {    
     margin: 5px;
     border: 1px solid #ccc;
+    border-radius: 3px;
     padding: 5px;
     float: left;
     border-collapse: separate;

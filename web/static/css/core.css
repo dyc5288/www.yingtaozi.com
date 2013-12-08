@@ -808,6 +808,8 @@ body{
     line-height:23px;
 
     border:1px solid #ccc;
+    
+    border-radius: 3px;
 
     background:#f9f9f9;
 
@@ -822,6 +824,8 @@ body{
 .jPages a:hover, .jPages .current{
 
     border:1px solid #9d0537;
+    
+    border-radius: 3px;
 
     background:#d71e5b;
 

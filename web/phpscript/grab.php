@@ -23,7 +23,7 @@ if (!empty($flag['grab_info']))
     switch ($flag['grab_info'])
     {
         case pub_mod_info::TYPE_ELONGDAO:
-            for ($i = 1; $i <= 776; $i++)
+            for ($i = 3; $i <= 7; $i++)
             {
                 $params = array('url'  => "http://news.emland.net/index.php?&page={$i}", 'type' => $flag['grab_info']);
                 lib_gearman::add_job($GLOBALS['CONFIG']['gearman'], 'GRAB_INFO', $params, 3);

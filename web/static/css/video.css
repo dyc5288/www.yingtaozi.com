@@ -91,7 +91,8 @@ Author URI: http://duanyunchao.com/
     height: 221px;
     margin-bottom: 5px;
     border: 1px solid #ccc;
-    overflow: hidden;
+    overflow: hidden;    
+    border-radius: 3px;
 }
 
 .jVideo .jWord {
@@ -141,7 +142,8 @@ Author URI: http://duanyunchao.com/
 .jHotVideo img {
     width: 108px;
     height: 89px;
-    border: 1px solid #ccc;
+    border: 1px solid #ccc;    
+    border-radius: 3px;
 }
 
 .jHotVideo .jWord {

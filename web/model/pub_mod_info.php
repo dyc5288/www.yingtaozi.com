@@ -171,7 +171,9 @@ class pub_mod_info
         $filename = $dir . $name;
         $file     = PATH_STATIC . '/images/' . $name;
         put_file($file, $result);
-        return lib_qiniu::upfile($filename, $file);
+        $url = lib_qiniu::upfile($filename, $file);
+        unlink($file);
+        return $url;
     }
 
 }
