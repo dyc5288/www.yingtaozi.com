@@ -32,6 +32,7 @@ class ctl_index extends ctl_parent
     {
         $return = array('nav' => 'index');
         $this->_hot($return);
+        $this->_video($return);
         lib_template::assign('return', $return);
         lib_template::display('index.tpl');
     }

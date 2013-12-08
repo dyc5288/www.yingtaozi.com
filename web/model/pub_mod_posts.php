@@ -28,7 +28,8 @@ class pub_mod_posts
     const COLUMN_INFO_INDEX = 'ID, post_title, post_content, post_excerpt, post_date';           // 情报站首页
     const COLUMN_INFO_HOT   = 'ID, post_title';                                                  // 情报站热点资讯
     const COLUMN_VIDEO_INDEX = 'ID, post_title, post_excerpt';
-    const COLUMN_VIDEO_HOT   = 'ID, post_title, post_excerpt';                                   // 情报站热点资讯
+    const COLUMN_VIDEO_HOT   = 'ID, post_title, post_excerpt';                                   // 精彩推荐视频
+    const COLUMN_VIDEO_FHOT  = 'ID, post_title, post_excerpt, post_content';                     // 首页推荐视频
 
     /* 管理员的用户ID */
     const AUTHOR_ADMIN_ID = 1;
