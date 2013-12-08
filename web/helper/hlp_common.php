@@ -98,7 +98,7 @@ class hlp_common
     public static function remote_request($url)
     {
         $result = false;
-        $count = 0;
+        $count  = 0;
 
         while (empty($result) && $count < 5)
         {
@@ -115,6 +115,36 @@ class hlp_common
         }
 
         return $result;
+    }
+
+    /**
+     * 查找数字 
+     *
+     * @param string $str 
+     * @return array
+     */
+    public static function findNum($str = '')
+    {
+
+        $str = trim($str);
+
+        if (empty($str))
+        {
+            return '';
+        }
+
+        $reg = '/(\d{3}(\.\d+)?)/is'; //匹配数字的正则表达式
+        $result = array();
+
+        preg_match_all($reg, $str, $result);
+
+        if (is_array($result) && !empty($result) && !empty($result[1]) && !empty($result[1][0]))
+        {
+
+            return $result[1][0];
+        }
+
+        return '';
     }
 
 }

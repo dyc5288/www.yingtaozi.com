@@ -1,18 +1,22 @@
 $(function(){
     var fbutton = $(".jOrder").find("div");
+    var play = $("#js_play");
+    var intro = $("#js_dcontent");
     fbutton.click(function(){
         var url = $(this).attr('url');
-        var play = $("#js_play");
         var cur_url = play.attr('src');
         if (url != cur_url) {
             $(".jOrder").find(".jCurrent").toggleClass("jCurrent");
             $(this).toggleClass("jCurrent");
-            play.attr('src', url);
+            play.attr('src', url);    
+            intro.html(firstV.attr('introduce'));
         }
         return false;
     });
     var firstV = fbutton.first();
     if (firstV) {
-        $("#js_play").attr('src', firstV.attr('url'));        
+        firstV.addClass("jCurrent");
+        play.attr('src', firstV.attr('url'));        
+        intro.html(firstV.attr('introduce'));
     }
 });

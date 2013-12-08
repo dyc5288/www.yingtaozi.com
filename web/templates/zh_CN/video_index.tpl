@@ -4,7 +4,7 @@
     <div class="jWrap">
         <div class="jPost">
             <div class="jPosition">
-                您的位置：<a href="">TV放送局</a> >>  视频列表
+                您的位置：<a href="<{''|url:'video'}>">TV放送局</a> >>  视频列表
             </div>
 
             <div class="jContent">

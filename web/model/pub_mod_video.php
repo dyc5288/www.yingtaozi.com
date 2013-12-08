@@ -70,8 +70,7 @@ class pub_mod_video
                 $attributes    = $vals[$id]['attributes'];
                 $key           = substr($attributes['HREF'], strpos($attributes['HREF'], 'id_') + 3, -5);
                 $data['url']   = "http://player.youku.com/embed/{$key}";
-                $arr           = explode(' ', $attributes['TITLE']);
-                $data['id']    = intval($arr[0]);
+                $data['id']    = hlp_common::findNum($attributes['TITLE']);
                 $data['title'] = $attributes['TITLE'];
                 $return[]      = $data;
             }

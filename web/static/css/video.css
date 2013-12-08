@@ -86,9 +86,10 @@ Author URI: http://duanyunchao.com/
 }
 
 .jVideo img {
-    width: 149px;
+    width: 147px;
     height: 122px;
     margin-bottom: 5px;
+    border: 1px solid #ccc;
 }
 
 .jVideo .jWord {

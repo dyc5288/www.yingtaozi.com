@@ -5,7 +5,7 @@
     <div class="jWrap">
         <div class="jPost">
             <div class="jPosition">
-                您的位置：<a href="">TV放送局</a> >>  视频列表
+                您的位置：<a href="<{''|url:'video'}>">TV放送局</a> >>  <{$return.video.post_title}>
             </div>
 
             <div class="jContent">
@@ -20,11 +20,7 @@
                 <div class="jOrder">
                     <{if !empty($return.post_content)}>
                         <{foreach from=$return.post_content key=k item=row}>
-                            <{if $k == 1}>
-                                <div class="jCurrent" url="<{$row.url}>"><{$row.id}></div>
-                            <{else}>
-                                <div url="<{$row.url}>"><{$row.id}></div>
-                            <{/if}>
+                            <div url="<{$row.url}>" introduce="abc"><{$row.id}></div>
                         <{/foreach}>
                     <{/if}>
                 </div>
@@ -36,8 +32,8 @@
                     <h3>分集剧情</h3>
                     <hr class="jHrRight">
                 </div>
-                <div class="jDcontent">
-                    该片讲述了小丸子上幼稚园和小学低年级的故事，大家已经熟知了这个俏皮、童真、聪慧、富有创意又缺点一大把的女孩子。而在第二部中，小丸子已经升入了三年级。故事自然还是围绕着她在生活和学习中与家人、朋友、老师、同学之间发生的一桩桩有趣的情景展开，有关于亲情、爱心以及同学之间的友情。[3]或是一些生活小事，但当中有笑有泪，令人回想起童年的稚气。最特别的，当在故事人物尴尬时的招牌表情，会突然出现在脸上的黑线，有时还会伴随着一阵寒风从头后吹过。[2]
+                <div class="jDcontent" id="js_dcontent">
+                    
                 </div>
             </div>
         </div>        
