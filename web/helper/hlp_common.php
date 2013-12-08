@@ -125,7 +125,6 @@ class hlp_common
      */
     public static function findNum($str = '')
     {
-
         $str = trim($str);
 
         if (empty($str))
@@ -133,7 +132,7 @@ class hlp_common
             return '';
         }
 
-        $reg = '/(\d{3}(\.\d+)?)/is'; //匹配数字的正则表达式
+        $reg = '/(\d{1,5}(\.\d+)?)/is'; //匹配数字的正则表达式
         $result = array();
 
         preg_match_all($reg, $str, $result);
