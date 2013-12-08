@@ -38,48 +38,20 @@
             <hr class="jHrLeft"/>
             <h3>精彩推荐</h3>
             <hr class="jHrRight"/>
-        </div>        
-        
-        <div class="jHotVideo">
-            <a href="<{$URL}>/?c=video&a=detail">
-                <div class="jHotImg">
-                    <img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐">
-                </div>            
-                <div class="jWord">殷桃小丸子 20周年</div>
-            </a>
-        </div>
-        <div class="jHotVideo">
-            <a href="<{$URL}>/?c=video&a=detail">
-                <div class="jHotImg">
-                    <img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐">
-                </div>            
-                <div class="jWord">殷桃小丸子 20周年</div>
-            </a>
-        </div>
-        <div class="jHotVideo">
-            <a href="<{$URL}>/?c=video&a=detail">
-                <div class="jHotImg">
-                    <img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐">
-                </div>            
-                <div class="jWord">殷桃小丸子 20周年</div>
-            </a>
-        </div>
-        <div class="jHotVideo">
-            <a href="<{$URL}>/?c=video&a=detail">
-                <div class="jHotImg">
-                    <img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐">
-                </div>            
-                <div class="jWord">殷桃小丸子 20周年</div>
-            </a>
-        </div>
-        <div class="jHotVideo">
-            <a href="<{$URL}>/?c=video&a=detail">
-                <div class="jHotImg">
-                    <img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐">
-                </div>            
-                <div class="jWord">殷桃小丸子 20周年</div>
-            </a>
-        </div>
+        </div>                
+           
+        <{if !empty($return.hot)}>
+            <{foreach from=$return.hot item=video}>
+                <div class="jHotVideo">
+                    <a href="<{$video.ID|url:"video_detail"}>">
+                        <div class="jHotImg">
+                            <img src="<{$video.post_excerpt|excerpt}>" alt="<{$video.post_title}>">
+                        </div>            
+                        <div class="jWord"><{$video.post_title|truncate:17}></div>
+                    </a>
+                </div>
+            <{/foreach}>
+        <{/if}>
     </div>
 </div>
 <{include file='footer.tpl'}>

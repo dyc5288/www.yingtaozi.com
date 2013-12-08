@@ -19,4 +19,10 @@ $(function(){
         play.attr('src', firstV.attr('url'));        
         intro.html(firstV.attr('introduce'));
     }
+    var cates = $("#js_dcate").find("div");
+    cates.click(function(){
+        var keyword = $(this).html();
+        window.location.href = '/?c=video&keyword='+keyword;
+        return false;
+    });
 });

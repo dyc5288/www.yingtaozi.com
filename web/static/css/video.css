@@ -53,6 +53,7 @@ Author URI: http://duanyunchao.com/
 
 .jHeader {
     clear: both;
+    overflow: auto;
 }
 
 .jHeader hr {
@@ -140,6 +141,7 @@ Author URI: http://duanyunchao.com/
 .jHotVideo img {
     width: 108px;
     height: 89px;
+    border: 1px solid #ccc;
 }
 
 .jHotVideo .jWord {

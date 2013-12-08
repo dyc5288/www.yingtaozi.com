@@ -34,6 +34,20 @@ class ctl_parent
         $return['hot']       = pub_mod_posts::get_list($cond, $order, 0, 5, pub_mod_posts::COLUMN_INFO_HOT);
     }
 
+    /**
+     * 热点资讯
+     * 
+     * @return void
+     */
+    protected function _hot_video(&$return)
+    {
+        $order = 'comment_count desc';
+        $cond = array();
+        $cond['post_status'] = pub_mod_posts::STATUS_PUBLISH;
+        $cond['post_type']   = pub_mod_posts::TYPE_VIDEO;
+        $return['hot']       = pub_mod_posts::get_list($cond, $order, 0, 5, pub_mod_posts::COLUMN_VIDEO_HOT);
+    }
+
 }
 
 ?>

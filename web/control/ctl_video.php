@@ -31,12 +31,20 @@ class ctl_video extends ctl_parent
     {
         $return = array('nav'   => 'video', 'count' => 0, 'data'  => array());
         $start = get_params('s', 0, 'request', 0);
+        $keyword = get_params('keyword', 1, 'request', '');
         $limit = 12;
         $url   = '?c=video';
         $order = "post_date desc,ID desc";
         $cond  = array();
         $cond['post_status'] = pub_mod_posts::STATUS_PUBLISH;
         $cond['post_type']   = pub_mod_posts::TYPE_VIDEO;
+        
+        if (!empty($keyword))
+        {
+            $cond['keyword'] = $keyword;
+            $url .= "keyword={$keyword}";
+        }
+        
         $return['count']     = pub_mod_posts::get_count($cond);
         $start               = ($start >= $return['count']) ? floor($return['count'] / $limit) * $limit : $start;
 
@@ -54,6 +62,7 @@ class ctl_video extends ctl_parent
         $config['start']        = $start;
         $return['page']         = pagination($config);
 
+        $this->_hot_video($return);
         lib_template::assign('return', $return);
         lib_template::display('video_index.tpl');
     }
@@ -74,6 +83,7 @@ class ctl_video extends ctl_parent
             $return['post_content'] = !empty($return['video']) ? unserialize($return['video']['post_content']) : '';
         }        
 
+        $this->_hot_video($return);
         lib_template::assign('return', $return);
         lib_template::display('video_detail.tpl');
     }
