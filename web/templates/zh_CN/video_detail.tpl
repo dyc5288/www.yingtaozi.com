@@ -20,7 +20,7 @@
                 <div class="jOrder">
                     <{if !empty($return.post_content)}>
                         <{foreach from=$return.post_content key=k item=row}>
-                            <div url="<{$row.url}>" introduce="abc"><{$row.id}></div>
+                            <div url="<{$row.url}>" introduce=""><{$row.id}></div>
                         <{/foreach}>
                     <{/if}>
                 </div>
@@ -45,7 +45,7 @@
             动漫列表
         </div>
         <div class="jDcate">
-            <div class="jCurrent">樱桃小丸子</div>
+            <div>樱桃小丸子</div>
             <div>Hello Kitty</div>
             <div>龙猫</div>
             <div>火影忍者</div>

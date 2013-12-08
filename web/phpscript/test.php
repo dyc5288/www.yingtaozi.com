@@ -8,4 +8,5 @@
  */
 require '../init.php';
 
-debug('heihei');
+$num = hlp_common::findNum('第01话 三倍时钟贴纸');
+var_dump($num);

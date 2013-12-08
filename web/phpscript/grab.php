@@ -37,11 +37,11 @@ if (!empty($flag['grab_video']))
     switch ($flag['grab_video'])
     {
         case pub_mod_video::TYPE_YOUKU:
-            for ($i = 1; $i <= 26; $i++)
+            for ($i = 1; $i <= 1; $i++)
             {
-                $start  = 413 + ($i - 1) * 20 + 1;
-                $url    = "http://www.youku.com/show_episode/id_z66e31362bf9611de97c0.html?dt=json&divid=reload_{$start}&__rt=1&__ro=reload_1";
-                $params = array('url'  => $url, 'type' => $flag['grab_video'], 'id'   => 1539);
+                $start  = ($i - 1) * 20 + 1;
+                $url    = "http://www.youku.com/show_episode/id_z64c3a4d4f7e211e1b52a.html?dt=json&divid=reload_{$start}&__rt=1&__ro=reload_{$start}";
+                $params = array('url'  => $url, 'type' => $flag['grab_video'], 'id'   => 1570);
                 lib_gearman::add_job($GLOBALS['CONFIG']['gearman'], 'GRAB_VIDEO', $params, 3);
             }
             break;
