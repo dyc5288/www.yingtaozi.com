@@ -234,7 +234,7 @@ function edit_post( $post_data = null ) {
 	}
 
 	// Meta Stuff 云朝修改
-    $excerpt_column = array('image_url' => 1, 'from' => 1);
+    $excerpt_column = array('image_url' => 1, 'from' => 1, 'buy_url' => 1, 'price' => 1);
     $post_data['post_excerpt'] = array();
 	if ( isset($post_data['meta']) && $post_data['meta'] ) {
 		foreach ( $post_data['meta'] as $key => $value ) {

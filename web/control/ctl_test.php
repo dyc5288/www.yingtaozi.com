@@ -339,5 +339,17 @@ class ctl_test extends ctl_parent
         echo "====> imageView privateUrl: \n";
         echo $imgViewPrivateUrl . "\n";
     }
+    
+    /**
+     * excel操作
+     * 
+     * @return void
+     */
+    public function excel()
+    {
+        $file = PATH_DATA . '/notsync/xls/2013-12-08-13740145.xls';
+        $data = lib_excel::get_data($file);
+        json_print($data);
+    }
 
 }

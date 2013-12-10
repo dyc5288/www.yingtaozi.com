@@ -49,6 +49,7 @@ $menu[4] = array( '', 'read', 'separator1', '', 'wp-menu-separator' );
 $menu[5] = array( __('Posts'), 'edit_posts', 'edit.php', '', 'open-if-no-js menu-top menu-icon-post', 'menu-posts', 'none' );
     $submenu['edit.php'][5]  = array( __('All Posts'), 'edit_posts', 'edit.php' );
 	$submenu['edit.php'][6]  = array( __('所有视频'), 'edit_posts', 'edit.php?post_type=video' );
+	$submenu['edit.php'][7]  = array( __('所有产品'), 'edit_posts', 'edit.php?post_type=product' );
 	/* translators: add new post */
 	$submenu['edit.php'][10]  = array( _x('Add New', 'post'), get_post_type_object( 'post' )->cap->create_posts, 'post-new.php' );
 
