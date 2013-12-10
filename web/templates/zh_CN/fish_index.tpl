@@ -48,7 +48,6 @@
                                     <img src="<{$product.post_excerpt|excerpt}>" alt="">
                                     <div class="jWord">
                                         <{$product.post_title}>
-                                        -<{$return.lsize}>-<{$k}>-<{$k mod $return.lsize}>
                                     </div>
                                 </a>
                             </div>
