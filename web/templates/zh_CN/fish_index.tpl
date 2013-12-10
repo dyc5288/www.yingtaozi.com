@@ -42,30 +42,20 @@
                     </div>
                     <{if !empty($return.data)}>
                         <{foreach from=$return.data key=k item=product}>
-                            <{if $k % $return.lsize == $return.lsize}>
-                                </div>
-                                <div class="jCol">
-                            <{/if}>
+                            <{$k|remainder:$return.lsize}>
                             <div class="jProduct">
                                 <a href="<{$product.ID|url:"fish_detail"}>">
                                     <img src="<{$product.post_excerpt|excerpt}>" alt="">
                                     <div class="jWord">
                                         <{$product.post_title}>
-                                        -<{$return.lsize}>-<{$k}>
+                                        -<{$return.lsize}>-<{$k}>-<{$k mod $return.lsize}>
                                     </div>
                                 </a>
                             </div>
                         <{/foreach}>
                     <{/if}>            
                 </div>
-                <div class="jPages">
-                    <div class='wp-pagenavi'>
-                        <a href="http://www.yingtaozi.com/" class="previouspostslink">上一页</a>
-                        <span class='current'>1</span>
-                        <a href='http://www.yingtaozi.com/?paged=2' class='page larger'>2</a>
-                        <a href="http://www.yingtaozi.com/?paged=2" class="nextpostslink">下一页</a>
-                    </div>
-                </div>
+                <{$return.page}>
             </div>
         </div>
     </div>
