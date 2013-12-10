@@ -16,6 +16,7 @@ if (!empty($flag['help']))
 {
     echo "php grab.php -grab_info 1 抓取恶魔岛资讯" . PHP_EOL;
     echo "php grab.php -grab_video 1 抓取优酷视频" . PHP_EOL;
+    echo "php grab.php -grab_product 1 抓取周边产品" . PHP_EOL;
 }
 
 if (!empty($flag['grab_info']))
@@ -48,4 +49,11 @@ if (!empty($flag['grab_video']))
     }
 }
 
+if (!empty($flag['grab_product']))
+{
+    $file = PATH_DATA . '/notsync/xls/2013-12-08-13740145.xls';
+    $params = array();
+    $params['file'] = $file;
+    lib_gearman::add_job($GLOBALS['CONFIG']['gearman'], 'GRAB_PRODUCT', $params, 3);
+}
 echo "success" . PHP_EOL;
