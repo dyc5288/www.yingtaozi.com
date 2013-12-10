@@ -66,7 +66,6 @@ function GRAB_INFO($job)
 
                             $param_array = array();
                             $param_array['post_author']  = pub_mod_posts::AUTHOR_ADMIN_ID;
-                            $param_array['post_date']    = $row['post_date'];
                             $post_content                = pub_mod_info::replace_image($row['post_content']);
                             $param_array['post_content'] = addslashes($post_content);
                             $param_array['post_title']   = addslashes($row['post_title']);
