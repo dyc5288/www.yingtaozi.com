@@ -71,6 +71,20 @@ class ctl_parent
                 break;
             }
         }
+    }    
+
+    /**
+     * 首页淘周边
+     * 
+     * @return void
+     */
+    protected function _fish(&$return)
+    {
+        $order = 'comment_count desc';
+        $cond  = array();
+        $cond['post_status'] = pub_mod_posts::STATUS_PUBLISH;
+        $cond['post_type']   = pub_mod_posts::TYPE_PRODUCT;
+        $return['hot_product'] = pub_mod_posts::get_list($cond, $order, 0, 12, pub_mod_posts::COLUMN_PDT_HOT);
     }
 
 }

@@ -59,18 +59,11 @@
                             <img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐">
                         </div>
                         <div class="jFishright">
-                            <img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐">
-                            <img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐">
-                            <img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐">
-                            <img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐">
-                            <img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐">
-                            <img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐">
-                            <img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐">
-                            <img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐">
-                            <img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐">
-                            <img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐">
-                            <img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐">
-                            <img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐">
+                            <{if !empty($return.hot_product)}>
+                                <{foreach from=$return.hot_product item=product}>
+                                    <img src="<{$product.post_excerpt|excerpt}>" alt="<{$product.post_title}>" title="<{$product.post_title}>">
+                                <{/foreach}>
+                            <{/if}>
                         </div>
                     </div>
                 </div>           

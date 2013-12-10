@@ -75,6 +75,11 @@ Author URI: http://duanyunchao.com/
     text-align: center;    
 }
 
+.jProduct .jPrice {
+    text-align: center;    
+    color: red;
+}
+
 .jCate {
     padding: 0px;
     width: 216px;

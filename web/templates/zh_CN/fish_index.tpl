@@ -49,6 +49,9 @@
                                     <div class="jWord">
                                         <{$product.post_title}>
                                     </div>
+                                    <div class="jPrice">
+                                        <{$product.post_excerpt|excerpt:'price'}>￥
+                                    </div>
                                 </a>
                             </div>
                         <{/foreach}>
