@@ -30,6 +30,7 @@ Author URI: http://duanyunchao.com/
 
 .jPosition {
     width: 880px;
+    background: white;
 }
 
 .jCol {
@@ -64,6 +65,7 @@ Author URI: http://duanyunchao.com/
 
 .jProduct {
     width: 196px;
+    background: white;
 }
 
 .jProduct img {
@@ -163,10 +165,12 @@ Author URI: http://duanyunchao.com/
     padding: 10px;
     overflow: auto;
     margin-bottom: 10px;
+    background: white;
 }
 
 .jDcate {
     margin-left: 10px;
+    background: white;
 }
 
 .jDimg {
@@ -283,6 +287,7 @@ Author URI: http://duanyunchao.com/
     overflow: auto;
     margin-left: 10px;
     margin-top: 10px;
+    background: white;
 }
 
 .jDshop .jDHeader {

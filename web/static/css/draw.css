@@ -16,7 +16,6 @@ Author URI: http://duanyunchao.com/
     zoom: 1;
     border: 1px solid #ccc;
     padding: 10px;
-    margin-bottom: 10px;
     float: left;
 }
 
@@ -30,7 +29,9 @@ Author URI: http://duanyunchao.com/
 
 .jPosition {
     width: 880px;
+    margin-bottom: 10px;
     border-radius: 3px;
+    background: white;
 }
 
 .jContainer {
@@ -46,6 +47,7 @@ Author URI: http://duanyunchao.com/
     margin-right: 5px;
     margin-bottom: 10px;
     border-radius: 3px;
+    background: white;
 }
 
 .jFirst {
@@ -73,10 +75,6 @@ Author URI: http://duanyunchao.com/
     display:inline; 
 }
 
-.jFriend {
-    margin-top: -10px;
-}
-
 /* 详情页 */
 .jDetailContent,.jRightContent,.jMainContent {    
     position:relative;
@@ -84,11 +82,11 @@ Author URI: http://duanyunchao.com/
     display:block;
     clear:both;
     zoom: 1;
-    margin-bottom: 10px;
 }
 
 .jDetailContent {
     width: 902px;
+    margin-bottom: 10px;
 }
 
 .jMainContent {
@@ -101,6 +99,7 @@ Author URI: http://duanyunchao.com/
     float: none;
     position: absolute;
     right: 0px;
+    margin-bottom: 10px;
 }
 
 .jDproduct, .jDcate {
@@ -110,7 +109,8 @@ Author URI: http://duanyunchao.com/
     clear:both;
     zoom: 1;
     border: 1px solid #ccc;    
-    border-radius: 3px;
+    border-radius: 3px;    
+    background: white;
 }
 
 .jDproduct {    
@@ -223,6 +223,7 @@ Author URI: http://duanyunchao.com/
     padding: 10px;
     margin-bottom: 10px;
     border-radius: 3px;
+    background: white;
 }
 
 .jDcurr .jLeft {

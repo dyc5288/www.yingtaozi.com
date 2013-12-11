@@ -22,15 +22,18 @@ Author URI: http://duanyunchao.com/
 }
 
 .jHot {
-    width: 228px;    
+    width: 228px;        
+    background: white;
 }
 
 .jContent {
     width: 619px;
+    background: white;
 }
 
 .jPosition {
-    width: 619px;
+    width: 619px;    
+    background: white;
 }
 
 .jAds {
@@ -111,6 +114,7 @@ Author URI: http://duanyunchao.com/
 .jPages {
     padding-top: 10px;
     padding-left:0px;
+    background: white;
 }
 
 
@@ -162,6 +166,7 @@ Author URI: http://duanyunchao.com/
     border: 1px solid #ccc;
     margin-bottom: 10px;
     border-radius: 3px;
+    background: white;
 }
 
 .jDcate {

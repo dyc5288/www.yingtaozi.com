@@ -23,34 +23,40 @@ Author URI: http://duanyunchao.com/
 
 .jHot {
     width: 250px;
-    height: 260px
+    height: 260px;
+    background: white;
 }
 
 .jPos {
     padding: 0px;
     width: 270px;
     height: 120px;
+    background: white;
 }
 
 .jFish {
     width: 878px;
     height: 403px;
+    background: white;
 }
 
 .jVideo {
     width: 878px;
     height: 552px;
+    background: white;
 }
 
 .jAcross {
     padding: 0px;
     width: 898px;
     height: 50px;
+    background: white;
 }
 
 .jAds {    
     color:#444;    
     background-position:-892px -148px;
+    background: white;
 }
 
 .jAds img {
@@ -79,6 +85,7 @@ Author URI: http://duanyunchao.com/
     float: left;
     overflow: hidden;
     border-radius: 3px;
+    background: white;
 }
 
 .jPhoto {
