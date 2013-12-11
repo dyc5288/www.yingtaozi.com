@@ -1,5 +1,6 @@
 <{include file='header.tpl'}>
 <link rel="stylesheet" href="<{s}>css/index.css<{/s}>" type="text/css" media="screen" />
+<script type="text/javascript" src="<{s}>js/index.js<{/s}>"></script>
 <div class="jMain">
     <div class="jLay">
         <div class="jPost">
@@ -52,16 +53,20 @@
                 <div class="jBox">
                     <div class="jBoxH">
                         <h3>淘周边</h3>
-                        <a href="">more>></a>
+                        <a href="<{''|url:'fish'}>">more>></a>
                     </div>
                     <div class="jBoxC">
                         <div class="jFishleft">
-                            <img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐">
+                            <a href="">
+                                <img id="js_fish_img" src="" alt="">
+                            </a>
                         </div>
-                        <div class="jFishright">
+                        <div class="jFishright" id="js_fish">
                             <{if !empty($return.hot_product)}>
-                                <{foreach from=$return.hot_product item=product}>
-                                    <img src="<{$product.post_excerpt|excerpt}>" alt="<{$product.post_title}>" title="<{$product.post_title}>">
+                                <{foreach from=$return.hot_product key=k item=product}>
+                                    <a href="<{$product.ID|url:"fish_detail"}>">
+                                        <img key=<{$k}> src="<{$product.post_excerpt|excerpt}>" alt="<{$product.post_title}>" title="<{$product.post_title}>">
+                                    </a>
                                 <{/foreach}>
                             <{/if}>
                         </div>

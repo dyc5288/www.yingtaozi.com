@@ -4,7 +4,7 @@
     <div class="jWrap">
         <div class="jPost" id="post-171">
             <div class="jPosition">
-                您的位置：<a href="">淘周边</a>  >> 产品列表
+                您的位置：<a href="<{''|url:'fish'}>">淘周边</a>  >> 产品列表
             </div>
             <div class="jContent">      
                 <div class="jCol jFirst">

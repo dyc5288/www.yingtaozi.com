@@ -46,6 +46,9 @@ function smarty_modifier_url($data, $type = false)
         case 'fish_detail':
             $url = URL . "/?c=fish&a=detail&id={$data}";
             break;
+        case 'fish':
+            $url = URL . "/?c=fish";
+            break;
         default:
             $url = URL;
             break;
