@@ -198,13 +198,11 @@ Author URI: http://duanyunchao.com/
 
 .jDcate div:hover {    
     cursor: pointer;
-    background: #56b38e;
-    color: white;
+    background: -webkit-linear-gradient(top, #f1f1f1, #EBECEE);
 }
 
 .jDcate .jCurrent {
-    background: #56b38e;
-    color: white;
+    background: -webkit-linear-gradient(top, #f1f1f1, #EBECEE);
 }
 
 .jDvideo, .jOrder，.jDcontent {    
@@ -239,11 +237,9 @@ Author URI: http://duanyunchao.com/
 
 .jOrder div:hover {    
     cursor: pointer;
-    background: #56b38e;
-    color: white;
+    background: -webkit-linear-gradient(top, #f1f1f1, #EBECEE);
 }
 
 .jOrder .jCurrent {
-    background: #56b38e;
-    color: white;
+    background: -webkit-linear-gradient(top, #f1f1f1, #EBECEE);
 }
