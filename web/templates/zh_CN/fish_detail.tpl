@@ -4,13 +4,13 @@
     <div class="jWrap">
         <div class="jPost" id="post">
             <div class="jPosition">
-                您的位置：<a href="">淘周边</a>  >> 产品列表
+                您的位置：<a href="<{''|url:'fish'}>">淘周边</a>  >> <{$return.product.post_title}>
             </div>
             <div class="jDetailContent">      
                 <div class="jMainContent">
                     <div class="jDproduct">
                         <div class="jDimg">
-                            <img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐">
+                            <img src="<{$return.product.post_excerpt|excerpt}>" alt="">
                         </div>
                     </div>
                     
@@ -19,9 +19,9 @@
                             可爱卡通 日本樱桃小丸子防滑鼠标垫 14款自选...
                         </div>
                         <div class="jPrice">
-                            ￥30.00
+                            ￥<{$return.product.post_excerpt|excerpt:'price'}>
                         </div>
-                        <input class="jBuy" type="button" value="购买" />
+                            <a target="_blank" class="jBuy" href="<{$return.product.post_excerpt|excerpt:'buy_url'}>" >购买</a>
                     </div>
                     
                     <div class="jDproduct jDcomment">
@@ -40,6 +40,12 @@
                             <img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐">
                             <div class="jCommentText">
                                 虽然是NIKE，这个球比较硬，特价时买的。刚拿到手说退，**说办公品不让退。晕死。篮球为什么不让退。
+                            </div>
+                        </div>
+                        <div class="jComment">
+                            <img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐">
+                            <div class="jCommentText">
+                                橡胶和皮革的求，拿到手有些味道，做工一般与想象中的大牌还有些差距，两块胶皮黏贴的地方有条很明显的缝，还有一个很小的缺口，价格用券后147，就是女儿手还抱不过来，不是太喜欢
                             </div>
                         </div>
                         <div class="jComment">
@@ -88,28 +94,30 @@
                             明星店铺
                         </div>
                         <div class="jShopMain">
-                            <a href="">                                
-                                <img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐">
+                            <a target="_blank" href="http://s.click.taobao.com/t?e=m%3D2%26s%3DagJ37wsoiykcQipKwQzePDAVflQIoZepK7Vc7tFgwiFRAdhuF14FMWN5VqF9jwBz5x%2BIUlGKNpV4B1RlAojkBIhMOI7%2FHtdV90p7qlgeigQwPrn00QwN2w%3D%3D">                                
+                                <img src="http://logo.taobaocdn.com/shop-logo/aa/e6/T1KcCgXitzXXb1upjX" alt="伊菲迪诺家居专营店">
                             </a>
-                            <a href="">                                
-                                <img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐">
+                            <a target="_blank" href="http://s.click.taobao.com/t?e=m%3D2%26s%3DzMlE74mhD24cQipKwQzePDAVflQIoZepLKpWJ%2Bin0XJRAdhuF14FMarcUs4qZOa9MMgx22UI05Z4B1RlAojkBIhMOI7%2FHtdVcIN7bzx%2Fey7mMXzIDCei5g%3D%3D">                                
+                                <img src="http://logo.taobaocdn.com/shop-logo/77/dd/T1MOeaXeRsXXartXjX" alt="">
                             </a>
-                            <a href="">                                
-                                <img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐">
+                            <a target="_blank" href="http://s.click.taobao.com/t?e=m%3D2%26s%3DI9WAZc2cI7ccQipKwQzePDAVflQIoZepLKpWJ%2Bin0XJRAdhuF14FMQx7c4tGyktrMMgx22UI05Z4B1RlAojkBIhMOI7%2FHtdVBT%2B%2BE6enBXuiZ%2BQMlGz6FQ%3D%3D">                                
+                                <img src="http://logo.taobaocdn.com/shop-logo/e9/5f/T1dmRlXfcDJ0OrtXjX.gif" alt="丽的手工坊DIY串珠配件">
                             </a>
-                            <a href="">                                
-                                <img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐">
+                            <a target="_blank" href="http://s.click.taobao.com/t?e=m%3D2%26s%3DSXsq7NAXHMgcQipKwQzePDAVflQIoZepLKpWJ%2Bin0XJRAdhuF14FMeqrGC2EZ7Ro8sviUM61dt14B1RlAojkBIhMOI7%2FHtdV0PDl9UnVP9xZW3lUKb7TQw%3D%3D">                                
+                                <img src="http://logo.taobaocdn.com/shop-logo/8f/e3/T1NkKGXiddXXb1upjX" alt=" 唯美dangao巧克力">
                             </a>
-                            <a href="">                                
-                                <img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐">
+                            <a target="_blank" href="http://s.click.taobao.com/t?e=m%3D2%26s%3Df0CSYIyq%2BwQcQipKwQzePDAVflQIoZepLKpWJ%2Bin0XJRAdhuF14FMcb6GrzFRjXc8sviUM61dt14B1RlAojkBIhMOI7%2FHtdVxe2VS1aiBpuiZ%2BQMlGz6FQ%3D%3D">                                
+                                <img src="http://logo.taobaocdn.com/shop-logo/3c/72/T1jKNmXa4eXXartXjX.gif" alt="羊咩咩玩具城">
                             </a>
-                            <a href="">                                
-                                <img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐">
+                            <a target="_blank" href="http://s.click.taobao.com/t?e=m%3D2%26s%3D0t2pyskidrAcQipKwQzePDAVflQIoZepLKpWJ%2Bin0XJRAdhuF14FMUgZTFuJDCh6RitN3%2FurF3x4B1RlAojkBIhMOI7%2FHtdV5ug1zijSTBOiZ%2BQMlGz6FQ%3D%3D">                                
+                                <img src="http://logo.taobaocdn.com/shop-logo/db/4f/T10q8nXl0nXXartXjX.gif" alt="精物门柴神艺术火柴">
                             </a>
                         </div>
                     </div>
                     <div class="jAds">
-                        <img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐">
+                        <a target="_blank" href="http://redirect.simba.taobao.com/rd?w=unionnojs&f=http%3A%2F%2Fre.taobao.com%2Feauction%3Fe%3DQFWfa3FEhqrghojqVNxKsTh%252Bh%252Be%252FKsirsMiqaJ97LhaLltG5xFicOSZqewpHPyZzQbUn1Y0sOqTQGmTvLa%252FRoVZatX8ks5V8%26ptype%3D100010&k=e2e107a2b72ca1b1&c=un&b=alimm_0&p=mm_13740145_0_0">
+                            <img src="http://gi4.md.alicdn.com/imgextra/i4/596724422/T2WrhuXlBNXXXXXXXX_!!596724422.jpg_460x460.jpg" alt="">
+                        </a>
                     </div>
                 </div>
             </div>

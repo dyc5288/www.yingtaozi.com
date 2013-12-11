@@ -74,7 +74,9 @@ class ctl_fish extends ctl_parent
      */
     public function detail()
     {
-        $return = array('nav' => 'fish');
+        $return = array('nav'              => 'fish');
+        $id                = get_params('id', 0, 'request');
+        $return['product'] = pub_mod_posts::get_one_post($id);
         lib_template::assign('return', $return);
         lib_template::display('fish_detail.tpl');
     }

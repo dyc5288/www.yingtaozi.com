@@ -26,11 +26,13 @@ Author URI: http://duanyunchao.com/
     padding-right: 5px;
     border:0px;
     padding: 0px;
+    border-radius: 3px;
 }
 
 .jPosition {
     width: 880px;
     background: white;
+    border-radius: 3px;
 }
 
 .jCol {
@@ -66,6 +68,7 @@ Author URI: http://duanyunchao.com/
 .jProduct {
     width: 196px;
     background: white;
+    border-radius: 3px;
 }
 
 .jProduct img {
@@ -164,11 +167,13 @@ Author URI: http://duanyunchao.com/
     overflow: auto;
     margin-bottom: 10px;
     background: white;
+    border-radius: 3px;
 }
 
 .jDcate {
     margin-left: 10px;
     background: white;
+    border-radius: 3px;
 }
 
 .jDimg {
@@ -213,7 +218,8 @@ Author URI: http://duanyunchao.com/
     font-size: 16px;
 }
 
-.jDbuy {
+.jBuy {    
+    border: 1px solid #ccc;    
 }
 
 .jHeader {
@@ -286,6 +292,7 @@ Author URI: http://duanyunchao.com/
     margin-left: 10px;
     margin-top: 10px;
     background: white;
+    border-radius: 3px;
 }
 
 .jDshop .jDHeader {
@@ -304,11 +311,13 @@ Author URI: http://duanyunchao.com/
 }
 
 .jShopMain img {
-    width: 117px;
+    width: 115px;
     height: 97px;
     margin-right:3px; 
     margin-bottom: 3px;
     float: left;
+    border: 1px solid #ccc;    
+    border-radius: 20px;
     
 }
 
@@ -322,6 +331,7 @@ Author URI: http://duanyunchao.com/
     margin-left: 10px;
     margin-top: 10px;
     margin-bottom: 10px;
+    border-radius: 3px;
 }
 
 .jAds img {
