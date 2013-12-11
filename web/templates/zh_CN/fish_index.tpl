@@ -1,5 +1,6 @@
 <{include file='header.tpl'}>
 <link rel="stylesheet" href="<{s}>css/fish.css<{/s}>" type="text/css" media="screen" />
+<script type="text/javascript" src="<{s}>js/fish.js<{/s}>"></script>
 <div class="jMain">
     <div class="jWrap">
         <div class="jPost" id="post-171">
@@ -9,8 +10,8 @@
             <div class="jContent">      
                 <div class="jCol jFirst">
                     <div class="jProduct jCate">
-                        <div class="jTheme">
-                            <div class="jCurrent">樱桃小丸子</div>
+                        <div class="jTheme" id="js_dcatea">
+                            <div>樱桃小丸子</div>
                             <div>Hello Kitty</div>
                             <div>龙猫</div>
                             <div>火影忍者</div>
@@ -28,11 +29,11 @@
                             <div>七龙珠</div>
                             <div>麦兜</div>
                         </div>
-                        <div class="jCategory">
+                        <div class="jCategory" id="js_dcateb">
                             <div>家居</div>
                             <div>服饰</div>
                             <div>学习文具</div>
-                            <div class="jCurrent">玩偶</div>
+                            <div>玩偶</div>
                             <div>电脑配件</div>
                             <div>书籍</div>
                             <div>美味零食</div>
