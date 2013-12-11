@@ -10,25 +10,23 @@
     </head>
     <body class="home blog">
         <div class="junP jun950">
-            <div class="junHr">
-                <div class="junH">
-                    <div class="jSite">
-                        <h1 class="jLogo"><a href="<{$URL}>">樱桃子之家</a></h1>
-                    </div>
-                    <div class="jNav">
-                        <ul class="jMenu clearfix">
-                            <li <{if $return.nav == 'index'}>class="current_page_item class_cur"<{else}>class="page_item"<{/if}>><a href="<{$URL}>">首页</a></li>
-                            <li <{if $return.nav == 'info'}>class="current_page_item  class_cur"<{else}>class="page_item"<{/if}>><a href="<{$URL}>/?c=info">情报站</a></li>
-                            <li <{if $return.nav == 'video'}>class="current_page_item  class_cur"<{else}>class="page_item"<{/if}>><a href="<{$URL}>/?c=video">TV放送局</a></li>
-                            <li <{if $return.nav == 'fish'}>class="current_page_item  class_cur"<{else}>class="page_item"<{/if}>><a href="<{$URL}>/?c=fish">淘周边</a></li>
-                            <li <{if $return.nav == 'draw'}>class="current_page_item  class_cur"<{else}>class="page_item"<{/if}>><a href="<{$URL}>/?c=draw">图集</a></li>
-                        </ul>
-                        <div class="jSearch">
-                            <form method="get" id="searchform" action="<{$URL}>/?a=search">
-                                <input type="text" class="jSKey" value="搜索"  onfocus="this.value='';this.style.color='#444';" name="s" id="s" />
-                                <button class="jSBtn">Search</button>
-                            </form>
-                        </div>
+            <div class="junH">
+                <div class="jSite">
+                    <h1 class="jLogo"><a href="<{$URL}>">樱桃子之家</a></h1>
+                </div>
+                <div class="jNav">
+                    <ul class="jMenu clearfix">
+                        <li <{if $return.nav == 'index'}>class="current_page_item class_cur"<{else}>class="page_item"<{/if}>><a href="<{$URL}>">首页</a></li>
+                        <li <{if $return.nav == 'info'}>class="current_page_item  class_cur"<{else}>class="page_item"<{/if}>><a href="<{$URL}>/?c=info">情报站</a></li>
+                        <li <{if $return.nav == 'video'}>class="current_page_item  class_cur"<{else}>class="page_item"<{/if}>><a href="<{$URL}>/?c=video">TV放送局</a></li>
+                        <li <{if $return.nav == 'fish'}>class="current_page_item  class_cur"<{else}>class="page_item"<{/if}>><a href="<{$URL}>/?c=fish">淘周边</a></li>
+                        <li <{if $return.nav == 'draw'}>class="current_page_item  class_cur"<{else}>class="page_item"<{/if}>><a href="<{$URL}>/?c=draw">图集</a></li>
+                    </ul>
+                    <div class="jSearch">
+                        <form method="get" id="searchform" action="<{$URL}>/?a=search">
+                            <input type="text" class="jSKey" value="搜索"  onfocus="this.value='';this.style.color='#444';" name="s" id="s" />
+                            <button class="jSBtn">Search</button>
+                        </form>
                     </div>
                 </div>
             </div>
