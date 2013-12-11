@@ -24,10 +24,10 @@ $(function(){
     }    
     
     Y.switchimg = function(){
-        if (Y.index == 12) {
+        if (Y.index >= Y.len - 1) {
             Y.index = 0;
         } else {
-            Y.index += 1;
+            Y.index = parseInt(Y.index) + 1;
         }
         fi.fadeOut(80);
         fi.hide();
