@@ -12,12 +12,18 @@ $(function(){
             $(this).addClass('jCurrent');
             return false;
         }
-        return false;
     });
     var catebs = $("#js_dcateb").find("div");
     catebs.click(function(){
         var keyword = $(this).html();
         window.location.href = '/?c=fish&keyword='+keyword;
         return false;
+    });
+    catebs.each(function(){
+        var k = $(this).html();
+        if (k == cur_keyword) {
+            $(this).addClass('jCurrent');
+            return false;
+        }
     });
 });

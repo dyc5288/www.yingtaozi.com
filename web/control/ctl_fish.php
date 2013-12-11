@@ -62,6 +62,7 @@ class ctl_fish extends ctl_parent
         $config['start']        = $start;
         $return['page']         = pagination($config);
 
+        $return['keyword'] = $keyword;
         $return['lsize'] = floor(min($return['count'], $limit) / 4);
         lib_template::assign('return', $return);
         lib_template::display('fish_index.tpl');

@@ -59,7 +59,7 @@
                 </div>
                 <div class="jRightContent">
                     <div class="jDcate">
-                        <div class="jTheme" id="js_dcatea">
+                        <div class="jTheme" id="js_dcatea" cur_keyword="<{$return.keyword}>">
                             <div>樱桃小丸子</div>
                             <div>Hello Kitty</div>
                             <div>龙猫</div>
