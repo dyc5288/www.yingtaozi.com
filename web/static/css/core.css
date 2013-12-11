@@ -82,12 +82,17 @@ a:hover {
 
 /*layout*/
 
-.junP, .junH, .junC, .junF {
+.junP, .junH, .junC, .junF, .junHr {
 
     margin-left:auto;
 
     margin-right:auto;
 
+}
+
+.junHr{
+    background: white;
+    border-bottom: 1px solid #d6d6d6;
 }
 
 
@@ -185,8 +190,6 @@ body{
     height:135px;
 
     background-position:0 0;
-
-    margin-bottom:2px;
 
 }
 
