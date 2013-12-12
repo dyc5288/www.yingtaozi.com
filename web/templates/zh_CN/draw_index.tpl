@@ -22,6 +22,8 @@
                         </a>
                     <{/foreach}>
                 <{/if}> 
+                
+                <{$return.page}>
             </div>
         </div>        
     </div>

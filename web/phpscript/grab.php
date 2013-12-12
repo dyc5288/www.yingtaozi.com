@@ -90,8 +90,8 @@ if (!empty($flag['grab_image']))
     {
         $params = array();
         $params['type'] = 2;
-        $params['url'] = 'http://www.foxqq.com/biaoqing/YingTaoXiaoWanZi.html';
-        $params['title'] = '樱桃小丸子';
+        $params['url'] = 'http://www.foxqq.com/biaoqing/NiuNiuNiuNiu.html';
+        $params['title'] = '牛牛妞妞 表情';
         lib_gearman::add_job($GLOBALS['CONFIG']['gearman'], 'GRAB_IMAGE', $params, 3);
     }
 }
