@@ -17,6 +17,21 @@
  * @since 2.9.0
  */
 function create_initial_post_types() {
+	register_post_type( 'draw', array(
+		'labels' => array(
+			'name_admin_bar' => _x( 'Post', 'add new on admin bar' ),
+		),
+		'public'  => true,
+		'_builtin' => true, /* internal use only. don't use this when registering your own post type. */
+		'_edit_link' => 'post.php?post=%d', /* internal use only. don't use this when registering your own post type. */
+		'capability_type' => 'post',
+		'map_meta_cap' => true,
+		'hierarchical' => false,
+		'rewrite' => false,
+		'query_var' => false,
+		'delete_with_user' => true,
+		'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'trackbacks', 'custom-fields', 'comments', 'revisions', 'post-formats' ),
+	) );
 	register_post_type( 'product', array(
 		'labels' => array(
 			'name_admin_bar' => _x( 'Post', 'add new on admin bar' ),
@@ -1291,7 +1306,7 @@ function register_post_type( $post_type, $args = array() ) {
 		unset( $args->supports );
 	} elseif ( false !== $args->supports ) {
 		// Add default features
-		add_post_type_support( $post_type, array( 'title', 'editor', 'video', 'product' ) );
+		add_post_type_support( $post_type, array( 'title', 'editor', 'video', 'product', 'draw' ) );
 	}
 
 	if ( false !== $args->query_var && ! empty( $wp ) ) {

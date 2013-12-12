@@ -22,6 +22,7 @@ class pub_mod_video
             return false;
         }
 
+        $param_array['post_type'] = pub_mod_posts::TYPE_VIDEO;
         return pub_mod_posts::add_post($param_array);
     }
 

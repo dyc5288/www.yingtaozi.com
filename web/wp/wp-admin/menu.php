@@ -50,6 +50,7 @@ $menu[5] = array( __('Posts'), 'edit_posts', 'edit.php', '', 'open-if-no-js menu
     $submenu['edit.php'][5]  = array( __('All Posts'), 'edit_posts', 'edit.php' );
 	$submenu['edit.php'][6]  = array( __('所有视频'), 'edit_posts', 'edit.php?post_type=video' );
 	$submenu['edit.php'][7]  = array( __('所有产品'), 'edit_posts', 'edit.php?post_type=product' );
+	$submenu['edit.php'][8]  = array( __('所有图集'), 'edit_posts', 'edit.php?post_type=draw' );
 	/* translators: add new post */
 	$submenu['edit.php'][10]  = array( _x('Add New', 'post'), get_post_type_object( 'post' )->cap->create_posts, 'post-new.php' );
 

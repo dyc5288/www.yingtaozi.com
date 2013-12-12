@@ -18,6 +18,7 @@ if (!empty($flag['help']))
     echo "php grab.php -grab_video 1 抓取优酷视频" . PHP_EOL;
     echo "php grab.php -grab_product 1 抓取周边产品" . PHP_EOL;
     echo "php grab.php -grab_image 1 抓取百度图片" . PHP_EOL;
+    echo "php grab.php -grab_image 2 抓取QQ表情图片" . PHP_EOL;
 }
 
 if (!empty($flag['grab_info']))
@@ -61,25 +62,37 @@ if (!empty($flag['grab_product']))
 
 if (!empty($flag['grab_image']))
 {
-    $start   = 0;
-    $limit   = 50;
-    $keywrod = '樱桃小丸子';
-    $oq      = urlencode($keywrod);
-    $url     = "http://image.baidu.com/i?tn=resultjson_com&ipn=rj&ct=201326592&cl=2&lm=-1&st=-1&fm=index&fr=&sf=1&fmq=&pv=&ic=0&nc=1&z=&se=1&showtab=0&fb=0&width=&height=&face=0&istype=2&ie=gbk&word=%D3%A3%CC%D2%D0%A1%CD%E8%D7%D3&f=3&oq={$oq}&rsp=-1&oe=utf-8&rn={$limit}&pn={$start}&531463329075.834&132670077221.29118";
-    $result  = hlp_common::remote_request($url);
-    $result  = json_decode($result, true);
-    $count   = isset($result['listNum']) ? $result['listNum'] : 0;
-
-    if ($count > 0)
+    if ($flag['grab_image'] == 1)
     {
-        while ($start < $count)
+        $start   = 0;
+        $limit   = 50;
+        $keywrod = '樱桃小丸子';
+        $oq      = urlencode($keywrod);
+        $url     = "http://image.baidu.com/i?tn=resultjson_com&ipn=rj&ct=201326592&cl=2&lm=-1&st=-1&fm=index&fr=&sf=1&fmq=&pv=&ic=0&nc=1&z=&se=1&showtab=0&fb=0&width=&height=&face=0&istype=2&ie=gbk&word=%D3%A3%CC%D2%D0%A1%CD%E8%D7%D3&f=3&oq={$oq}&rsp=-1&oe=utf-8&rn={$limit}&pn={$start}&531463329075.834&132670077221.29118";
+        $result  = hlp_common::remote_request($url);
+        $result  = json_decode($result, true);
+        $count   = isset($result['listNum']) ? $result['listNum'] : 0;
+
+        if ($count > 0)
         {
-            $url    = "http://image.baidu.com/i?tn=resultjson_com&ipn=rj&ct=201326592&cl=2&lm=-1&st=-1&fm=index&fr=&sf=1&fmq=&pv=&ic=0&nc=1&z=&se=1&showtab=0&fb=0&width=&height=&face=0&istype=2&ie=gbk&word=%D3%A3%CC%D2%D0%A1%CD%E8%D7%D3&f=3&oq={$oq}&rsp=-1&oe=utf-8&rn={$limit}&pn={$start}&531463329075.834&132670077221.29118";
-            $start += $limit;
-            $params = array();
-            $params['url'] = $url;
-            lib_gearman::add_job($GLOBALS['CONFIG']['gearman'], 'GRAB_IMAGE', $params, 3);
+            while ($start < $count)
+            {
+                $url    = "http://image.baidu.com/i?tn=resultjson_com&ipn=rj&ct=201326592&cl=2&lm=-1&st=-1&fm=index&fr=&sf=1&fmq=&pv=&ic=0&nc=1&z=&se=1&showtab=0&fb=0&width=&height=&face=0&istype=2&ie=gbk&word=%D3%A3%CC%D2%D0%A1%CD%E8%D7%D3&f=3&oq={$oq}&rsp=-1&oe=utf-8&rn={$limit}&pn={$start}&531463329075.834&132670077221.29118";
+                $start += $limit;
+                $params = array();
+                $params['url'] = $url;
+                $params['title'] = $keywrod;
+                lib_gearman::add_job($GLOBALS['CONFIG']['gearman'], 'GRAB_IMAGE', $params, 3);
+            }
         }
+    }
+    else if ($flag['grab_image'] == 2)
+    {
+        $params = array();
+        $params['type'] = 2;
+        $params['url'] = 'http://www.foxqq.com/biaoqing/YingTaoXiaoWanZi.html';
+        $params['title'] = '樱桃小丸子';
+        lib_gearman::add_job($GLOBALS['CONFIG']['gearman'], 'GRAB_IMAGE', $params, 3);
     }
 }
 echo "success" . PHP_EOL;

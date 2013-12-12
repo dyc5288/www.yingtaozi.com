@@ -21,6 +21,7 @@ class pub_mod_posts
     const TYPE_POST       = 'post';         // 文章
     const TYPE_VIDEO      = 'video';        // 剧集
     const TYPE_PRODUCT    = 'product';      // 产品
+    const TYPE_DRAW       = 'draw';         // 图集
     const TYPE_ATTACHMENT = 'attachment';   // 附件
     const TYPE_REVISION   = 'revision';     // 修订版
     const TYPE_PAGE       = 'page';         // 单独页面    
