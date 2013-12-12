@@ -45,57 +45,71 @@ function GRAB_IMAGE($job)
 
         try
         {
-            $url       = $params['url'];
-            $title     = $params['title'];
-            $pid       = GM('W_101', $title);
-            $image_obj = false;
-            var_dump($url);
-            $result    = hlp_common::remote_request($url);
-            $result    = json_decode($result, true);
-            $data      = isset($result['data']) ? $result['data'] : array();
+            $type = $params['type'];
 
-            if (!empty($pid))
+            if ($type == 1)
             {
-                $image_obj = pub_mod_posts::get_one_post($pid);
-            }
+                $url       = $params['url'];
+                $title     = $params['title'];
+                $pid       = GM('W_101', $title);
+                $image_obj = false;
 
-            if (empty($data))
-            {
-                throw new Exception('not data!');
-            }
+                $result    = hlp_common::remote_request($url);
+                $result    = json_decode($result, true);
+                $data      = isset($result['data']) ? $result['data'] : array();
 
-            $param_array = array();
-            $post_content = array();
+                if (!empty($pid))
+                {
+                    $image_obj = pub_mod_posts::get_one_post($pid);
+                }
 
-            if (empty($image_obj))
-            {
-                $param_array['post_author'] = pub_mod_posts::AUTHOR_ADMIN_ID;
+                if (empty($data))
+                {
+                    throw new Exception('not data!');
+                }
+
+                $param_array = array();
+                $post_content = array();
+
+                if (empty($image_obj))
+                {
+                    $param_array['post_author'] = pub_mod_posts::AUTHOR_ADMIN_ID;
+                }
+                else
+                {
+                    $post_content = unserialize($image_obj['post_content']);
+                }
+
+                foreach ($data as $row)
+                {
+                    $pc = array();
+                    $pc['middleURL'] = pub_mod_info::save_image($row['middleURL']);
+                    $pc['hoverURL']  = pub_mod_info::save_image($row['hoverURL']);
+                    $post_content[]  = $pc;
+                }
+
+                $param_array['post_content'] = serialize($post_content);
+                $param_array['post_date']    = date('Y-m-d H:i:s');
+
+                if (empty($image_obj))
+                {
+                    $pid            = pub_mod_image::add_image($param_array);
+                    $return['data'] = $pid;
+                    SM($pid, 'W_101', $title, 86400);
+                }
+                else
+                {
+                    $return['data'] = pub_mod_image::update_video($pid, $param_array);
+                }
             }
             else
             {
-                $post_content = unserialize($image_obj['post_content']);
-            }
-
-            foreach ($data as $row)
-            {
-                $pc = array();
-                $pc['middleURL'] = pub_mod_info::save_image($row['middleURL']);
-                $pc['hoverURL']  = pub_mod_info::save_image($row['hoverURL']);
-                $post_content[]  = $pc;var_dump($row['hoverURL']);
-            }
-
-            $param_array['post_content'] = serialize($post_content);
-            $param_array['post_date']    = date('Y-m-d H:i:s');
-
-            if (empty($image_obj))
-            {
-                $pid            = pub_mod_image::add_image($param_array);
-                $return['data'] = $pid;
-                SM($pid, 'W_101', $title, 86400);
-            }
-            else
-            {
-                $return['data'] = pub_mod_image::update_video($pid, $param_array);
+                $url       = $params['url'];
+                $result    = hlp_common::remote_request($url);
+                $matches = array();
+                preg_match_all('/<div id=\"picBox(.*)\">(.*)<\\/div>/iU', $result, $matches);
+                
+                var_dump($matches);
             }
 
             $return['state'] = true;
