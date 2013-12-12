@@ -148,7 +148,7 @@ function GRAB_IMAGE($job)
         {
             print_r($return);
         }
-        die;
+
         lib_database::close_mysql();
         unset($params);
         return $return['state'];
