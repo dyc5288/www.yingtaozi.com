@@ -54,9 +54,9 @@ function GRAB_IMAGE($job)
                 $pid       = GM('W_101', $title);
                 $image_obj = false;
 
-                $result    = hlp_common::remote_request($url);
-                $result    = json_decode($result, true);
-                $data      = isset($result['data']) ? $result['data'] : array();
+                $result = hlp_common::remote_request($url);
+                $result = json_decode($result, true);
+                $data   = isset($result['data']) ? $result['data'] : array();
 
                 if (!empty($pid))
                 {
@@ -83,9 +83,9 @@ function GRAB_IMAGE($job)
                 foreach ($data as $row)
                 {
                     $pc = array();
-                    $pc['middleURL'] = pub_mod_info::save_image($row['middleURL']);
-                    $pc['hoverURL']  = pub_mod_info::save_image($row['hoverURL']);
-                    $post_content[]  = $pc;
+                    $pc['url']      = pub_mod_info::save_image($row['middleURL']);
+                    $pc['url_l']    = pub_mod_info::save_image($row['hoverURL']);
+                    $post_content[] = $pc;
                 }
 
                 $param_array['post_content'] = serialize($post_content);
@@ -102,14 +102,36 @@ function GRAB_IMAGE($job)
                     $return['data'] = pub_mod_image::update_video($pid, $param_array);
                 }
             }
-            else
+            else if ($type == 2)
             {
-                $url       = $params['url'];
-                $result    = hlp_common::remote_request($url);
+                $url     = $params['url'];
+                $title   = $params['title'];
+                $result  = hlp_common::remote_request($url);
+                $data    = mb_convert_encoding($result, 'utf-8', 'GBK');
                 $matches = array();
-                preg_match_all('/<div id=\"picBox(.*)\">(.*)<\\/div>/iU', $result, $matches);
-                
-                var_dump($matches);
+                var_dump($data);
+                preg_match_all('/<img src=\'(.*)\'  alt=\'(.*)\'\/>/iU', $data, $matches);
+                $urls = $matches[1];
+
+                if (!empty($urls))
+                {
+                    $param_array = array();
+                    $post_content = array();
+                    $param_array['post_author'] = pub_mod_posts::AUTHOR_ADMIN_ID;
+
+                    foreach ($urls as $u)
+                    {
+                        $u  = "http://www.foxqq.com{$u}";
+                        $pc = array();
+                        $pc['url']      = pub_mod_info::save_image($u);
+                        $pc['url_l']    = $pc['url'];
+                        $post_content[] = $pc;
+                    }
+
+                    $param_array['post_content'] = serialize($post_content);
+                    $param_array['post_date']    = date('Y-m-d H:i:s');
+                    $return['pid']               = pub_mod_image::add_image($param_array);
+                }
             }
 
             $return['state'] = true;
