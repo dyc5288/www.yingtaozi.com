@@ -49,6 +49,7 @@ function GRAB_IMAGE($job)
             $title     = $params['title'];
             $pid       = GM('W_101', $title);
             $image_obj = false;
+            var_dump($url);
             $result    = hlp_common::remote_request($url);
             $result    = json_decode($result, true);
             $data      = isset($result['data']) ? $result['data'] : array();
@@ -80,7 +81,7 @@ function GRAB_IMAGE($job)
                 $pc = array();
                 $pc['middleURL'] = pub_mod_info::save_image($row['middleURL']);
                 $pc['hoverURL']  = pub_mod_info::save_image($row['hoverURL']);
-                $post_content[]  = $pc;
+                $post_content[]  = $pc;var_dump($row['hoverURL']);
             }
 
             $param_array['post_content'] = serialize($post_content);
@@ -88,7 +89,9 @@ function GRAB_IMAGE($job)
 
             if (empty($image_obj))
             {
-                $return['data'] = pub_mod_image::add_image($param_array);
+                $pid            = pub_mod_image::add_image($param_array);
+                $return['data'] = $pid;
+                SM($pid, 'W_101', $title, 86400);
             }
             else
             {
