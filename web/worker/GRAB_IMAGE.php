@@ -45,20 +45,54 @@ function GRAB_IMAGE($job)
 
         try
         {
-            $url    = $params['url'];
-            $result = hlp_common::remote_request($url);
-            $result = json_decode($result, true);
-            $data   = isset($result['data']) ? $result['data'] : array();
+            $url       = $params['url'];
+            $title     = $params['title'];
+            $pid       = GM('W_101', $title);
+            $image_obj = false;
+            $result    = hlp_common::remote_request($url);
+            $result    = json_decode($result, true);
+            $data      = isset($result['data']) ? $result['data'] : array();
+
+            if (!empty($pid))
+            {
+                $image_obj = pub_mod_posts::get_one_post($pid);
+            }
 
             if (empty($data))
             {
                 throw new Exception('not data!');
             }
 
-            foreach ($data as $key => $row)
+            $param_array = array();
+            $post_content = array();
+
+            if (empty($image_obj))
             {
-                var_dump($row);
-                die;
+                $param_array['post_author'] = pub_mod_posts::AUTHOR_ADMIN_ID;
+            }
+            else
+            {
+                $post_content = unserialize($image_obj['post_content']);
+            }
+
+            foreach ($data as $row)
+            {
+                $pc = array();
+                $pc['middleURL'] = pub_mod_info::save_image($row['middleURL']);
+                $pc['hoverURL']  = pub_mod_info::save_image($row['hoverURL']);
+                $post_content[]  = $pc;
+            }
+
+            $param_array['post_content'] = serialize($post_content);
+            $param_array['post_date']    = date('Y-m-d H:i:s');
+
+            if (empty($image_obj))
+            {
+                $return['data'] = pub_mod_image::add_image($param_array);
+            }
+            else
+            {
+                $return['data'] = pub_mod_image::update_video($pid, $param_array);
             }
 
             $return['state'] = true;
@@ -75,7 +109,7 @@ function GRAB_IMAGE($job)
         {
             print_r($return);
         }
-
+        die;
         lib_database::close_mysql();
         unset($params);
         return $return['state'];
