@@ -34,6 +34,7 @@ class pub_mod_posts
     const COLUMN_VIDEO_FHOT  = 'ID, post_title, post_excerpt, post_content';                     // 首页推荐视频
     const COLUMN_PDT_INDEX   = 'ID, post_title, post_excerpt';                                   // 淘周边
     const COLUMN_PDT_HOT     = 'ID, post_title, post_excerpt';                                   // 首页淘周边
+    const COLUMN_DRAW_INDEX  = 'ID, post_title, post_content';                                   // 图集列表
 
     /* 管理员的用户ID */
     const AUTHOR_ADMIN_ID = 1;
