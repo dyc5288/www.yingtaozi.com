@@ -109,7 +109,6 @@ function GRAB_IMAGE($job)
                 $result  = hlp_common::remote_request($url);
                 $data    = mb_convert_encoding($result, 'utf-8', 'GBK');
                 $matches = array();
-                var_dump($data);
                 preg_match_all('/<img src=\'(.*)\'  alt=\'(.*)\'\/>/iU', $data, $matches);
                 $urls = $matches[1];
 
@@ -118,6 +117,7 @@ function GRAB_IMAGE($job)
                     $param_array = array();
                     $post_content = array();
                     $param_array['post_author'] = pub_mod_posts::AUTHOR_ADMIN_ID;
+                    $param_array['post_title']  = addslashes($title);
 
                     foreach ($urls as $u)
                     {
