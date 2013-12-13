@@ -1,4 +1,5 @@
 $(function(){
+    /* 涛周边 */
     var fimg = $("#js_fish").find("img");
     var fi = $("#js_fish_img");
     var Y = {};
@@ -48,4 +49,56 @@ $(function(){
         window.clearTimeout(_time);
         Y.switchimg();
     },3000);
+    
+    /* 图集 */
+    var dimg = $("#js_draw").find("img");
+    var di = $("#js_draw_img");
+    var D = {};
+    D.index = 0;
+    D.len = 12;
+    dimg.mouseenter(function(){
+        var _this = $(this);
+        di.attr('src', _this.attr('src'));     
+        di.attr('title', $(this).attr('title'));
+        var dia = di.parent();
+        var dimga = $(this).parent();
+        dia.attr('href', dimga.attr('href'));
+        D.index = $(this).attr('key');
+        return false;
+    });
+    var firstD = dimg.first();
+    if (firstD) {
+        di.attr('src', firstD.attr('src'));
+        di.attr('title', firstD.attr('title'));
+        var dia = di.parent();
+        var dimga = firstD.parent();
+        dia.attr('href', dimga.attr('href'));
+    }    
+    
+    D.switchimg = function(){
+        if (D.index >= D.len - 1) {
+            D.index = 0;
+        } else {
+            D.index = parseInt(D.index) + 1;
+        }
+        di.fadeOut(80);
+        di.hide();
+        var cur = $("#js_draw").find('[key="'+D.index+'"]');
+        di.attr('src', cur.attr('src'));
+        di.attr('title', cur.attr('title'));
+        var dia = di.parent();
+        var dimga = cur.parent();
+        dia.attr('href', dimga.attr('href'));
+        di.fadeIn();
+        _dtime = window.setTimeout(function(){
+            window.clearTimeout(_dtime);
+            D.switchimg();
+        },5000);
+    }    
+    
+    var _dtime = window.setTimeout(function(){
+        window.clearTimeout(_dtime);
+        D.switchimg();
+    },5000);
+    
 });

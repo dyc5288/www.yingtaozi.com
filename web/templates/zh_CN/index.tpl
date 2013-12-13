@@ -24,28 +24,37 @@
             
             <div class="jPos">
                 <div class="jAds">
-                    <img src="http://pic1.ooopic.com/uploadfilepic/sheji/2009-08-12/OOOPIC_SHIJUNHONG_20090812f2d0e717f4efff27.jpg" alt="115商务云标准套餐">
+                    <a href="http://s.click.taobao.com/t?e=zGU34CA7K%2BPkqB05%2Bm7rfGGjlY60oHcc7bkKOQYjHwtHp1cssGjZM6zyvaQzDFnmSDuEWJZO8FrlgpoJUNMIolnlcgUmnJZrCunRzr6juiSjryrWdKI3mBuehw4Lxm3j2VXmR76ua8cPpp9GpsGm7fs0twhjWQOq4itbdgPe1NhIcSUPAlZEZi4FWg%3D%3D&pid=mm_13740145_0_0">
+                        <img src="http://gtms01.alicdn.com/tps/i1/T1zA7MFgpgXXbTMG7M-440-180.jpg" alt="">
+                    </a>
                 </div>
             </div>
             
             <div class="jPdt">
                 <div class="jPhoto">
-                    <img src="http://pic1.ooopic.com/uploadfilepic/sheji/2009-08-12/OOOPIC_SHIJUNHONG_20090812f2d0e717f4efff27.jpg" alt="115商务云标准套餐" id="js-photo">
+                    <a href="">
+                        <img id="js_draw_img" src="http://pic1.ooopic.com/uploadfilepic/sheji/2009-08-12/OOOPIC_SHIJUNHONG_20090812f2d0e717f4efff27.jpg" alt="115商务云标准套餐" id="js-photo">
+                    </a>
                 </div>
                 
-                <ul class="jExtImg">
-                    <li class="focus" btn="tab"><img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐"></li>
-                    <li class="focus" btn="tab"><img src="http://pic1.ooopic.com/uploadfilepic/sheji/2009-08-12/OOOPIC_SHIJUNHONG_20090812f2d0e717f4efff27.jpg" alt="115商务云标准套餐"></li>
-                    <li class="focus" btn="tab"><img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐"></li>
-                    <li class="focus" btn="tab"><img src="http://pic1.ooopic.com/uploadfilepic/sheji/2009-08-12/OOOPIC_SHIJUNHONG_20090812f2d0e717f4efff27.jpg" alt="115商务云标准套餐"></li>
-                    <li class="focus" btn="tab"><img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐"></li>
+                <ul class="jExtImg" id="js_draw">
+                    <{if !empty($return.hot_draw)}>
+                        <{foreach from=$return.hot_draw key=k item=draw}>
+                            <li class="focus" btn="tab">
+                                <a href="<{$draw.ID|url:"draw_detail"}>">
+                                    <img key=<{$k}> src="<{'4'|draw:$draw.post_content:'url'}>" url="<{'4'|draw:$draw.post_content:'url_l'}>" alt="<{$draw.post_title}>" title="<{$draw.post_title}>">
+                                </a>
+                            </li>
+                        <{/foreach}>
+                    <{/if}>
                 </ul>               
                 
             </div>
             
-            <div class="jAcross">
+            <div style="display: none;" class="jAcross">
                 <div class="jAds">
-                    <img src="http://pic1.ooopic.com/uploadfilepic/sheji/2009-08-12/OOOPIC_SHIJUNHONG_20090812f2d0e717f4efff27.jpg" alt="115商务云标准套餐">
+                    <iframe name="alimamaifrm" frameborder="0" marginheight="0" marginwidth="0" border="0" scrolling="no" width="900" height="30" src="http://www.taobao.com/go/app/tbk_app/chongzhi_210_30.php?pid=mm_13740145_4042950_14740731&page=chongzhi_210_30.php&size_w=900&size_h=30&stru_phone=1&stru_game=1&stru_travel=1&size_cat=cst" ></iframe>
+                    
                 </div>                
             </div>
             

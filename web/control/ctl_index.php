@@ -34,6 +34,7 @@ class ctl_index extends ctl_parent
         $this->_hot($return);
         $this->_video($return);
         $this->_fish($return);
+        $this->_draw($return);
         lib_template::assign('return', $return);
         lib_template::display('index.tpl');
     }

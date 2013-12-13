@@ -67,14 +67,14 @@ class ctl_parent
         if (!empty($return['hot_video'][0]['post_content']))
         {
             $post_content = unserialize($return['hot_video'][0]['post_content']);
-            
+
             foreach ($post_content as $row)
             {
                 $return['hot_video'][0]['post_content'] = $row;
                 break;
             }
         }
-    }    
+    }
 
     /**
      * 首页淘周边
@@ -86,9 +86,25 @@ class ctl_parent
     {
         $order = 'comment_count desc';
         $cond  = array();
-        $cond['post_status'] = pub_mod_posts::STATUS_PUBLISH;
-        $cond['post_type']   = pub_mod_posts::TYPE_PRODUCT;
+        $cond['post_status']   = pub_mod_posts::STATUS_PUBLISH;
+        $cond['post_type']     = pub_mod_posts::TYPE_PRODUCT;
         $return['hot_product'] = pub_mod_posts::get_list($cond, $order, 0, 12, pub_mod_posts::COLUMN_PDT_HOT);
+    }
+
+    /**
+     * 首页图集
+     * 
+     * @param array $return
+     * @return void
+     */
+    protected function _draw(&$return)
+    {
+        $order = 'comment_count desc';
+        $cond  = array();
+        $cond['post_status'] = pub_mod_posts::STATUS_PUBLISH;
+        $cond['post_type']   = pub_mod_posts::TYPE_DRAW;
+        $hot_draw            = pub_mod_posts::get_list($cond, $order, 0, 5, pub_mod_posts::COLUMN_DRAW_INDEX);
+        $return['hot_draw']  = $hot_draw;
     }
 
     /**
@@ -103,7 +119,7 @@ class ctl_parent
         $cond  = array();
         $cond['post_status'] = pub_mod_posts::STATUS_PUBLISH;
         $cond['post_type']   = pub_mod_posts::TYPE_DRAW;
-        $return['hot_image']       = pub_mod_posts::get_list($cond, $order, 0, 5, pub_mod_posts::COLUMN_DRAW_INDEX);
+        $return['hot_image'] = pub_mod_posts::get_list($cond, $order, 0, 5, pub_mod_posts::COLUMN_DRAW_INDEX);
     }
 
 }
