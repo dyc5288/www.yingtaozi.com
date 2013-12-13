@@ -10,7 +10,7 @@
             <div class="jContent">
                 <{if !empty($return.data)}>
                     <{foreach from=$return.data key=k item=draw}>
-                        <a href="<{$URL}>/?c=draw&a=detail">
+                        <a href="<{$draw.ID|url:"draw_detail"}>">
                             <div class="jContainer<{'1'|draw:$k}>">
                                 <div class="jTitle">
                                     <{$draw.post_title}>

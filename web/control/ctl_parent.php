@@ -23,6 +23,7 @@ class ctl_parent
     /**
      * 热点资讯
      * 
+     * @param array $return
      * @return void
      */
     protected function _hot(&$return)
@@ -37,6 +38,7 @@ class ctl_parent
     /**
      * 精彩推荐视频
      * 
+     * @param array $return
      * @return void
      */
     protected function _hot_video(&$return)
@@ -51,6 +53,7 @@ class ctl_parent
     /**
      * 首页视频
      * 
+     * @param array $return
      * @return void
      */
     protected function _video(&$return)
@@ -76,6 +79,7 @@ class ctl_parent
     /**
      * 首页淘周边
      * 
+     * @param array $return
      * @return void
      */
     protected function _fish(&$return)
@@ -85,6 +89,21 @@ class ctl_parent
         $cond['post_status'] = pub_mod_posts::STATUS_PUBLISH;
         $cond['post_type']   = pub_mod_posts::TYPE_PRODUCT;
         $return['hot_product'] = pub_mod_posts::get_list($cond, $order, 0, 12, pub_mod_posts::COLUMN_PDT_HOT);
+    }
+
+    /**
+     * 精彩推荐图集
+     * 
+     * @param array $return
+     * @return void
+     */
+    protected function _hot_image(&$return)
+    {
+        $order = 'comment_count desc';
+        $cond  = array();
+        $cond['post_status'] = pub_mod_posts::STATUS_PUBLISH;
+        $cond['post_type']   = pub_mod_posts::TYPE_DRAW;
+        $return['hot_image']       = pub_mod_posts::get_list($cond, $order, 0, 5, pub_mod_posts::COLUMN_DRAW_INDEX);
     }
 
 }

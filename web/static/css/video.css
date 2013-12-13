@@ -21,6 +21,10 @@ Author URI: http://duanyunchao.com/
     border-radius: 3px;
 }
 
+.jLay {
+    background: #f1f1f1;
+}
+
 .jHot {
     width: 228px;        
     background: white;
@@ -145,15 +149,15 @@ Author URI: http://duanyunchao.com/
 
 .jHotVideo img {
     width: 108px;
-    height: 89px;
     border: 1px solid #ccc;    
-    border-radius: 3px;
+    border-radius: 50px;
 }
 
 .jHotVideo .jWord {
     float: none;
     position: absolute;
     right: 8px;
+    width: 85px;
 }
 
 .jCategory{    

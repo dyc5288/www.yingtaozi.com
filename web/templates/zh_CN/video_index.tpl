@@ -47,7 +47,7 @@
                         <div class="jHotImg">
                             <img src="<{$video.post_excerpt|excerpt}>" alt="<{$video.post_title}>">
                         </div>            
-                        <div class="jWord"><{$video.post_title|truncate:17}></div>
+                        <div class="jWord"><{$video.post_title}></div>
                     </a>
                 </div>
             <{/foreach}>

@@ -8,7 +8,7 @@ $(function(){
         if (url != cur_url) {
             $(".jOrder").find(".jCurrent").toggleClass("jCurrent");
             $(this).toggleClass("jCurrent");
-            play.attr('src', url);    
+            play.attr('src', url);
             intro.html(firstV.attr('introduce'));
         }
         return false;
@@ -16,7 +16,7 @@ $(function(){
     var firstV = fbutton.first();
     if (firstV) {
         firstV.addClass("jCurrent");
-        play.attr('src', firstV.attr('url'));        
+        play.attr('src', firstV.attr('url'));
         intro.html(firstV.attr('introduce'));
     }
     var cates = $("#js_dcate").find("div");

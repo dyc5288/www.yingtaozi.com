@@ -131,11 +131,12 @@ Author URI: http://duanyunchao.com/
     clear:both;
     zoom: 1;
     padding: 20px;
+    width: 578px;
+    overflow: auto;
+    text-align: center;
 }
 
 .jDimg img {
-    width: 578px;
-    height: 578px;
 }
 
 .jDproduct .jDintro {
@@ -241,6 +242,7 @@ Author URI: http://duanyunchao.com/
 .jDcurr .jTitle {
     overflow: auto;
     margin-bottom: 5px;
+    margin-top: 5px;
 }
 
 .jDNine {

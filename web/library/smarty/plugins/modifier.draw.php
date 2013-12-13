@@ -24,7 +24,7 @@
  * @param boolean
  * @return string
  */
-function smarty_modifier_draw($type, $key)
+function smarty_modifier_draw($type, $key, $len = 9)
 {
     switch ($type)
     {
@@ -59,13 +59,28 @@ function smarty_modifier_draw($type, $key)
                 $count++;
                 $res .= '<img src="' . $row['url'] . '" alt="图集">';
 
-                if ($count >= 9)
+                if ($count >= $len)
                 {
                     break;
                 }
             }
 
             return $res;
+            break;
+        case '3':            
+            if (empty($key))
+            {
+                return 0;
+            }
+
+            $post_content = unserialize($key);
+
+            if (empty($post_content))
+            {
+                return 0;
+            }
+            
+            return count($post_content);
             break;
     }
 

@@ -76,6 +76,15 @@ class ctl_draw extends ctl_parent
     public function detail()
     {        
         $return = array('nav' => 'draw');
+        $id                = get_params('id', 0, 'request');
+        $return['draw'] = pub_mod_posts::get_one_post($id);        
+        
+        if (!empty($return['draw']))
+        {
+            $return['post_content'] = !empty($return['draw']) ? unserialize($return['draw']['post_content']) : '';
+        }        
+        
+        $this->_hot_image($return);
         lib_template::assign('return', $return);
         lib_template::display('draw_detail.tpl');
     }
