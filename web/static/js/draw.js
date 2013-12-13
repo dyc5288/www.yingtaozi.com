@@ -1,11 +1,11 @@
 $(function(){
     var data = $("#js_data").find('div');
     var first = data.first();
+    var _image = $("#js_image");
     var cur = 0;
     var len = data.length;
-    var position = 'left';
     if (first) {
-        $("#js_image").attr('src', first.attr('url'));
+        set_image(first.attr('url'));
     }
     var width = 618;
     var mwidth = width / 3;
@@ -27,10 +27,17 @@ $(function(){
         var cur_div = $("#js_data").find('[key="'+cur+'"]');
         if (cur_div) {
             var url = cur_div.attr('url');
-            $("#js_image").attr('src', url);
+            set_image(url);
         }
         return false;
     });
+    
+    function set_image(url) {        
+        _image.attr('src', url);
+        var cheight = _image.css('height');
+        var _top = (width - cheight) / 2;
+        _image.css('top', _top);
+    }
     
     function next_image() {
         if (cur >= len-1) {
