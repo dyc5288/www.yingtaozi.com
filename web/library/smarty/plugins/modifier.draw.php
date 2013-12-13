@@ -82,6 +82,22 @@ function smarty_modifier_draw($type, $key, $len = 9)
             
             return count($post_content);
             break;
+        case '4':
+            if (empty($key))
+            {
+                return '';
+            }
+
+            $post_content = unserialize($key);
+
+            if (empty($post_content))
+            {
+                return '';
+            }
+            
+            $column = in_array($len, array('url', 'url_l')) ? $len : 'url';
+            return $post_content[0][$column];
+            break;
     }
 
     return '';
