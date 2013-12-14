@@ -94,5 +94,18 @@ if (!empty($flag['grab_image']))
         $params['title'] = '牛牛妞妞 表情';
         lib_gearman::add_job($GLOBALS['CONFIG']['gearman'], 'GRAB_IMAGE', $params, 3);
     }
+    else if ($flag['grab_image'] == 2)
+    {
+        $params = array();
+        $params['type'] = 3;
+        $urls = array();
+        for($i = 2; $i <= 51; $i++)
+        {
+            $urls[] = "http://www.roame.net/index/bakemonogatari/images/index_{$i}.html";
+        }
+        $params['urls'] = $urls;
+        $params['title'] = '化物语图片壁纸1';
+        lib_gearman::add_job($GLOBALS['CONFIG']['gearman'], 'GRAB_IMAGE', $params, 3);
+    }
 }
 echo "success" . PHP_EOL;
