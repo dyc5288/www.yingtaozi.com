@@ -10,8 +10,12 @@
             <div class="jDetailContent">      
                 <div class="jMainContent">
                     <div class="jDproduct" id="js_change">
+                        <div class="jPreImg">
+                        </div>
                         <div class="jDimg">
                             <img id="js_image" src="" alt="">
+                        </div>
+                        <div class="jNextImg">
                         </div>
                     </div>                    
                     <div id="js_data" sytle="display:none;" >

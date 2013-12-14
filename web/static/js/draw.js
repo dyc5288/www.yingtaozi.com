@@ -12,9 +12,11 @@ $(function(){
     $("#js_change").mousemove(function(e){
         var x = e.offsetX;
         if (x > mwidth) {
-            
+            $(this).removeClass('jPreImg');            
+            $(this).addClass('jNextImg');
         } else {
-            
+            $(this).removeClass('jNextImg');            
+            $(this).addClass('jPreImg');
         }
         return false;
     }).click(function(e){
@@ -29,6 +31,10 @@ $(function(){
             var url = cur_div.attr('url');
             set_image(url);
         }
+        return false;
+    }).blur(function(){
+        $(this).removeClass('jPreImg');
+        $(this).removeClass('jNextImg');
         return false;
     });
     
