@@ -152,10 +152,8 @@ function GRAB_IMAGE($job)
 
                     if (!empty($url_data))
                     {
-
                         foreach ($url_data as $u)
                         {
-                            $u  = "http://www.foxqq.com{$u}";
                             $pc = array();
                             $pc['url']      = pub_mod_info::save_image($u);
                             $pc['url_l']    = $pc['url'];
@@ -183,7 +181,7 @@ function GRAB_IMAGE($job)
         {
             print_r($return);
         }
-die;
+
         lib_database::close_mysql();
         unset($params);
         return $return['state'];
