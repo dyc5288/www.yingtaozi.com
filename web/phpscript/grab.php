@@ -19,6 +19,7 @@ if (!empty($flag['help']))
     echo "php grab.php -grab_product 1 抓取周边产品" . PHP_EOL;
     echo "php grab.php -grab_image 1 抓取百度图片" . PHP_EOL;
     echo "php grab.php -grab_image 2 抓取QQ表情图片" . PHP_EOL;
+    echo "php grab.php -grab_image 3 抓取路游动漫图片" . PHP_EOL;
 }
 
 if (!empty($flag['grab_info']))
@@ -94,7 +95,7 @@ if (!empty($flag['grab_image']))
         $params['title'] = '牛牛妞妞 表情';
         lib_gearman::add_job($GLOBALS['CONFIG']['gearman'], 'GRAB_IMAGE', $params, 3);
     }
-    else if ($flag['grab_image'] == 2)
+    else if ($flag['grab_image'] == 3)
     {
         $params = array();
         $params['type'] = 3;
@@ -103,7 +104,7 @@ if (!empty($flag['grab_image']))
         {
             $urls[] = "http://www.roame.net/index/bakemonogatari/images/index_{$i}.html";
         }
-        $params['urls'] = $urls;
+        $params['url'] = $urls;
         $params['title'] = '化物语图片壁纸1';
         lib_gearman::add_job($GLOBALS['CONFIG']['gearman'], 'GRAB_IMAGE', $params, 3);
     }
