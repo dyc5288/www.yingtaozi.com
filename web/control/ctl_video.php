@@ -63,6 +63,7 @@ class ctl_video extends ctl_parent
         $return['page']         = pagination($config);
 
         $this->_hot_video($return);
+        $return['keyword'] = $keyword;
         lib_template::assign('return', $return);
         lib_template::display('video_index.tpl');
     }

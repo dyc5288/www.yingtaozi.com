@@ -31,6 +31,7 @@ class ctl_info extends ctl_parent
     {
         $return = array('nav'   => 'info', 'count' => 0, 'data'  => array());
         $start = get_params('s', 0, 'request', 0);
+        $keyword = get_params('keyword', 1, 'request', '');
         $limit = 5;
         $url   = '?c=info';
         $order = "post_date desc,ID desc";
@@ -39,6 +40,12 @@ class ctl_info extends ctl_parent
         $cond['post_type']   = pub_mod_posts::TYPE_POST;
         $return['count']     = pub_mod_posts::get_count($cond);
         $start               = ($start >= $return['count']) ? floor($return['count'] / $limit) * $limit : $start;
+
+        if (!empty($keyword))
+        {
+            $cond['keyword'] = $keyword;
+            $url .= "keyword={$keyword}";
+        }
 
         if (!empty($return['count']))
         {
@@ -55,6 +62,7 @@ class ctl_info extends ctl_parent
         $return['page']         = pagination($config);
 
         $this->_hot($return);
+        $return['keyword'] = $keyword;
         lib_template::assign('return', $return);
         lib_template::display('info_index.tpl');
     }

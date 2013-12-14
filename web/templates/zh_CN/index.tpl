@@ -33,7 +33,7 @@
             <div class="jPdt">
                 <div class="jPhoto">
                     <a href="">
-                        <img id="js_draw_img" src="http://pic1.ooopic.com/uploadfilepic/sheji/2009-08-12/OOOPIC_SHIJUNHONG_20090812f2d0e717f4efff27.jpg" alt="115商务云标准套餐" id="js-photo">
+                        <img id="js_draw_img" src="" alt="" id="js-photo">
                     </a>
                 </div>
                 

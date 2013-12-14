@@ -18,4 +18,23 @@ $(function(){
         window.location.href=url;
         return false;
     });
+    var jkey = $("#js_keyword");
+    if (jkey.val() != '搜索') {
+        jkey.css('color', '#444');        
+    }
+    jkey.focus(function(){
+        var val = $(this).val();
+        if (val == '搜索') {
+            $(this).val('');
+            $(this).css('color', '#444');
+        }
+        return false;
+    }).blur(function(){
+        var val = $(this).val();
+        if (!val) {
+            $(this).val('搜索');
+            $(this).css('color', '#bebebe');
+        }
+        return false;
+    });
 });

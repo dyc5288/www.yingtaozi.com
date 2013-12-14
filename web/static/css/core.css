@@ -130,6 +130,10 @@ a:hover {
 
 .jLay, .jWrap, .jSide, .jSide { zoom: 1; }
 
+.jLay {    
+    background: #f1f1f1;
+}
+
 .jLayMS .jWrap { margin-right:265px; }
 
 .jLayMS .jSide {

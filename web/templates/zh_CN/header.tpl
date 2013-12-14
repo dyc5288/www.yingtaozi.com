@@ -23,8 +23,8 @@
                         <li <{if $return.nav == 'draw'}>class="current_page_item  class_cur"<{else}>class="page_item"<{/if}>><a href="<{$URL}>/?c=draw">图集</a></li>
                     </ul>
                     <div class="jSearch">
-                        <form method="get" id="searchform" action="<{$URL}>/?a=search">
-                            <input type="text" class="jSKey" value="搜索"  onfocus="this.value='';this.style.color='#444';" name="s" id="s" />
+                        <form method="post" id="searchform" action="<{$URL}>/?c=<{if $return.nav == 'index'}>fish<{else}><{$return.nav}><{/if}>">
+                            <input type="text" class="jSKey" value="<{if !empty($return.keyword)}><{$return.keyword}><{else}>搜索<{/if}>"  name="keyword" id="js_keyword" />
                             <button class="jSBtn">Search</button>
                         </form>
                     </div>
