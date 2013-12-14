@@ -20,6 +20,7 @@ if (!empty($flag['help']))
     echo "php grab.php -grab_image 1 抓取百度图片" . PHP_EOL;
     echo "php grab.php -grab_image 2 抓取QQ表情图片" . PHP_EOL;
     echo "php grab.php -grab_image 3 抓取路游动漫图片" . PHP_EOL;
+    echo "php grab.php -grab_image 4 抓取图展的图片" . PHP_EOL;
 }
 
 if (!empty($flag['grab_info']))
@@ -100,12 +101,12 @@ if (!empty($flag['grab_image']))
         $params = array();
         $params['type'] = 3;
         $urls = array();
-        for($i = 2; $i <= 51; $i++)
+        for($i = 2; $i <= 30; $i++)
         {
-            $urls[] = "http://www.roame.net/index/bakemonogatari/images/index_{$i}.html";
+            $urls[] = "http://www.roame.net/index/sword-art-online/images/index_{$i}.html";
         }
         $params['url'] = $urls;
-        $params['title'] = '化物语图片壁纸1';
+        $params['title'] = '刀剑神域';
         lib_gearman::add_job($GLOBALS['CONFIG']['gearman'], 'GRAB_IMAGE', $params, 3);
     }
 }
