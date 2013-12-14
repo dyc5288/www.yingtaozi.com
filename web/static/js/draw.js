@@ -8,7 +8,7 @@ $(function(){
         set_image(first.attr('url'));
     }
     var width = 618;
-    var mwidth = width / 2;
+    var mwidth = width / 3;
     $("#js_change").mousemove(function(e){
         var x = e.offsetX;
         if (x > mwidth) {
@@ -39,7 +39,7 @@ $(function(){
     });
     
     function set_image(url) {        
-        _image.attr('src', url);
+        _image.ReloadImage(url);
     }
     
     function next_image() {
