@@ -133,6 +133,41 @@ function GRAB_IMAGE($job)
                     $return['pid']               = pub_mod_image::add_image($param_array);
                 }
             }
+            else if ($type == 3)
+            {
+                $urls  = $params['url'];
+                $title = $params['title'];
+
+                $param_array = array();
+                $post_content = array();
+                $param_array['post_author'] = pub_mod_posts::AUTHOR_ADMIN_ID;
+                $param_array['post_title']  = addslashes($title);
+                
+                foreach ($urls as $url)
+                {
+                    $data  = hlp_common::remote_request($url);
+                    $matches = array();
+                    preg_match_all('/<img alt=\"(.*)\" src=\"(.*)\"\/>/iU', $data, $matches);
+                    $url_data = $matches[2];
+
+                    if (!empty($url_data))
+                    {
+
+                        foreach ($url_data as $u)
+                        {
+                            $u  = "http://www.foxqq.com{$u}";
+                            $pc = array();
+                            $pc['url']      = pub_mod_info::save_image($u);
+                            $pc['url_l']    = $pc['url'];
+                            $post_content[] = $pc;
+                        }
+                    }
+                }
+
+                $param_array['post_content'] = serialize($post_content);
+                $param_array['post_date']    = date('Y-m-d H:i:s');
+                $return['pid']               = pub_mod_image::add_image($param_array);
+            }
 
             $return['state'] = true;
         }
@@ -148,7 +183,7 @@ function GRAB_IMAGE($job)
         {
             print_r($return);
         }
-
+die;
         lib_database::close_mysql();
         unset($params);
         return $return['state'];
