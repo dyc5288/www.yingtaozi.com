@@ -42,6 +42,7 @@ function GRAB_INFO($job)
     if (!empty($params) && !empty($params['type']))
     {
         $return = array('state'      => false, 'start_time' => time(), 'params'     => $params, 'data'       => array());
+        echo "start " . date('Y-m-d H:i:s') . PHP_EOL;
 
         try
         {
