@@ -41,7 +41,14 @@ function GRAB_PRODUCT($job)
 
     if (!empty($params) && !empty($params['file']))
     {
-        $return = array('state'      => false, 'start_time' => time(), 'params'     => $params, 'data'       => array());
+        $return = array('state'      => false, 'start_time' => time(), 'data'       => array());
+        $input = array('time'   => date('Y-m-d H:i:s'), 'params' => $params);
+
+        if (CLI_DEBUG_LEVEL)
+        {
+            print_r($input);
+            unset($input);
+        }
 
         try
         {
