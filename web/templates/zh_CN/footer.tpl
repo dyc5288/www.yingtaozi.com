@@ -4,8 +4,8 @@
                 <div class="jFriend">
                     <h3>友情链接</h3>
                     <div class="jFcontent">
-                        <a target="_blank" href="http://www.baidu.com">百度地方</a><a target="_blank" href="http://www.qq.com">腾讯飞</a><a target="_blank" href="http://www.baidu.com">地方百度</a>
-                        <a target="_blank" href="http://www.baidu.com">百都度</a><a target="_blank" href="http://www.qq.com">腾讯</a><a target="_blank" href="http://www.baidu.com">百度</a>
+                        <a target="_blank" href="http://news.emland.net/">恶魔岛</a><a target="_blank" href="http://www.taobao.com/">淘宝</a><a target="_blank" href="http://www.youku.com/">优酷</a>
+                        <a target="_blank" href="http://www.foxqq.com/">QQ表情</a><a target="_blank" href="http://www.qq.com">腾讯</a><a target="_blank" href="http://www.baidu.com">百度</a>
                         <a target="_blank" href="http://www.baidu.com">百度</a><a target="_blank" href="http://www.qq.com">腾讯</a><a target="_blank" href="http://www.baidu.com">百度</a>
                         <a target="_blank" href="http://www.baidu.com">百度</a><a target="_blank" href="http://www.qq.com">腾讯</a><a target="_blank" href="http://www.baidu.com">百度</a>
                         <a target="_blank" href="http://www.baidu.com">百度</a><a target="_blank" href="http://www.qq.com">腾讯</a><a target="_blank" href="http://www.baidu.com">百度</a>
