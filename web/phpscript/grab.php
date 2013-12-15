@@ -55,12 +55,12 @@ if (!empty($flag['grab_video']))
 
 if (!empty($flag['grab_product']))
 {
-    $file   = PATH_DATA . '/notsync/xls/2013-12-15-13740145 (1).xls';
+    $file   = PATH_DATA . '/notsync/xls/2013-12-15-13740145 (1)10.xls';
     $params = array();
     $params['file'] = $file;
-    lib_gearman::add_job($GLOBALS['CONFIG']['gearman'], 'GRAB_PRODUCT', $params, 3);
+    //lib_gearman::add_job($GLOBALS['CONFIG']['gearman'], 'GRAB_PRODUCT', $params, 3);
     
-    $file   = PATH_DATA . '/notsync/xls/2013-12-15-13740145.xls';
+    $file   = PATH_DATA . '/notsync/xls/2013-12-15-1374014515.xls';
     $params = array();
     $params['file'] = $file;
     lib_gearman::add_job($GLOBALS['CONFIG']['gearman'], 'GRAB_PRODUCT', $params, 3);
