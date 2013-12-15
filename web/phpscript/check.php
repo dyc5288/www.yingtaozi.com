@@ -113,7 +113,12 @@ if (!empty($flag['info']))
             elseif (!empty($post_excerpt))
             {
                 $post_excerpt = unserialize($post_excerpt);
-                var_dump($post_excerpt);die;
+                $image_url    = $post_excerpt['image_url'];
+
+                if (strpos($image_url, 'www.yingtaozi.cn') !== false)
+                {
+                    $is_delete = true;
+                }
             }
 
             if ($is_delete)
