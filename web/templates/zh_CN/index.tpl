@@ -39,12 +39,14 @@
 
                 <ul class="jExtImg" id="js_draw">
                     <{if !empty($return.hot_draw)}>
-                        <{foreach from=$return.hot_draw key=k item=draw}>
+                        <{assign var="k" value=0}>
+                        <{foreach from=$return.hot_draw item=draw}>
                             <li class="focus" btn="tab">
                                 <a href="<{$draw.ID|url:"draw_detail"}>">
                                     <img key=<{$k}> src="<{'4'|draw:$draw.post_content:'url'}>" url="<{'4'|draw:$draw.post_content:'url_l'}>" alt="<{$draw.post_title}>" title="<{$draw.post_title}>">
                                 </a>
                             </li>
+                            <{assign var="k" value=$k+1}>
                         <{/foreach}>
                     <{/if}>
                 </ul>               
@@ -72,10 +74,12 @@
                         </div>
                         <div class="jFishright" id="js_fish">
                             <{if !empty($return.hot_product)}>
-                                <{foreach from=$return.hot_product key=k item=product}>
+                                <{assign var="k" value=0}>
+                                <{foreach from=$return.hot_product item=product}>
                                     <a href="<{$product.ID|url:"fish_detail"}>">
                                         <img key=<{$k}> src="<{$product.post_excerpt|excerpt}>" alt="<{$product.post_title}>" title="<{$product.post_title}>">
                                     </a>
+                                    <{assign var="k" value=$k+1}>
                                 <{/foreach}>
                             <{/if}>
                         </div>

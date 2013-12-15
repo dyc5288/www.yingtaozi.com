@@ -9,7 +9,8 @@
 
             <div class="jContent">
                 <{if !empty($return.data)}>
-                    <{foreach from=$return.data key=k item=draw}>
+                    <{assign var="k" value=0}>
+                    <{foreach from=$return.data item=draw}>
                         <a href="<{$draw.ID|url:"draw_detail"}>">
                             <div class="jContainer<{'1'|draw:$k}>">
                                 <div class="jTitle">
@@ -20,6 +21,7 @@
                                 </div>
                             </div>
                         </a>
+                        <{assign var="k" value=$k+1}>
                     <{/foreach}>
                 <{/if}> 
                 

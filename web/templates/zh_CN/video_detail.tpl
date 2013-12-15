@@ -19,8 +19,10 @@
                 </div>
                 <div class="jOrder">
                     <{if !empty($return.post_content)}>
-                        <{foreach from=$return.post_content key=k item=row}>
+                        <{assign var="k" value=0}>
+                        <{foreach from=$return.post_content item=row}>
                             <div url="<{$row.url}>" introduce=""><{$row.id}></div>
+                            <{assign var="k" value=$k+1}>
                         <{/foreach}>
                     <{/if}>
                 </div>

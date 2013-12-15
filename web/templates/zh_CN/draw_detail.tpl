@@ -20,8 +20,10 @@
                     </div>                    
                     <div id="js_data" sytle="display:none;" >
                         <{if !empty($return.post_content)}>
-                            <{foreach from=$return.post_content key=k item=row}>
-                                <div url="<{$row.url_l}>" key="<{$k}>"></div>
+                            <{assign var="k" value=0}>
+                            <{foreach from=$return.post_content item=row}>                
+                                <div url="<{$row.url_l}>" key="<{$k}>"></div>                
+                                <{assign var="k" value=$k+1}>
                             <{/foreach}>
                         <{/if}>
                     </div>

@@ -41,7 +41,8 @@
                         </div>
                     </div>
                     <{if !empty($return.data)}>
-                        <{foreach from=$return.data key=k item=product}>
+                        <{assign var="k" value=0}>
+                        <{foreach from=$return.data item=product}>
                             <{$k|remainder:$return.lsize}>
                             <div class="jProduct">
                                 <a href="<{$product.ID|url:"fish_detail"}>">
@@ -53,7 +54,8 @@
                                         <{$product.post_excerpt|excerpt:'price'}>￥
                                     </div>
                                 </a>
-                            </div>
+                            </div>                
+                            <{assign var="k" value=$k+1}>
                         <{/foreach}>
                     <{/if}>            
                 </div>

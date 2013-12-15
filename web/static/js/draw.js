@@ -28,7 +28,7 @@ $(function(){
         }
         var cur_div = $("#js_data").find('[key="'+cur+'"]');
         if (cur_div) {
-            var url = cur_div.attr('url');
+            var url = cur_div.attr('url');console.log(cur_div);
             set_image(url);
         }
         return false;
