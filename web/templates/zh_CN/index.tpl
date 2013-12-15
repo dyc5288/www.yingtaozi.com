@@ -33,7 +33,7 @@
             <div class="jPdt">
                 <div class="jPhoto">
                     <a href="">
-                        <img id="js_draw_img" src="" alt="" id="js-photo">
+                        <img id="js_draw_img" src="" alt="" id="js-photo"/>
                     </a>
                 </div>
                 
