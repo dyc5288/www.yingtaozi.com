@@ -8,5 +8,6 @@
  */
 require '../init.php';
 
-$num = urldecode('http://s.click.taobao.com/t?e=m%3D2%26s%3DF0aeGyr%2F9u0cQipKwQzePOeEDrYVVa64LKpWJ%2Bin0XJRAdhuF14FMbKE7NS4wSxnJ1gyddu7kN94B1RlAojkBIhMOI7%2FHtdVlfnKyjckZtRcdBNu9EqTpBD5zSAINgEP');
-var_dump($num);
+$url = 'http://news.emland.net/news37471.html';
+$detail_data = pub_mod_info::grab_detail($url);
+var_dump($detail_data);
