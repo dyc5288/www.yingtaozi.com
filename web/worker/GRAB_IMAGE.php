@@ -42,6 +42,7 @@ function GRAB_IMAGE($job)
     if (!empty($params) && !empty($params['url']))
     {
         $return = array('state'      => false, 'start_time' => time(), 'params'     => $params, 'data'       => array());
+        echo date('Y-m-d H:i:s') . ' start:' . PHP_EOL;
 
         try
         {
@@ -171,7 +172,6 @@ function GRAB_IMAGE($job)
                 $url_prefix = $params['url'];
                 $title      = $params['title'];
                 $num        = $params['num'];
-                echo date('Y-m-d H:i:s') . ' start:' . PHP_EOL;
 
                 $param_array = array();
                 $post_content = array();
