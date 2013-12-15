@@ -32,7 +32,7 @@ class ctl_fish extends ctl_parent
         $return = array('nav'   => 'fish', 'count' => 0, 'data'  => array());
         $start   = get_params('s', 0, 'request', 0);
         $keyword = get_params('keyword', 1, 'request', '');
-        $limit   = 20;
+        $limit   = 19;
         $url     = '?c=fish';
         $order   = "post_date desc,ID desc";
         $cond    = array();
@@ -63,7 +63,7 @@ class ctl_fish extends ctl_parent
         $return['page']         = pagination($config);
 
         $return['keyword'] = $keyword;
-        $return['lsize'] = floor(min($return['count'], $limit) / 4);
+        $return['lsize']   = floor(min($return['count'], $limit + 1) / 4);
         lib_template::assign('return', $return);
         lib_template::display('fish_index.tpl');
     }
