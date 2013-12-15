@@ -21,7 +21,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="jPos">
                 <div class="jAds">
                     <a href="http://s.click.taobao.com/t?e=zGU34CA7K%2BPkqB05%2Bm7rfGGjlY60oHcc7bkKOQYjHwtHp1cssGjZM6zyvaQzDFnmSDuEWJZO8FrlgpoJUNMIolnlcgUmnJZrCunRzr6juiSjryrWdKI3mBuehw4Lxm3j2VXmR76ua8cPpp9GpsGm7fs0twhjWQOq4itbdgPe1NhIcSUPAlZEZi4FWg%3D%3D&pid=mm_13740145_0_0">
@@ -29,14 +29,14 @@
                     </a>
                 </div>
             </div>
-            
+
             <div class="jPdt">
                 <div class="jPhoto">
                     <a href="">
                         <img id="js_draw_img" src="" alt="" id="js-photo"/>
                     </a>
                 </div>
-                
+
                 <ul class="jExtImg" id="js_draw">
                     <{if !empty($return.hot_draw)}>
                         <{foreach from=$return.hot_draw key=k item=draw}>
@@ -48,16 +48,16 @@
                         <{/foreach}>
                     <{/if}>
                 </ul>               
-                
+
             </div>
-            
+
             <div style="display: none;" class="jAcross">
                 <div class="jAds">
                     <iframe name="alimamaifrm" frameborder="0" marginheight="0" marginwidth="0" border="0" scrolling="no" width="900" height="30" src="http://www.taobao.com/go/app/tbk_app/chongzhi_210_30.php?pid=mm_13740145_4042950_14740731&page=chongzhi_210_30.php&size_w=900&size_h=30&stru_phone=1&stru_game=1&stru_travel=1&size_cat=cst" ></iframe>
-                    
+
                 </div>                
             </div>
-            
+
             <div class="jFish">
                 <div class="jBox">
                     <div class="jBoxH">
@@ -82,7 +82,7 @@
                     </div>
                 </div>           
             </div>
-            
+
             <div class="jVideo">
                 <div class="jBox">
                     <div class="jBoxH">
