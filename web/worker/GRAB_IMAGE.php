@@ -181,31 +181,39 @@ function GRAB_IMAGE($job)
                 {
                     $url     = $url_prefix . "&p=$i";
                     $data    = hlp_common::remote_request($url);
-                    $matches = array();
-                    preg_match_all('/<div class=\"c_p_l_c_i\" data-obj=\".*\">(.*)<\\/div>/iU', $data, $matches);
-                    $url_data = $matches[1];
-
-                    if (!empty($url_data))
+                    
+                    if ($i == 1)
                     {
-                        foreach ($url_data as $u)
+                        $matches = array();
+                        preg_match_all('/<div class=\"c_p_l_c_i\" data-obj=\".*\">(.*)<\\/div>/iU', $data, $matches);
+                        $url_data = $matches[1];
+
+                        if (!empty($url_data))
                         {
-                            $p    = xml_parser_create();
-                            $vals = array();
-                            $index = array();
-                            xml_parse_into_struct($p, $u, $vals, $index);
-                            xml_parser_free($p);
+                            foreach ($url_data as $u)
+                            {
+                                $p    = xml_parser_create();
+                                $vals = array();
+                                $index = array();
+                                xml_parse_into_struct($p, $u, $vals, $index);
+                                xml_parser_free($p);
 
-                            $iattr  = $vals[$index['IMG'][0]]['attributes'];
-                            $iurl   = $iattr['SRC'];
-                            $ilurl  = str_replace('/m/', '/l/', $iurl);
-                            $ititle = $iattr['ALT'];
+                                $iattr  = $vals[$index['IMG'][0]]['attributes'];
+                                $iurl   = $iattr['SRC'];
+                                $ilurl  = str_replace('/m/', '/l/', $iurl);
+                                $ititle = $iattr['ALT'];
 
-                            $pc = array();
-                            $pc['url']      = pub_mod_info::save_image($iurl);
-                            $pc['url_l']    = pub_mod_info::save_image($ilurl);
-                            $pc['title']    = $ititle;
-                            $post_content[] = $pc;
+                                $pc = array();
+                                $pc['url']      = pub_mod_info::save_image($iurl);
+                                $pc['url_l']    = pub_mod_info::save_image($ilurl);
+                                $pc['title']    = $ititle;
+                                $post_content[] = $pc;
+                            }
                         }
+                    }
+                    else
+                    {
+                        
                     }
                 }
 
