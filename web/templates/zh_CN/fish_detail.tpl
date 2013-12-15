@@ -17,7 +17,7 @@
                     
                     <div class="jDproduct jDbuy">
                         <div class="jDintro">
-                            可爱卡通 日本樱桃小丸子防滑鼠标垫 14款自选...
+                            <{$return.product.post_title}>
                         </div>
                         <div class="jPrice">
                             ￥<{$return.product.post_excerpt|excerpt:'price'}>
@@ -31,28 +31,10 @@
                             <h4>评论详情</h4>
                             <hr class="jHrRight">
                         </div>
-                        <div class="jComment">
+                        <div class="jComment" style="display: none;">
                             <img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐">
                             <div class="jCommentText">
                                 这次真的超满意。手感很不错哦，买了中午休息时单位大伙一起玩玩。现在很需要运动健身。
-                            </div>
-                        </div>
-                        <div class="jComment">
-                            <img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐">
-                            <div class="jCommentText">
-                                虽然是NIKE，这个球比较硬，特价时买的。刚拿到手说退，**说办公品不让退。晕死。篮球为什么不让退。
-                            </div>
-                        </div>
-                        <div class="jComment">
-                            <img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐">
-                            <div class="jCommentText">
-                                橡胶和皮革的求，拿到手有些味道，做工一般与想象中的大牌还有些差距，两块胶皮黏贴的地方有条很明显的缝，还有一个很小的缺口，价格用券后147，就是女儿手还抱不过来，不是太喜欢
-                            </div>
-                        </div>
-                        <div class="jComment">
-                            <img src="http://b.115.com/img/115/product/13680706872441.png" alt="115商务云标准套餐">
-                            <div class="jCommentText">
-                                橡胶和皮革的求，拿到手有些味道，做工一般与想象中的大牌还有些差距，两块胶皮黏贴的地方有条很明显的缝，还有一个很小的缺口，价格用券后147，就是女儿手还抱不过来，不是太喜欢
                             </div>
                         </div>
                     </div>
