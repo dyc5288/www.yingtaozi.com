@@ -44,7 +44,7 @@ class ctl_info extends ctl_parent
         if (!empty($keyword))
         {
             $cond['keyword'] = $keyword;
-            $url .= "keyword={$keyword}";
+            $url .= "&keyword={$keyword}";
         }
 
         if (!empty($return['count']))

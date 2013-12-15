@@ -42,7 +42,7 @@ class ctl_video extends ctl_parent
         if (!empty($keyword))
         {
             $cond['keyword'] = $keyword;
-            $url .= "keyword={$keyword}";
+            $url .= "&keyword={$keyword}";
         }
         
         $return['count']     = pub_mod_posts::get_count($cond);

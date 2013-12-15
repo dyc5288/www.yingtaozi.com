@@ -33,7 +33,7 @@ class ctl_draw extends ctl_parent
         $return = array('nav' => 'draw', 'count' => 0, 'data'  => array());
         $start   = get_params('s', 0, 'request', 0);
         $keyword = get_params('keyword', 1, 'request', '');
-        $limit   = 16;
+        $limit   = 12;
         $url     = '?c=draw';
         $order   = "post_date desc,ID desc";
         $cond    = array();
@@ -43,7 +43,7 @@ class ctl_draw extends ctl_parent
         if (!empty($keyword))
         {
             $cond['keyword'] = $keyword;
-            $url .= "keyword={$keyword}";
+            $url .= "&keyword={$keyword}";
         }
 
         $return['count'] = pub_mod_posts::get_count($cond);
