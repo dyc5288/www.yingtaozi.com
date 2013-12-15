@@ -15,7 +15,7 @@ class pub_mod_posts
     const STATUS_PRIVATE    = 'private';    // 私密
     const STATUS_FUTURE     = 'future';     // 将来发布
     const STATUS_PENDING    = 'pending';    // 发布状态
-    const STATUS_TRASH      = 'trash';      // 发布状态
+    const STATUS_TRASH      = 'trash';      // 垃圾箱
 
     /* 类型 */
     const TYPE_POST       = 'post';         // 文章
