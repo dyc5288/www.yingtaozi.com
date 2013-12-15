@@ -142,10 +142,10 @@ function GRAB_IMAGE($job)
                 $post_content = array();
                 $param_array['post_author'] = pub_mod_posts::AUTHOR_ADMIN_ID;
                 $param_array['post_title']  = addslashes($title);
-                
+
                 foreach ($urls as $url)
                 {
-                    $data  = hlp_common::remote_request($url);
+                    $data    = hlp_common::remote_request($url);
                     $matches = array();
                     preg_match_all('/<img alt=\"(.*)\" src=\"(.*)\"\/>/iU', $data, $matches);
                     $url_data = $matches[2];
@@ -157,6 +157,54 @@ function GRAB_IMAGE($job)
                             $pc = array();
                             $pc['url']      = pub_mod_info::save_image($u);
                             $pc['url_l']    = $pc['url'];
+                            $post_content[] = $pc;
+                        }
+                    }
+                }
+
+                $param_array['post_content'] = serialize($post_content);
+                $param_array['post_date']    = date('Y-m-d H:i:s');
+                $return['pid']               = pub_mod_image::add_image($param_array);
+            }
+            else if ($type == 4)
+            {
+                $url_prefix = $params['url'];
+                $title      = $params['title'];
+                $num        = $params['num'];
+
+                $param_array = array();
+                $post_content = array();
+                $param_array['post_author'] = pub_mod_posts::AUTHOR_ADMIN_ID;
+                $param_array['post_title']  = addslashes($title);
+
+                for ($i = 1; $i <= $num; $i++)
+                {
+                    $url     = $url_prefix . "&p=$i";
+                    $data    = hlp_common::remote_request($url);
+                    $matches = array();
+                    preg_match_all('/<div class=\"c_p_l_c_i\" data-obj=\".*\">(.*)<\\/div>/iU', $data, $matches);
+                    $url_data = $matches[1];
+
+                    if (!empty($url_data))
+                    {
+                        foreach ($url_data as $u)
+                        {
+                            $p    = xml_parser_create();
+                            $vals = array();
+                            $index = array();
+                            xml_parse_into_struct($p, $u, $vals, $index);
+                            xml_parser_free($p);
+
+                            $aattr  = $vals[$index['A'][0]]['attributes'];
+                            $iattr  = $vals[$index['IMG'][0]]['attributes'];
+                            $iurl   = $iattr['SRC'];
+                            $ilurl  = str_replace('/m/', '/l/', $iurl);
+                            $ititle = $iattr['ALT'];
+
+                            $pc = array();
+                            $pc['url']      = pub_mod_info::save_image($iurl);
+                            $pc['url_l']    = pub_mod_info::save_image($ilurl);
+                            $pc['title']    = $ititle;
                             $post_content[] = $pc;
                         }
                     }
