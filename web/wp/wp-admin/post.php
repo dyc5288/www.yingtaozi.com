@@ -156,6 +156,10 @@ case 'edit':
 		$parent_file = "edit.php";
 		$submenu_file = "edit.php";
 		$post_new_file = "post-new.php";
+	} elseif ( in_array($post_type, array( 'video', 'product', 'draw')) ) {
+		$parent_file = "edit.php";
+		$submenu_file = "edit.php?post_type={$post_type}";
+		$post_new_file = "post-new.php";
 	} elseif ( 'attachment' == $post_type ) {
 		$parent_file = 'upload.php';
 		$submenu_file = 'upload.php';
