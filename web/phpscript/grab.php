@@ -60,7 +60,7 @@ if (!empty($flag['grab_product']))
     $params['file'] = $file;
     lib_gearman::add_job($GLOBALS['CONFIG']['gearman'], 'GRAB_PRODUCT', $params, 3);
     
-    $file   = PATH_DATA . '/notsync/xls/2013-12-15-13740145 (1).xls';
+    $file   = PATH_DATA . '/notsync/xls/2013-12-15-13740145.xls';
     $params = array();
     $params['file'] = $file;
     lib_gearman::add_job($GLOBALS['CONFIG']['gearman'], 'GRAB_PRODUCT', $params, 3);
