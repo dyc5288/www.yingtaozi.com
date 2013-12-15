@@ -171,6 +171,7 @@ function GRAB_IMAGE($job)
                 $url_prefix = $params['url'];
                 $title      = $params['title'];
                 $num        = $params['num'];
+                echo date('Y-m-d H:i:s') . ' start:' . PHP_EOL;
 
                 $param_array = array();
                 $post_content = array();
