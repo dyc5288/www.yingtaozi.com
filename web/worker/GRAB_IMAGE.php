@@ -242,6 +242,11 @@ function GRAB_IMAGE($job)
                         }
                     }
                 }
+                
+                if (empty($post_content))
+                {
+                    throw new Exception('content not empty!');
+                }
 
                 $param_array['post_content'] = serialize($post_content);
                 $param_array['post_date']    = date('Y-m-d H:i:s');
