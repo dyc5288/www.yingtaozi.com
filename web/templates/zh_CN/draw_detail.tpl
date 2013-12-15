@@ -54,7 +54,7 @@
                             <hr class="jHrRight">
                         </div>
                         <div class="jTitle">
-                            <div class="jLeft">合服篇</div>
+                            <div class="jLeft"><{$return.draw.post_title}></div>
                             <div class="jRight">1/<{'3'|draw:$return.draw.post_content}></div>
                         </div>
                         <div class="jDNine">

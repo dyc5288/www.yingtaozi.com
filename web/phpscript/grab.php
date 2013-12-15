@@ -113,12 +113,12 @@ if (!empty($flag['grab_image']))
     {
         $params = array();
         $params['type']  = 4;
-        $params['title'] = '阿狸合集K';
-        $key             = urlencode('阿狸');
+        $params['title'] = '麦兜合集B';
+        $key             = urlencode('麦兜');
         $params['url']   = "http://www.tuzhan.com/search.html?key={$key}&_=1387040470452";
-        $params['num']   = 3;
+        $params['num']   = 4;
         $params['sum']   = 0;
-        $params['start'] = 1;
+        $params['start'] = 4;
         lib_gearman::add_job($GLOBALS['CONFIG']['gearman'], 'GRAB_IMAGE', $params, 3);
     }
 }

@@ -45,10 +45,10 @@ $(function(){
         },3000);
     }    
     
-    var _time = window.setTimeout(function(){
+    /*var _time = window.setTimeout(function(){
         window.clearTimeout(_time);
         Y.switchimg();
-    },3000);
+    },3000);*/
     
     /* 图集 */
     var dimg = $("#js_draw").find("img");
