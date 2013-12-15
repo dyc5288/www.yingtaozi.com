@@ -63,11 +63,11 @@ if (!empty($flag['draw']))
                     
                     if ($res)
                     {
+                        echo "{$ID} ok" . PHP_EOL;
                         $total++;
                     }
                 }
-            }
-            
+            }            
         }
 
         unset($result);
