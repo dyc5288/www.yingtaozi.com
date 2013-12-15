@@ -131,8 +131,8 @@ Author URI: http://duanyunchao.com/
     display:block;
     clear:both;
     zoom: 1;
-    padding: 20px;
-    width: 578px;
+    padding: 10px;
+    width: 598px;
     overflow: auto;
     text-align: center;
 }
@@ -143,6 +143,7 @@ Author URI: http://duanyunchao.com/
 
 .jDimg img {
     border: 1px solid #ccc;    
+    max-width: 596px;
 }
 
 .jNextImg {    
