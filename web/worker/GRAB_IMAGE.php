@@ -209,19 +209,28 @@ function GRAB_IMAGE($job)
                                 $iurl   = $iattr['SRC'];
                                 $ilurl  = str_replace('/m/', '/l/', $iurl);
                                 $ititle = $iattr['ALT'];
+
+                                $pc = array();
+                                $pc['url']      = pub_mod_info::save_image($iurl);
+                                $pc['url_l']    = pub_mod_info::save_image($ilurl);
+                                $pc['title']    = $ititle;
+                                $post_content[] = $pc;
                             }
                             else
                             {
-                                $iurl   = $u['src'];
-                                $ilurl  = str_replace('/m/', '/l/', $iurl);
-                                $ititle = $u['name'];
-                            }
+                                foreach ($u as $ui)
+                                {
+                                    $iurl   = $ui['src'];
+                                    $ilurl  = str_replace('/m/', '/l/', $iurl);
+                                    $ititle = $ui['name'];
 
-                            $pc = array();
-                            $pc['url']      = pub_mod_info::save_image($iurl);
-                            $pc['url_l']    = pub_mod_info::save_image($ilurl);
-                            $pc['title']    = $ititle;
-                            $post_content[] = $pc;
+                                    $pc = array();
+                                    $pc['url']      = pub_mod_info::save_image($iurl);
+                                    $pc['url_l']    = pub_mod_info::save_image($ilurl);
+                                    $pc['title']    = $ititle;
+                                    $post_content[] = $pc;
+                                }
+                            }
                         }
                     }
                 }
