@@ -113,10 +113,10 @@ if (!empty($flag['grab_image']))
     {
         $params = array();
         $params['type']  = 4;
-        $params['title'] = '柯南';
-        $key             = urlencode($params['title']);
+        $params['title'] = '哆啦A梦合集B';
+        $key             = urlencode('哆啦A梦');
         $params['url']   = "http://www.tuzhan.com/search.html?key={$key}&_=1387040470452";
-        $params['num']   = 5;
+        $params['num']   = 3;
         $params['sum']   = 0;
         $params['start']   = 1;
         lib_gearman::add_job($GLOBALS['CONFIG']['gearman'], 'GRAB_IMAGE', $params, 3);
