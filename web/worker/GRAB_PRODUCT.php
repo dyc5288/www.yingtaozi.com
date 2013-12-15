@@ -61,8 +61,8 @@ function GRAB_PRODUCT($job)
 
                     if (!empty($cache))
                     {
-                        //$return['data'][] = $cache_key . "exist!";
-                        //continue;
+                        $return['data'][] = $cache_key . "exist!";
+                        continue;
                     }
 
                     $param_array = array();
