@@ -63,13 +63,12 @@
                         <div class="jCategory" id="js_dcateb">
                             <div>家居</div>
                             <div>服饰</div>
-                            <div>学习文具</div>
+                            <div>文具</div>
                             <div>玩偶</div>
-                            <div>电脑配件</div>
+                            <div>配件</div>
                             <div>书籍</div>
-                            <div>美味零食</div>
-                            <div>个性定制</div>
-                            <div>影碟</div>
+                            <div>零食</div>
+                            <div>个性</div>
                         </div>
                     </div>
                     <div class="jDshop">
