@@ -16,6 +16,62 @@ if (!empty($flag['help']))
 {
     echo "php check.php -draw 1 检查图集" . PHP_EOL;
     echo "php check.php -info 1 检查情报" . PHP_EOL;
+    echo "php check.php -info_die 1 检查情报图挂了" . PHP_EOL;
+}
+
+/* 检查情报图挂了 */
+if (!empty($flag['info_die']))
+{
+    $start_time = time();
+    $total      = 0;
+    echo "start " . date('Y-m-d H:i:s') . PHP_EOL;
+    $cond       = array();
+    $cond['post_status'] = pub_mod_posts::STATUS_PUBLISH;
+    $cond['post_type']   = pub_mod_posts::TYPE_POST;
+    $count               = pub_mod_posts::get_count($cond);
+
+    /* 分页取数据 */
+    $limit = 100;
+    $start = 0;
+
+    while ($start < $count)
+    {
+        $result = pub_mod_posts::get_list($cond, false, $start, $limit, pub_mod_posts::COLUMN_INFO_INDEX);
+
+        foreach ($result as $row)
+        {
+            $post_content = $row['post_content'];
+            $ID           = $row['ID'];
+            $is_delete    = false;
+
+            if (!empty($post_content))
+            {
+                if (strpos($post_content, 'attachnew') !== false)
+                {
+                    $is_delete = true;
+                }
+            }
+
+            if ($is_delete)
+            {
+                $param_array = array();
+                $param_array['post_status'] = pub_mod_posts::STATUS_TRASH;
+                $res                        = pub_mod_image::update_image($ID, $param_array);
+
+                if ($res)
+                {
+                    echo "{$ID} ok" . PHP_EOL;
+                    $total++;
+                }
+            }
+        }
+
+        unset($result);
+        $start += $limit;
+    }
+
+    $user_time = time() - $start_time;
+    echo "finish all " . date('Y-m-d H:i:s') . "count:{$count} total:{$total}, use {$user_time}s." . PHP_EOL;
 }
 
 /* 检查图集 */
