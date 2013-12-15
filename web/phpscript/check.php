@@ -171,7 +171,7 @@ if (!empty($flag['info']))
                 $post_excerpt = unserialize($post_excerpt);
                 $image_url    = $post_excerpt['image_url'];
 
-                if (strpos($image_url, 'www.yingtaozi.cn') !== false)
+                if (empty($image_url) || strpos($image_url, 'www.yingtaozi.cn') !== false)
                 {
                     $is_delete = true;
                 }
