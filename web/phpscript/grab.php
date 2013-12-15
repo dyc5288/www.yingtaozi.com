@@ -82,7 +82,7 @@ if (!empty($flag['grab_image']))
                 $url    = "http://image.baidu.com/i?tn=resultjson_com&ipn=rj&ct=201326592&cl=2&lm=-1&st=-1&fm=index&fr=&sf=1&fmq=&pv=&ic=0&nc=1&z=&se=1&showtab=0&fb=0&width=&height=&face=0&istype=2&ie=gbk&word=%D3%A3%CC%D2%D0%A1%CD%E8%D7%D3&f=3&oq={$oq}&rsp=-1&oe=utf-8&rn={$limit}&pn={$start}&531463329075.834&132670077221.29118";
                 $start += $limit;
                 $params = array();
-                $params['url'] = $url;
+                $params['url']   = $url;
                 $params['title'] = $keywrod;
                 lib_gearman::add_job($GLOBALS['CONFIG']['gearman'], 'GRAB_IMAGE', $params, 3);
             }
@@ -91,8 +91,8 @@ if (!empty($flag['grab_image']))
     else if ($flag['grab_image'] == 2)
     {
         $params = array();
-        $params['type'] = 2;
-        $params['url'] = 'http://www.foxqq.com/biaoqing/NiuNiuNiuNiu.html';
+        $params['type']  = 2;
+        $params['url']   = 'http://www.foxqq.com/biaoqing/NiuNiuNiuNiu.html';
         $params['title'] = '牛牛妞妞 表情';
         lib_gearman::add_job($GLOBALS['CONFIG']['gearman'], 'GRAB_IMAGE', $params, 3);
     }
@@ -100,13 +100,23 @@ if (!empty($flag['grab_image']))
     {
         $params = array();
         $params['type'] = 3;
-        $urls = array();
-        for($i = 2; $i <= 30; $i++)
+        $urls           = array();
+        for ($i = 2; $i <= 30; $i++)
         {
-            $urls[] = "http://www.roame.net/index/sword-art-online/images/index_{$i}.html";
+            $urls[]          = "http://www.roame.net/index/sword-art-online/images/index_{$i}.html";
         }
-        $params['url'] = $urls;
+        $params['url']   = $urls;
         $params['title'] = '刀剑神域';
+        lib_gearman::add_job($GLOBALS['CONFIG']['gearman'], 'GRAB_IMAGE', $params, 3);
+    }
+    else if ($flag['grab_image'] == 4)
+    {
+        $params = array();
+        $params['type']  = 4;
+        $params['title'] = '樱桃小丸子';
+        $key             = urlencode($params['title']);
+        $params['url']   = "http://www.tuzhan.com/search.html?key={$key}&_=1387040470452";
+        $params['num']   = 3;
         lib_gearman::add_job($GLOBALS['CONFIG']['gearman'], 'GRAB_IMAGE', $params, 3);
     }
 }
