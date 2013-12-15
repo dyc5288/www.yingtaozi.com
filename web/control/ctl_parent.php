@@ -28,7 +28,7 @@ class ctl_parent
      */
     protected function _hot(&$return)
     {
-        $order = 'comment_count desc';
+        $order = 'comment_count desc, ID desc';
         $cond  = array();
         $cond['post_status'] = pub_mod_posts::STATUS_PUBLISH;
         $cond['post_type']   = pub_mod_posts::TYPE_POST;
@@ -43,7 +43,7 @@ class ctl_parent
      */
     protected function _hot_video(&$return)
     {
-        $order = 'comment_count desc';
+        $order = 'comment_count desc, ID desc';
         $cond  = array();
         $cond['post_status'] = pub_mod_posts::STATUS_PUBLISH;
         $cond['post_type']   = pub_mod_posts::TYPE_VIDEO;
@@ -58,7 +58,7 @@ class ctl_parent
      */
     protected function _video(&$return)
     {
-        $order = 'comment_count desc';
+        $order = 'comment_count desc, ID desc';
         $cond  = array();
         $cond['post_status'] = pub_mod_posts::STATUS_PUBLISH;
         $cond['post_type']   = pub_mod_posts::TYPE_VIDEO;
@@ -84,7 +84,7 @@ class ctl_parent
      */
     protected function _fish(&$return)
     {
-        $order = 'comment_count desc';
+        $order = 'comment_count desc, ID desc';
         $cond  = array();
         $cond['post_status']   = pub_mod_posts::STATUS_PUBLISH;
         $cond['post_type']     = pub_mod_posts::TYPE_PRODUCT;
@@ -99,7 +99,7 @@ class ctl_parent
      */
     protected function _draw(&$return)
     {
-        $order = 'comment_count desc';
+        $order = 'comment_count desc, ID desc';
         $cond  = array();
         $cond['post_status'] = pub_mod_posts::STATUS_PUBLISH;
         $cond['post_type']   = pub_mod_posts::TYPE_DRAW;
@@ -115,7 +115,7 @@ class ctl_parent
      */
     protected function _hot_image(&$return)
     {
-        $order = 'comment_count desc';
+        $order = 'comment_count desc, ID desc';
         $cond  = array();
         $cond['post_status'] = pub_mod_posts::STATUS_PUBLISH;
         $cond['post_type']   = pub_mod_posts::TYPE_DRAW;
