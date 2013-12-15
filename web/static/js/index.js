@@ -58,7 +58,7 @@ $(function(){
     D.len = 12;
     dimg.mouseenter(function(){
         var _this = $(this);
-        di.attr('src', _this.attr('src'));     
+        di.attr('src', _this.attr('url'));     
         di.attr('title', $(this).attr('title'));
         var dia = di.parent();
         var dimga = $(this).parent();
@@ -68,7 +68,7 @@ $(function(){
     });
     var firstD = dimg.first();
     if (firstD) {
-        di.attr('src', firstD.attr('src'));
+        di.attr('src', firstD.attr('url'));
         di.attr('title', firstD.attr('title'));
         var dia = di.parent();
         var dimga = firstD.parent();
@@ -82,9 +82,8 @@ $(function(){
             D.index = parseInt(D.index) + 1;
         }
         di.fadeOut(80);
-        di.hide();
         var cur = $("#js_draw").find('[key="'+D.index+'"]');
-        di.attr('src', cur.attr('src'));
+        di.attr('src', cur.attr('url'));
         di.attr('title', cur.attr('title'));
         var dia = di.parent();
         var dimga = cur.parent();
