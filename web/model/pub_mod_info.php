@@ -107,8 +107,8 @@ class pub_mod_info
 
         $data                   = mb_convert_encoding($result, 'utf-8', 'GBK');
         $post_content           = hlp_format::get_div('class="he15 content line22"', $data);
-        $post_content           = preg_replace('/onload(.*)=\"(.*)\"/iU', '', $post_content);
-        $post_content           = preg_replace('/onclick(.*)=\"(.*)\"/iU', '', $post_content);
+        $post_content           = preg_replace('/onload=\"(.*)\"/iU', '', $post_content);
+        $post_content           = preg_replace('/onclick=\"(.*)\"/iU', '', $post_content);
         $return['post_content'] = $post_content;
         return $return;
     }
