@@ -172,13 +172,15 @@ function GRAB_IMAGE($job)
                 $url_prefix = $params['url'];
                 $title      = $params['title'];
                 $num        = $params['num'];
+                $sum        = $params['sum'];
+                $start      = isset($params['start']) ? $params['start'] : 1;
 
                 $param_array = array();
                 $post_content = array();
                 $param_array['post_author'] = pub_mod_posts::AUTHOR_ADMIN_ID;
                 $param_array['post_title']  = addslashes($title);
 
-                for ($i = 1; $i <= $num; $i++)
+                for ($i = $start; $i <= $num; $i++)
                 {
                     $url  = $url_prefix . "&p=$i";
                     $data = hlp_common::remote_request($url);
@@ -216,6 +218,11 @@ function GRAB_IMAGE($job)
                                 $pc['url_l']    = pub_mod_info::save_image($ilurl);
                                 $pc['title']    = $ititle;
                                 $post_content[] = $pc;
+
+                                if ($sum && count($post_content) >= $sum)
+                                {
+                                    break;
+                                }
                             }
                             else
                             {
