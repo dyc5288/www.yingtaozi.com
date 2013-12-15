@@ -57,7 +57,7 @@
                         </div>
                         <div class="jTitle">
                             <div class="jLeft"><{$return.draw.post_title}></div>
-                            <div class="jRight">1/<{'3'|draw:$return.draw.post_content}></div>
+                            <div class="jRight"><span id="js_index">1</span>/<{'3'|draw:$return.draw.post_content}></div>
                         </div>
                         <div class="jDNine">
                             <{'2'|draw:$return.draw.post_content:6}>

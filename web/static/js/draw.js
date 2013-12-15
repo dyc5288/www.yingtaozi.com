@@ -31,6 +31,7 @@ $(function(){
         if (cur_div) {
             var url = cur_div.attr('url');
             set_image(url);
+            $("#js_index").html(cur+1);
         }
         return false;
     }).blur(function(){
