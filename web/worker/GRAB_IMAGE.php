@@ -195,7 +195,6 @@ function GRAB_IMAGE($job)
                             xml_parse_into_struct($p, $u, $vals, $index);
                             xml_parser_free($p);
 
-                            $aattr  = $vals[$index['A'][0]]['attributes'];
                             $iattr  = $vals[$index['IMG'][0]]['attributes'];
                             $iurl   = $iattr['SRC'];
                             $ilurl  = str_replace('/m/', '/l/', $iurl);
