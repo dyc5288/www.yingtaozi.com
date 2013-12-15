@@ -107,8 +107,8 @@ class pub_mod_info
 
         $data                   = mb_convert_encoding($result, 'utf-8', 'GBK');
         $post_content           = hlp_format::get_div('class="he15 content line22"', $data);
-        $post_content           = preg_replace('/on(.*)=\"(.*)\"/iU', '', $post_content);
-        $post_content           = preg_replace('/on(.*)=\'(.*)\'/iU', '', $post_content);
+        $post_content           = preg_replace('/onload(.*)=\"(.*)\"/iU', '', $post_content);
+        $post_content           = preg_replace('/onclick(.*)=\"(.*)\"/iU', '', $post_content);
         $return['post_content'] = $post_content;
         return $return;
     }
@@ -171,7 +171,7 @@ class pub_mod_info
         $filename = $dir . $name;
         $file     = PATH_STATIC . '/images/' . $name;
         put_file($file, $result);
-        $url = lib_qiniu::upfile($filename, $file);
+        $url      = lib_qiniu::upfile($filename, $file);
         unlink($file);
         return $url;
     }
