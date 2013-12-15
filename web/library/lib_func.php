@@ -925,6 +925,5 @@ function debug_error_handler($errno, $errmsg, $filename, $linenum, $vars)
     $return['errmsg']   = $errmsg;
     $return['filename'] = $filename;
     $return['linenum']  = $linenum;
-    $return['vars']     = $vars;
     debug($return);
 }
