@@ -32,7 +32,7 @@ class pub_mod_image
      * @param array $param_array 
      * @return void
      */
-    public static function update_video($ID, $param_array)
+    public static function update_image($ID, $param_array)
     {
         if (empty($ID) || empty($param_array))
         {
