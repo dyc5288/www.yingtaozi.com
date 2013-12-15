@@ -179,18 +179,25 @@ function GRAB_IMAGE($job)
 
                 for ($i = 1; $i <= $num; $i++)
                 {
-                    $url     = $url_prefix . "&p=$i";
-                    $data    = hlp_common::remote_request($url);
-                    
+                    $url  = $url_prefix . "&p=$i";
+                    $data = hlp_common::remote_request($url);
+
                     if ($i == 1)
                     {
                         $matches = array();
                         preg_match_all('/<div class=\"c_p_l_c_i\" data-obj=\".*\">(.*)<\\/div>/iU', $data, $matches);
                         $url_data = $matches[1];
+                    }
+                    else
+                    {
+                        $url_data = json_decode($data, true);
+                    }
 
-                        if (!empty($url_data))
+                    if (!empty($url_data))
+                    {
+                        foreach ($url_data as $u)
                         {
-                            foreach ($url_data as $u)
+                            if ($i == 1)
                             {
                                 $p    = xml_parser_create();
                                 $vals = array();
@@ -202,18 +209,20 @@ function GRAB_IMAGE($job)
                                 $iurl   = $iattr['SRC'];
                                 $ilurl  = str_replace('/m/', '/l/', $iurl);
                                 $ititle = $iattr['ALT'];
-
-                                $pc = array();
-                                $pc['url']      = pub_mod_info::save_image($iurl);
-                                $pc['url_l']    = pub_mod_info::save_image($ilurl);
-                                $pc['title']    = $ititle;
-                                $post_content[] = $pc;
                             }
+                            else
+                            {
+                                $iurl   = $u['src'];
+                                $ilurl  = str_replace('/m/', '/l/', $iurl);
+                                $ititle = $u['name'];
+                            }
+
+                            $pc = array();
+                            $pc['url']      = pub_mod_info::save_image($iurl);
+                            $pc['url_l']    = pub_mod_info::save_image($ilurl);
+                            $pc['title']    = $ititle;
+                            $post_content[] = $pc;
                         }
-                    }
-                    else
-                    {
-                        
                     }
                 }
 
