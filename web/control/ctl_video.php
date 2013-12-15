@@ -34,7 +34,7 @@ class ctl_video extends ctl_parent
         $keyword = get_params('keyword', 1, 'request', '');
         $limit = 12;
         $url   = '?c=video';
-        $order = "post_date desc,ID desc";
+        $order = "post_date desc,post_date desc";
         $cond  = array();
         $cond['post_status'] = pub_mod_posts::STATUS_PUBLISH;
         $cond['post_type']   = pub_mod_posts::TYPE_VIDEO;

@@ -34,7 +34,7 @@ class ctl_fish extends ctl_parent
         $keyword = get_params('keyword', 1, 'request', '');
         $limit   = 19;
         $url     = '?c=fish';
-        $order   = "post_date desc,ID desc";
+        $order   = "post_date desc,post_date desc";
         $cond    = array();
         $cond['post_status'] = pub_mod_posts::STATUS_PUBLISH;
         $cond['post_type']   = pub_mod_posts::TYPE_PRODUCT;
