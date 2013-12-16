@@ -16,6 +16,7 @@ if (!empty($flag['help']))
 {
     echo "php grab.php -grab_info 1 抓取恶魔岛资讯" . PHP_EOL;
     echo "php grab.php -grab_video 1 抓取优酷视频" . PHP_EOL;
+    echo "php grab.php -grab_video 2 抓取优酷视频分集介绍" . PHP_EOL;
     echo "php grab.php -grab_product 1 抓取周边产品" . PHP_EOL;
     echo "php grab.php -grab_image 1 抓取百度图片" . PHP_EOL;
     echo "php grab.php -grab_image 2 抓取QQ表情图片" . PHP_EOL;
@@ -47,6 +48,15 @@ if (!empty($flag['grab_video']))
                 $start  = ($i - 1) * 20 + 1;
                 $url    = "http://www.youku.com/show_episode/id_z63ddfc20dcae11e299f6.html?dt=json&divid=reload_{$start}&__rt=1&__ro=reload_{$start}";
                 $params = array('url'  => $url, 'type' => $flag['grab_video'], 'id'   => 1580);
+                lib_gearman::add_job($GLOBALS['CONFIG']['gearman'], 'GRAB_VIDEO', $params, 3);
+            }
+            break;
+        case pub_mod_video::TYPE_YOUKU_DETAIL:
+            for ($i = 1; $i <= 3; $i++)
+            {
+                $start  = ($i - 1) * 20 + 1;
+                $url    = "http://www.youku.com/show_point/id_z654e06a2278611e097c0.html?dt=json&divid=point_reload_{$start}&tab=0&__rt=1&__ro=point_reload_{$start}";
+                $params = array('url'  => $url, 'type' => $flag['grab_video'], 'id'   => 1508);
                 lib_gearman::add_job($GLOBALS['CONFIG']['gearman'], 'GRAB_VIDEO', $params, 3);
             }
             break;
