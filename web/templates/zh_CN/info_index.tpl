@@ -59,7 +59,7 @@
     </div>
 
     <div class="jAds">
-        <a href="http://re.taobao.com/eauction?e=HO3yoWCP7M%2FghojqVNxKsarnc6yQ59ouWIYUy9WxI16LltG5xFicOcVMu84rFBr8JPePkNk3onE3avkGnQR%2BPocMiCVs0rVkk%2B0jBdlPG77XcOrG9huDtQ%3D%3D&ptype=100008&unid=&refpos=274_102170_12,a,null&refpid=mm_30908564_3410813_11007308&clk1=885c3239ad31c658c9f3a36ca9c5ece1&upsid=885c3239ad31c658c9f3a36ca9c5ece1&spm=0.0.0.0.0_0.0.0.0" target="_blank"><img src="http://img02.taobaocdn.com/bao/uploaded/i1/15225031331019981/T1wkjRFhxeXXXXXXXX_!!0-item_pic.jpg_b.jpg" alt=""></a>
+        <a href="http://redirect.simba.taobao.com/rd?w=unionnojs&f=http%3A%2F%2Fre.taobao.com%2Feauction%3Fe%3DsAYxOYL4rKbghojqVNxKsRL4aV4Y1Or8AUuPt4hhrd%252BLltG5xFicOSZqewpHPyZzQbUn1Y0sOqQH7D7yRIFAqiRyjfoi5h6Dn4hSYUu131OB3ujUJI0OeA%253D%253D%26ptype%3D100010&k=e2e107a2b72ca1b1&c=un&b=alimm_0&p=mm_13740145_4042950_14768231" target="_blank"><img src="http://img03.taobaocdn.com/bao/uploaded/i3/T1YRu8XmlbXXb0UGs4_051707.jpg_250x250.jpg" title="日本内野樱桃小丸子微笑面巾 纯棉毛巾 无捻纱 柔软吸水 可爱卡通"></a>
     </div>
 </div>
 <{include file='footer.tpl'}>
