@@ -113,15 +113,8 @@ class pub_mod_video
             $matches = array();
             preg_match_all('/alt=\"(.*)\" src/iU', $row, $matches);
             $title = $matches[1][0];
-            $arr   = explode(' ', $title);
-            $index = $arr[0];
-
-            if (!is_numeric($index))
-            {
-                throw new Exception('数据异常');
-            }
-
-            $data = array('detail'        => $detail, 'title'         => $title, 'index'         => $index);
+            $index = hlp_common::findNum($title);
+            $data  = array('detail'        => $detail, 'title'         => $title, 'index'         => $index);
             $return[$index] = $data;
         }
 
