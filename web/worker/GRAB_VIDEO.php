@@ -141,10 +141,13 @@ function GRAB_VIDEO($job)
 
                             if (isset($pcontent[$k]))
                             {
-                                $data           = $pcontent[$k];
-                                unset($pcontent[$k]);
-                                $data['detail'] = $row['detail'];
-                                $pcontent[$key] = $data;
+                                $pcontent[$k]['detail'] = $row['detail'];
+                                $pcontent[$k]['id']     = $row['index'];
+                            }
+                            elseif (isset($pcontent[$key]))
+                            {
+                                $pcontent[$key]['detail'] = $row['detail'];
+                                $pcontent[$key]['id']     = $row['index'];
                             }
                         }
 
