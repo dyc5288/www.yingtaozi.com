@@ -8,7 +8,8 @@
  */
 class pub_mod_video
 {
-    const TYPE_YOUKU = 1;
+    const TYPE_YOUKU        = 1;
+    const TYPE_YOUKU_DETAIL = 2;
 
     /**
      * 添加文章
@@ -75,6 +76,53 @@ class pub_mod_video
                 $data['title'] = $attributes['TITLE'];
                 $return[]      = $data;
             }
+        }
+
+        return $return;
+    }
+
+    /**
+     * 抓取数据
+     *
+     * @param string $url 
+     * @return array
+     */
+    public static function grab_detail($url)
+    {
+        if (empty($url))
+        {
+            return false;
+        }
+
+        $data    = hlp_common::remote_request($url);
+        $matches = array();
+        preg_match_all('/<div class=\"item\">([\s\S]*)<\\/div><!--[\.]item-->/iU', $data, $matches);
+        $datas  = $matches[0];
+        $return = array();
+
+        if (empty($datas))
+        {
+            return false;
+        }
+
+        foreach ($datas as $row)
+        {
+            $matches = array();
+            preg_match_all('/<div class=\"desc\">([\s\S]*)<\\/div>/iU', $row, $matches);
+            $detail  = $matches[1][0];
+            $matches = array();
+            preg_match_all('/alt=\"(.*)\" src/iU', $row, $matches);
+            $title = $matches[1][0];
+            $arr   = explode(' ', $title);
+            $index = $arr[0];
+
+            if (!is_numeric($index))
+            {
+                throw new Exception('数据异常');
+            }
+
+            $data = array('detail'        => $detail, 'title'         => $title, 'index'         => $index);
+            $return[$index] = $data;
         }
 
         return $return;
