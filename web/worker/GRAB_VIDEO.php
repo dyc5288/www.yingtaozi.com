@@ -84,15 +84,71 @@ function GRAB_VIDEO($job)
                         {
                             $post_content = $data;
                         }
-                        
+
                         $pcontent = array();
-                        
-                        foreach($post_content as $row)
+
+                        foreach ($post_content as $row)
                         {
                             $pcontent[$row['id']] = $row;
                         }
-                        
+
                         ksort($pcontent);
+
+                        $parmas = array();
+                        $parmas['post_content'] = serialize($pcontent);
+
+                        $result = pub_mod_video::update_video($id, $parmas);
+
+                        if ($result)
+                        {
+                            $return['data'][] = $key;
+                            SM(1, 'W_100', $key, 864000);
+                        }
+                        else
+                        {
+                            throw new Exception('add error!');
+                        }
+                    }
+
+                    break;
+
+                case pub_mod_video::TYPE_YOUKU_DETAIL:
+                    $url   = $params['url'];
+                    $id    = $params['id'];
+                    $key   = sha1($url);
+                    $cache = GM('W_100', $key);
+
+                    $video_obj = pub_mod_posts::get_one_post($id);
+
+                    if (empty($video_obj))
+                    {
+                        throw new Exception("video {$id} not exist!");
+                    }
+
+                    if (!empty($cache))
+                    {
+                        throw new Exception("{$key} exist!");
+                    }
+
+                    $pcontent = unserialize($video_obj['post_content']);
+                    $data     = pub_mod_video::grab_detail($url);
+
+                    if (!empty($data))
+                    {
+                        foreach ($data as $key => $row)
+                        {
+                            $k = intval($key);
+
+                            if (isset($pcontent[$k]))
+                            {
+                                $data           = $pcontent[$k];
+                                unset($pcontent[$k]);
+                                $data['detail'] = $row['detail'];
+                                $pcontent[$key] = $data;
+                            }
+                        }
+
+                        ksort($pcontent, SORT_ASC);
 
                         $parmas = array();
                         $parmas['post_content'] = serialize($pcontent);
