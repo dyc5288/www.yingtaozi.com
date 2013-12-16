@@ -220,9 +220,14 @@ Author URI: http://duanyunchao.com/
 }
 
 .jDcontent {
-    margin-top: 29px;
+    margin-top: 15px;
     padding: 5px;
     overflow: auto;
+    margin-bottom: 20px;
+}
+
+.jDcontent h5 {
+    margin-bottom: 10px;
 }
 
 .jOrder div {    

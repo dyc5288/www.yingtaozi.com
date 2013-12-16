@@ -21,7 +21,7 @@
                     <{if !empty($return.post_content)}>
                         <{assign var="k" value=0}>
                         <{foreach from=$return.post_content item=row}>
-                            <div url="<{$row.url}>" introduce=""><{$row.id}></div>
+                            <div url="<{$row.url}>" introduce="<{$row.detail}>" title="<{$row.title}>"><{$row.id}></div>
                             <{assign var="k" value=$k+1}>
                         <{/foreach}>
                     <{/if}>
@@ -34,8 +34,9 @@
                     <h3>分集剧情</h3>
                     <hr class="jHrRight">
                 </div>
-                <div class="jDcontent" id="js_dcontent">
-                    
+                <div class="jDcontent">
+                    <h5 id="js_dtitle" ></h5>
+                    <div id="js_dcontent"></div>
                 </div>
             </div>
         </div>        
