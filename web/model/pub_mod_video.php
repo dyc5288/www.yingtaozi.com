@@ -137,7 +137,7 @@ class pub_mod_video
         
         $data    = hlp_common::remote_request($url);
         $matches = array();
-        preg_match_all('/<a.*title=\"hello kitty 凯蒂猫 (.*)\" href=\".*v_show\\/id_(.*).html.*\".*><\\/a>/iU', $data, $matches);
+        preg_match_all('/<a.*title=\"(.*)\" href=\".*v_show\\/id_(.*).html.*\".*><\\/a>/iU', $data, $matches);
         $titles  = $matches[1];
         $urls  = $matches[2];
         $return = array();
@@ -147,17 +147,20 @@ class pub_mod_video
             return false;
         }
 
+        $count = 1;
         foreach($titles as $key => $title)
         {
             $index = hlp_common::findNum($title);
+            $index = empty($index) ? '0'.$count : $index;
             $data = array();
             $data['id'] = $index;
-            $data['title'] = $title;
+            $data['title'] = $index . " ". $title;
             $id = $urls[$key];
             $data['url']   = "http://player.youku.com/embed/{$id}";
             $return[$index] = $data;
+            $count++;
         }
-        
+
         return $return;
     }
 
