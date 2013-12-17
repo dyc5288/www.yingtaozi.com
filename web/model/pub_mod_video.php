@@ -10,6 +10,7 @@ class pub_mod_video
 {
     const TYPE_YOUKU        = 1;
     const TYPE_YOUKU_DETAIL = 2;
+    const TYPE_YOUKU_LIST   = 3;
 
     /**
      * 添加文章
@@ -118,6 +119,45 @@ class pub_mod_video
             $return[$index] = $data;
         }
 
+        return $return;
+    }
+    
+    /**
+     * 抓取数据列表
+     *
+     * @param string $url 
+     * @return array
+     */
+    public static function grab_list($url)
+    {
+        if (empty($url))
+        {
+            return false;
+        }
+        
+        $data    = hlp_common::remote_request($url);
+        $matches = array();
+        preg_match_all('/<a.*title=\"hello kitty 凯蒂猫 (.*)\" href=\".*v_show\\/id_(.*).html.*\".*><\\/a>/iU', $data, $matches);
+        $titles  = $matches[1];
+        $urls  = $matches[2];
+        $return = array();
+        
+        if (empty($titles))
+        {
+            return false;
+        }
+
+        foreach($titles as $key => $title)
+        {
+            $index = hlp_common::findNum($title);
+            $data = array();
+            $data['id'] = $index;
+            $data['title'] = $title;
+            $id = $urls[$key];
+            $data['url']   = "http://player.youku.com/embed/{$id}";
+            $return[$index] = $data;
+        }
+        
         return $return;
     }
 
