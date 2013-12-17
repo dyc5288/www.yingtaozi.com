@@ -170,6 +170,44 @@ function GRAB_VIDEO($job)
                     }
 
                     break;
+
+                case pub_mod_video::TYPE_YOUKU_LIST:
+                    $key   = sha1($url);
+                    $url   = $params['url'];
+                    $title = $params['title'];
+                    $key   = sha1($url);
+                    $cache = GM('W_100', $key);
+
+                    if (!empty($cache))
+                    {
+                        throw new Exception("{$key} exist!");
+                    }
+
+                    $data = pub_mod_video::grab_list($url);
+                    ksort($data, SORT_ASC);
+
+                    if (!empty($data))
+                    {
+                        $param_array = array();
+                        $post_content = array();
+                        $param_array['post_author']  = pub_mod_posts::AUTHOR_ADMIN_ID;
+                        $param_array['post_title']   = addslashes($title);
+                        $param_array['post_content'] = serialize($data);
+                        $param_array['post_date']    = date('Y-m-d H:i:s');
+                        $result                      = pub_mod_video::add_video($param_array);
+
+                        if ($result)
+                        {
+                            $return['data'][] = $key;
+                            SM(1, 'W_100', $key, 864000);
+                        }
+                        else
+                        {
+                            throw new Exception('add error!');
+                        }
+                    }
+
+                    break;
             }
 
             $return['state'] = true;
