@@ -17,6 +17,7 @@ if (!empty($flag['help']))
     echo "php grab.php -grab_info 1 抓取恶魔岛资讯" . PHP_EOL;
     echo "php grab.php -grab_video 1 抓取优酷视频" . PHP_EOL;
     echo "php grab.php -grab_video 2 抓取优酷视频分集介绍" . PHP_EOL;
+    echo "php grab.php -grab_video 3 抓取爱奇艺视频" . PHP_EOL;
     echo "php grab.php -grab_product 1 抓取周边产品" . PHP_EOL;
     echo "php grab.php -grab_image 1 抓取百度图片" . PHP_EOL;
     echo "php grab.php -grab_image 2 抓取QQ表情图片" . PHP_EOL;
@@ -59,6 +60,11 @@ if (!empty($flag['grab_video']))
                 $params = array('url'  => $url, 'type' => $flag['grab_video'], 'id'   => 1572);
                 lib_gearman::add_job($GLOBALS['CONFIG']['gearman'], 'GRAB_VIDEO', $params, 3);
             }
+            break;
+        case pub_mod_video::TYPE_YOUKU_LIST:
+            $url    = "http://www.youku.com/playlist_show/id_4279185.html";
+            $params = array('url'  => $url, 'type' => $flag['grab_video'], 'title' => '咖啡猫');
+            lib_gearman::add_job($GLOBALS['CONFIG']['gearman'], 'GRAB_VIDEO', $params, 3);
             break;
     }
 }
