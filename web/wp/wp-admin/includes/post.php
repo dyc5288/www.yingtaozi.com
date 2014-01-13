@@ -286,7 +286,15 @@ function edit_post( $post_data = null ) {
 
 	update_post_meta( $post_ID, '_edit_last', get_current_user_id() );
 
-    $post_data['post_excerpt'] = serialize($post_data['post_excerpt']);
+    if (!empty($post_data['post_excerpt']))
+    {
+        $post_data['post_excerpt'] = serialize($post_data['post_excerpt']);
+    }
+    else
+    {
+        unset($post_data['post_excerpt']);
+    }
+    
 	wp_update_post( $post_data );
 
 	// Now that we have an ID we can fix any attachment anchor hrefs

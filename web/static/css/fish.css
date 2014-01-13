@@ -120,11 +120,13 @@ Author URI: http://duanyunchao.com/
 
 .jTheme div:hover, .jCategory div:hover {    
     cursor: pointer;
-    background: -webkit-linear-gradient(top, #f1f1f1, #EBECEE);
+    background: #D71E5B;
+    color: white;
 }
 
 .jTheme .jCurrent, .jCategory .jCurrent {
-    background: -webkit-linear-gradient(top, #f1f1f1, #EBECEE);
+    background: #D71E5B;
+    color: white;
 }
 
 /* 详情页 */
